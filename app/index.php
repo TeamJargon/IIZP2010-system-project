@@ -13,7 +13,7 @@ if(isset($_GET['taustavari'])) {
 
 echo "<body style='background-color: $taustavari'>";
 
-echo "<form method='get' action='h2t2.php'>";
+echo "<form method='get' action='index.php'>";
 
 foreach($taustavarit as $nimi => $vkoodi) {
 	$valittu = '';
