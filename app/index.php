@@ -1,7 +1,7 @@
 <html>
 <head>
 </head>
-<body>
+
 <?php
 
 $taustavarit["Valkoinen"] = "#fff";
