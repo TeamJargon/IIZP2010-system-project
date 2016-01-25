@@ -26,6 +26,7 @@ foreach($taustavarit as $nimi => $vkoodi) {
 }
 echo "<input type='submit' name='nappi' value='Vari'>";
 echo "</form>";
+echo "<p> Circle test </p>";
 ?>
 
 
