@@ -1,0 +1,2 @@
+1. Read from the database and output it as JSON with PHP. 
+2. Then using AJAX on the client side, request the file and parse the JSON in JavaScript.
