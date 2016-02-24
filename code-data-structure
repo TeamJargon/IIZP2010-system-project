@@ -1,7 +1,7 @@
 1. Read from the database and output it as JSON with PHP. 
 2. Then using AJAX on the client side, request the file and parse the JSON in JavaScript.
 
-Echotetaan data suoraan JavaScriptiin
+**Echotetaan data suoraan JavaScriptiin**
 esimerkki: http://www.dyn-web.com/tutorials/php-js/json/array.php
 
 This is probably the easiest to understand, and the most horrible to use. Don't do this unless you know what you're doing.
@@ -17,7 +17,7 @@ Cons
     Structured data is hard - You can probably do JSON... kinda. But XML and HTML will require special attention.
     
 
-Data AJAXilla palvelimelta
+**Data AJAXilla palvelimelta**
 esimerkki: http://www.w3schools.com/json/json_example.asp
 esimerkki: http://stackoverflow.com/questions/21484270/jquery-ajax-get-database-results-using-php-json-encode
 esimerkki: (JSON filusta) http://www.tutorialspoint.com/json/json_ajax_example.htm
