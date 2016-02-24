@@ -36,4 +36,5 @@ Cons
     State - Data fetched via a separate HTTP request won't include any information from the HTTP request that fetched the HTML document. You may need this information (e.g. if the HTML document is generated in response to a form submission) and, if you do, will have to transfer it across somehow. If you have ruled out embedding the data in the page (which you have if you are using this technique) then that limits you to cookies/sessions which may be subject to race conditions.
 
 
+--> Ei tarvita erillistä JSON-filua palvelimella, turha mutka matkassa
 
