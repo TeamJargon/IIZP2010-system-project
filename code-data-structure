@@ -1,2 +1,39 @@
 1. Read from the database and output it as JSON with PHP. 
 2. Then using AJAX on the client side, request the file and parse the JSON in JavaScript.
+
+Echotetaan data suoraan JavaScriptiin
+esimerkki: http://www.dyn-web.com/tutorials/php-js/json/array.php
+
+This is probably the easiest to understand, and the most horrible to use. Don't do this unless you know what you're doing.
+Pros
+
+    Very easily implemented - It takes very little to implement this, and understand.
+    Does not dirty source - Variables are outputted directly to JavaScript, so the DOM is not affected.
+
+Cons
+
+    Insecure - PHP has no trivial JavaScript escape functions, and they aren't trivial to implement. Especially when using user inputs, you are extremely vulnerable to second tier injections. Disputed see comments
+    Tightly couples PHP to your data logic - Because PHP is used in presentation, you can't separate the two cleanly.
+    Structured data is hard - You can probably do JSON... kinda. But XML and HTML will require special attention.
+    
+
+Data AJAXilla palvelimelta
+esimerkki: http://www.w3schools.com/json/json_example.asp
+esimerkki: http://stackoverflow.com/questions/21484270/jquery-ajax-get-database-results-using-php-json-encode
+esimerkki: (JSON filusta) http://www.tutorialspoint.com/json/json_ajax_example.htm
+
+This method is considered the best, because your server side and client side scripts are completely separate.
+Pros
+
+    Better separation between layers - If tomorrow you stop using PHP, and want to move to a servlet, a REST API, or some other service, you don't have to change much of the JavaScript code.
+    More readable - JavaScript is JavaScript, PHP is PHP. Without mixing the two, you get more readable code on both languages.
+    Allows for async data transfer - Getting the information from PHP might be time/resources expensive. Sometimes you just don't want to wait for the information, load the page, and have the information reach whenever.
+    Data is not directly found on the markup - This means that your markup is kept clean of any additional data, and only JavaScript sees it.
+
+Cons
+
+    Latency - AJAX creates an HTTP request, and HTTP requests are carried over network and have network latencies.
+    State - Data fetched via a separate HTTP request won't include any information from the HTTP request that fetched the HTML document. You may need this information (e.g. if the HTML document is generated in response to a form submission) and, if you do, will have to transfer it across somehow. If you have ruled out embedding the data in the page (which you have if you are using this technique) then that limits you to cookies/sessions which may be subject to race conditions.
+
+
+
