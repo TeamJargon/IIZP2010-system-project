@@ -6,7 +6,7 @@ SELECT brand FROM brand
 SQLEND;
 
 
-$stmt = $db->prepare($sql);
+$stmt = $db->prepare("$sql");
 $stmt->execute();
 
 if ($stmt->rowCount() >= 1) {
