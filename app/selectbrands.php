@@ -10,9 +10,7 @@ $stmt = $db->prepare($sql);
 $stmt->execute();
 
 if ($stmt->rowCount() >= 1) {
-    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-        echo "{$row[brand]}";
-    }
+    echo "asd";
 }
 
 
