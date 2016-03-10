@@ -1,7 +1,9 @@
 <?php
 require_once('../db-init.php');
 
-$brand = $_GET['brand'];
+if (isset($_GET['brand'])) {
+    $brand = $_GET['brand'];
+}
 
 $sql = <<<SQLEND
 SELECT Form FROM form WHERE PrimaryKey = ANY (SELECT Form FROM medicine WHERE Brand = (SELECT PrimaryKey FROM brand WHERE Brand = :brand));
