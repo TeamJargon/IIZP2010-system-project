@@ -16,11 +16,10 @@
 		{"name": "Heinix", "symptom": "Allergic cold"},
 		{"name": "Oxanest", "symptom": "Pain from cancer"},
 		{"name": "Lantus", "symptom": "Diabetes"},
-		{"name": "Nexium", "symptom": "Heartburn"},
+		{"name": "Nexium", "symptom": "Burning sensation in throat, aka heartburn"},
 		{"name": "Lisinopril", "symptom": "Heightened bloodpressure"},
 		{"name": "Furesis", "symptom": "Heightened bloodpressure"},
 		{"name": "Adalat", "symptom": "Pre-eclampsy"},
-		{"name": "Albetol", "symptom": "Heightened bloodpressure"},
 		{"name": "Albetol", "symptom": "Heightened bloodpressure"},
 		{"name": "Tractocile infuusio", "symptom": "Painful contractions"}	
 	]
