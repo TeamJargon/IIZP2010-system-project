@@ -1,0 +1,144 @@
+<html>
+   <head>
+      <meta content = "text/html; charset = ISO-8859-1" http-equiv = "content-type">
+		<style>
+			td,th,table{border:1px solid black;}	
+			td{padding:5px 5px 5px 5px;}
+		</style>
+		<script type = "application/javascript">
+		
+		var drugName = "";
+		var symptom = "";
+		
+		function GenerateChallenge()
+		{
+			
+			loadJSON();
+			
+			sqlLoadReference("burana");
+		}
+		
+        function loadJSON()
+		{
+            var data_file = "json/data.json";
+			
+			var bind = function(fn, context) {
+				return function() {
+					fn.apply(context, arguments);
+				};
+			};
+			
+            var http_request = new XMLHttpRequest();
+            try
+			{
+               // Opera 8.0+, Firefox, Chrome, Safari
+               http_request = new XMLHttpRequest();
+            }
+			catch (e)
+			{
+               // Internet Explorer Browsers
+				try
+				{
+					http_request = new ActiveXObject("Msxml2.XMLHTTP");
+				}
+				catch (e) 
+				{
+					try
+					{
+						http_request = new ActiveXObject("Microsoft.XMLHTTP");
+					}
+					catch (e)
+					{
+						// Something went wrong
+						alert("Unable to load data from JSON!");
+						return false;
+					}
+				}
+            }
+			
+            http_request.onreadystatechange = bind(function(){
+			
+			// MIKSI TULEE STATUS 404?
+               if (http_request.readyState == 4 && http_request.status == 200)
+			   {
+					// Javascript function JSON.parse to parse JSON data
+					var jsonObj = JSON.parse(http_request.responseText);
+					
+					var drugs = jsonObj.drugs;
+					// Math.random() on luku nollasta yhteen desimaalina
+					var rand = Math.random() * drugs.length;
+					var index = parseInt(rand);
+					this.drugName = drugs[index].name;
+					this.symptom = drugs[index].drugtarget;	
+					//alert("funktiossa " + drugName + symptom);					
+                }
+			}, this);
+			
+            http_request.open("GET", data_file, false);
+            http_request.send();
+			
+        }
+		
+		function sqlLoadReference(str) 
+		{
+			var http_request = new XMLHttpRequest();
+            try
+			{
+               // Opera 8.0+, Firefox, Chrome, Safari
+               http_request = new XMLHttpRequest();
+            }
+			catch (e)
+			{
+               // Internet Explorer Browsers
+				try
+				{
+					http_request = new ActiveXObject("Msxml2.XMLHTTP");
+				}
+				catch (e) 
+				{
+					try
+					{
+						http_request = new ActiveXObject("Microsoft.XMLHTTP");
+					}
+					catch (e)
+					{
+						// Something went wrong
+						alert("Unable to load data from database!");
+						return false;
+					}
+				}
+            }
+			http_request.onreadystatechange = function() {
+				if (http_request.readyState == 4 && http_request.status == 200) 
+				{
+					alert("works");
+					//var jsonObj = JSON.parse(http_request.responseText);
+					//alert(jsonObj[0]);
+					//document.getElementById("Name").innerHTML = jsonObj[0];
+					
+					
+				}
+			};
+			http_request.open("GET","http://jargonapp.herokuapp.com/getmedicine.php?brand="+str,false);
+			http_request.send();
+		}
+		
+		</script>
+	
+    <title>tutorialspoint.com JSON</title>
+	</head>
+	
+   <body>		
+      <table class = "src">
+         <tr><th>Name</th><th>Used for</th></tr>
+         <tr><td><div id = "Name">----</div></td>
+         <td><div id = "Aine">----</div></td></tr>
+      </table>
+
+      <div class = "central">
+         <button type = "button" onclick = "GenerateChallenge()">Update Details </button>
+      </div>
+		
+   </body>
+		
+</html>
