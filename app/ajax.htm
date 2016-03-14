@@ -111,12 +111,9 @@
 			http_request.onreadystatechange = function() {
 				if (http_request.readyState == 4 && http_request.status == 200) 
 				{
-					alert("works");
-					//var jsonObj = JSON.parse(http_request.responseText);
-					//alert(jsonObj[0]);
-					//document.getElementById("Name").innerHTML = jsonObj[0];
-					
-					
+					var jsonObj = JSON.parse(http_request.responseText);
+					document.getElementById("Name").innerHTML = jsonObj[0];
+					document.getElementById("Aine").innerHTML = jsonObj[1];
 				}
 			};
 			http_request.open("GET","http://jargonapp.herokuapp.com/getmedicine.php?brand="+str,false);
