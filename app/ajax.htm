@@ -15,7 +15,7 @@
 		function GenerateChallenge()
 		{
 			
-			//loadJSON();			
+			loadJSON();			
 			sqlLoadSubstance("burana");
 			sqlLoadForm("burana");
 			alert(drugName + ", " + symptom + ", " + substance + ", " + ", " + form)
@@ -122,7 +122,7 @@
 					this.substance = jsondata;
 				}
 			},this);
-			http_request.open("GET","php/getsubstance.php?brand="+str,false);
+			http_request.open("GET","php/getsubstance.php?brand="+encodeURIComponent(str),false);
 			http_request.send();			
 		}
 		
@@ -160,15 +160,15 @@
 					}
 				}
             }
-			http_request.onreadystatechange = function() {
+			http_request.onreadystatechange = bind(function() {
 				if (http_request.readyState == 4 && http_request.status == 200) 
 				{					
 					var jsondata = JSON.parse(http_request.responseText);
 					document.getElementById("muoto").innerHTML = jsondata;
 					this.form = jsondata;
 				}
-			};
-			http_request.open("GET","php/getform.php?brand="+str,false);
+			},this);
+			http_request.open("GET","php/getform.php?brand="+encodeURIComponent(str),false);
 			http_request.send();
 		}
 		
