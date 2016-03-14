@@ -109,9 +109,10 @@
 				alert(http_request.readyState);			
 				if (http_request.readyState == 4 && http_request.status == 200) 
 				{
-					var jsondata = JSON.parse(http_request.responsetext);
-					alert(jsondata);
-					document.getElementById("Name").innerHTML = http_request.responsetext;									
+					var jsondata = JSON.parse(http_request.responseText);
+					alert("jsondata: " + jsondata);
+					alert("jsondata: " + http_request.responseText);
+					document.getElementById("Name").innerHTML = http_request.responseText;									
 				}
 			};
 			http_request.open("GET","php/getsubstance.php?brand="+str,false);
@@ -151,7 +152,7 @@
 			alert(http_request.readyState);
 				if (http_request.readyState == 4 && http_request.status == 200) 
 				{					
-					var jsondata = JSON.parse(http_request.responsetext);
+					var jsondata = JSON.parse(http_request.responseText);
 					alert(jsondata);
 					document.getElementById("muoto").innerHTML = jsondata;
 				}
