@@ -13,7 +13,7 @@
 		function GenerateChallenge()
 		{
 			
-			loadJSON();			
+			//loadJSON();			
 			sqlLoadSubstance("burana");
 			sqlLoadMethod("burana");
 		}
@@ -106,13 +106,16 @@
 				}
             }
 			http_request.onreadystatechange = function() {
+				alert(http_request.readyState + " " + http_request.status);	
 				if (http_request.readyState == 4 && http_request.status == 200) 
 				{
+						
 					//var jsonObj[] = JSON.parse(http_request.responsetext);
-					document.getElementById("Name").innerHTML = http_request.responsetext;					
+					document.getElementById("Name").innerHTML = http_request.responsetext;		
+								
 				}
 			};
-			http_request.open("GET","http://jargonapp.herokuapp.com/php/getsubstance.php?brand="+str,false);
+			http_request.open("GET","php/getsubstance.php?brand="+str,false);
 			http_request.send();
 		}
 		
@@ -148,11 +151,13 @@
 			http_request.onreadystatechange = function() {
 				if (http_request.readyState == 4 && http_request.status == 200) 
 				{
+					alert("perkele2");	
 					//var jsonObj[] = JSON.parse(http_request.responsetext);
-					document.getElementById("Aine").innerHTML = http_request.responsetext;					
+					document.getElementById("Aine").innerHTML = JSON.parse(http_request.responsetext);			
+									
 				}
 			};
-			http_request.open("GET","http://jargonapp.herokuapp.com/php/getform.php?brand="+str,false);
+			http_request.open("GET","php/getform.php?brand="+str,true);
 			http_request.send();
 		}
 		
