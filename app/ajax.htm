@@ -7,7 +7,7 @@
 		</style>
 		<script type = "application/javascript">
 		
-		var drugName = "";
+		var brand = "";
 		var symptom = "";
 		var substance = "";
 		var form = "";
@@ -16,9 +16,14 @@
 		{
 			
 			loadJSON();			
-			sqlLoadSubstance(drugName);
-			sqlLoadForm(drugName);
-			alert(drugName + ", " + symptom + ", " + substance + ", " + ", " + form)
+			sqlLoadSubstance(brand);
+			sqlLoadForm(brand);
+			
+			
+			document.getElementById("form").innerHTML = form;
+			document.getElementById("brand").innerHTML = brand;
+			document.getElementById("substance").innerHTML = substance;
+			document.getElementById("symptom").innerHTML = symptom;
 			
 		}
 		
@@ -71,8 +76,8 @@
 					// Math.random() on luku nollasta yhteen desimaalina
 					var rand = Math.random() * drugs.length;
 					var index = parseInt(rand);
-					this.drugName = drugs[index].name;
-					this.symptom = drugs[index].drugtarget;					
+					this.brand = drugs[index].name;
+					this.symptom = drugs[index].symptom;					
                 }
 			}, this);
 			
@@ -118,7 +123,6 @@
 				if (http_request.readyState == 4 && http_request.status == 200) 
 				{
 					var jsondata = JSON.parse(http_request.responseText);
-					document.getElementById("Name").innerHTML = jsondata;
 					this.substance = jsondata;
 				}
 			},this);
@@ -164,7 +168,6 @@
 				if (http_request.readyState == 4 && http_request.status == 200) 
 				{					
 					var jsondata = JSON.parse(http_request.responseText);
-					document.getElementById("muoto").innerHTML = jsondata;
 					this.form = jsondata;
 				}
 			},this);
@@ -180,8 +183,10 @@
    <body>		
       <table class = "src">
          <tr><th>Name</th><th>Used for</th></tr>
-         <tr><td><div id = "Name">----</div></td>
-         <td><div id = "muoto">----</div></td></tr>
+         <tr><td><div id = "brand">----</div></td>
+         <td><div id = "form">----</div></td></tr>
+         <td><div id = "substance">----</div></td></tr>
+         <td><div id = "symptom">----</div></td></tr>
       </table>
 
       <div class = "central">
