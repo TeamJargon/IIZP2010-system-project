@@ -9,13 +9,17 @@
 		
 		var drugName = "";
 		var symptom = "";
+		var substance = "";
+		var form = "";
 		
 		function GenerateChallenge()
 		{
 			
 			//loadJSON();			
 			sqlLoadSubstance("burana");
-			sqlLoadMethod("burana");
+			sqlLoadForm("burana");
+			alert(drugName + ", " + symptom + ", " + substance + ", " + ", " + form)
+			
 		}
 		
         function loadJSON()
@@ -78,6 +82,11 @@
 		
 		function sqlLoadSubstance(str) 
 		{
+			var bind = function(fn, context) {
+				return function() {
+					fn.apply(context, arguments);
+				};
+			};
 			var http_request = new XMLHttpRequest();
             try
 			{
@@ -105,22 +114,25 @@
 					}
 				}
             }
-			http_request.onreadystatechange = function() {		
-				alert(http_request.readyState);			
+			http_request.onreadystatechange = bind(function() {		
 				if (http_request.readyState == 4 && http_request.status == 200) 
 				{
 					var jsondata = JSON.parse(http_request.responseText);
-					alert("jsondata: " + jsondata);
-					alert("jsondata: " + http_request.responseText);
-					document.getElementById("Name").innerHTML = http_request.responseText;									
+					document.getElementById("Name").innerHTML = jsondata;
+					this.substance = jsondata;
 				}
-			};
+			},this);
 			http_request.open("GET","php/getsubstance.php?brand="+str,false);
-			http_request.send();
+			http_request.send();			
 		}
 		
-		function sqlLoadMethod(str) 
+		function sqlLoadForm(str) 
 		{
+			var bind = function(fn, context) {
+				return function() {
+					fn.apply(context, arguments);
+				};
+			};
 			var http_request = new XMLHttpRequest();
             try
 			{
@@ -149,15 +161,14 @@
 				}
             }
 			http_request.onreadystatechange = function() {
-			alert(http_request.readyState);
 				if (http_request.readyState == 4 && http_request.status == 200) 
 				{					
 					var jsondata = JSON.parse(http_request.responseText);
-					alert(jsondata);
 					document.getElementById("muoto").innerHTML = jsondata;
+					this.form = jsondata;
 				}
 			};
-			http_request.open("GET","php/getform.php?brand="+str,true);
+			http_request.open("GET","php/getform.php?brand="+str,false);
 			http_request.send();
 		}
 		
