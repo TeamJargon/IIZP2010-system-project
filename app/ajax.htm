@@ -13,18 +13,14 @@
 		var form = "";
 		
 		function GenerateChallenge()
-		{
-			
+		{			
+		(	// haetaan oire ja siihen k‰ytett‰v‰n l‰‰kkeen brandi
+			// paikallisesta json-tiedostosta
 			loadJSON();			
+			// haetaan brandin perusteella vaikuttava aine
 			sqlLoadSubstance(brand);
-			sqlLoadForm(brand);
-			
-			
-			document.getElementById("form").innerHTML = form;
-			document.getElementById("brand").innerHTML = brand;
-			document.getElementById("substance").innerHTML = substance;
-			document.getElementById("symptom").innerHTML = symptom;
-			
+			// haetaan brandin perusteella muoto
+			sqlLoadForm(brand);				
 		}
 		
         function loadJSON()
@@ -76,8 +72,10 @@
 					// Math.random() on luku nollasta yhteen desimaalina
 					var rand = Math.random() * drugs.length;
 					var index = parseInt(rand);
-					this.brand = drugs[index].name;
-					this.symptom = drugs[index].symptom;					
+					this.brand = drugs[index].brand;
+					this.symptom = drugs[index].symptom;	
+					document.getElementById("brand").innerHTML = drugs[index].brand;
+					document.getElementById("symptom").innerHTML = drugs[index].symptom;
                 }
 			}, this);
 			
@@ -123,7 +121,8 @@
 				if (http_request.readyState == 4 && http_request.status == 200) 
 				{
 					var jsondata = JSON.parse(http_request.responseText);
-					this.substance = jsondata;
+					this.substance = jsondata;					
+					document.getElementById("substance").innerHTML = jsondata;
 				}
 			},this);
 			http_request.open("GET","php/getsubstance.php?brand="+encodeURIComponent(str),false);
@@ -169,6 +168,7 @@
 				{					
 					var jsondata = JSON.parse(http_request.responseText);
 					this.form = jsondata;
+					document.getElementById("form").innerHTML = jsondata;
 				}
 			},this);
 			http_request.open("GET","php/getform.php?brand="+encodeURIComponent(str),false);
