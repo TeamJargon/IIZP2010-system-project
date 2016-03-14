@@ -1,7 +1,9 @@
 <?php
 require_once('../db-init.php');
 
-$brand = $_GET['brand'];
+if (isset($_GET['brand'])) {
+    $brand = $_GET['brand'];
+}
 
 $sql = <<<SQLEND
 SELECT Indication FROM medicine WHERE brand = (SELECT PrimaryKey FROM brand WHERE Brand = :brand) LIMIT 1;

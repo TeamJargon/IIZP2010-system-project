@@ -5,7 +5,6 @@ if (isset($_GET['brand'])) {
     $brand = $_GET['brand'];
 }
 
-
 $sql = <<<SQLEND
 SELECT Substance FROM active_substance WHERE PrimaryKey = ANY (SELECT Substance FROM active_substances WHERE Brand = (SELECT PrimaryKey FROM brand WHERE brand = :brand));
 SQLEND;
