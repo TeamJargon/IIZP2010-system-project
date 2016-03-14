@@ -109,9 +109,8 @@
 				alert(http_request.readyState + " " + http_request.status);	
 				if (http_request.readyState == 4 && http_request.status == 200) 
 				{
-						
-					//var jsonObj[] = JSON.parse(http_request.responsetext);
-					document.getElementById("Name").innerHTML = http_request.responsetext;		
+				
+					document.getElementById("Name").innerHTML = http_request.responsetext;	
 								
 				}
 			};
@@ -150,11 +149,10 @@
             }
 			http_request.onreadystatechange = function() {
 				if (http_request.readyState == 4 && http_request.status == 200) 
-				{
-					alert("perkele2");	
-					//var jsonObj[] = JSON.parse(http_request.responsetext);
-					document.getElementById("Aine").innerHTML = JSON.parse(http_request.responsetext);			
-									
+				{					
+					var jsondata = JSON.parse(http_request.responsetext);
+					alert(jsondata);
+					document.getElementById("muoto").innerHTML = jsondata;
 				}
 			};
 			http_request.open("GET","php/getform.php?brand="+str,true);
@@ -170,7 +168,7 @@
       <table class = "src">
          <tr><th>Name</th><th>Used for</th></tr>
          <tr><td><div id = "Name">----</div></td>
-         <td><div id = "Aine">----</div></td></tr>
+         <td><div id = "muoto">----</div></td></tr>
       </table>
 
       <div class = "central">
