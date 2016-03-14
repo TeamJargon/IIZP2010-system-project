@@ -1,5 +1,5 @@
 <?php
-require_once('../db-init.php');
+require_once('../../db-init.php');
   
 $sql = <<<SQLEND
 SELECT brand FROM brand

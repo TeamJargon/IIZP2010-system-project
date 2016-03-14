@@ -1,5 +1,5 @@
 <?php
-require_once('../db-init.php');
+require_once('../../db-init.php');
 
 if (isset($_GET['brand'])) {
     $brand = $_GET['brand'];
