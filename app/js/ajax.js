@@ -29,7 +29,7 @@
 		
         function loadJSON()
 		{
-            var data_file = "json/data.json";
+            var data_file = "../json/data.json";
 			
 			var bind = function(fn, context) {
 				return function() {
@@ -126,7 +126,7 @@
 					this.substances.push(jsondata);
 				}
 			},this);
-			http_request.open("GET","php/getsubstance.php?brand="+encodeURIComponent(str),false);
+			http_request.open("GET","../php/getsubstance.php?brand="+encodeURIComponent(str),false);
 			http_request.send();			
 		}
 		
@@ -171,7 +171,7 @@
 					this.drugforms.push(jsondata);
 				}
 			},this);
-			http_request.open("GET","php/getform.php?brand="+encodeURIComponent(str),false);
+			http_request.open("GET","../php/getform.php?brand="+encodeURIComponent(str),false);
 			http_request.send();
 		}
 		
