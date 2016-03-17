@@ -72,9 +72,10 @@
             }
 			
             http_request.onreadystatechange = bind(function(){
-			
+				
                if (http_request.readyState == 4 && http_request.status == 200)
 			   {
+			   alert("Readystate4 status200");
 					// Javascript function JSON.parse to parse JSON data
 					var jsonObj = JSON.parse(http_request.responseText);
 					
@@ -82,14 +83,17 @@
 					// Math.random() on luku nollasta yhteen desimaalina
 					var rand = Math.random() * drugs.length;
 					var drugindex = parseInt(rand);
-					
+					alert("Ennen looppia");
 					for (var brandindex = 0;brandindex < drugs[drugindex].brand.length ; brandindex++)
 					{
+						alert("Loopin alussa");
 						this.brands.push(drugs[drugindex].brand[brandindex]);
+						alert("pushattu brandsiin");
 						document.getElementById("brands").innerHTML += drugs[drugindex].brand[brandindex];
+						alert("Sijoitettu innerhtml");
 						alert(drugs[drugindex].brand[brandindex]);
 					}
-					
+					alert("Loopin jälkeen");
 					this.symptom = drugs[index].symptom;					
 					document.getElementById("symptom").innerHTML = drugs[index].symptom;
                 }
