@@ -81,10 +81,15 @@
 					var drugs = jsonObj.drugs;
 					// Math.random() on luku nollasta yhteen desimaalina
 					var rand = Math.random() * drugs.length;
-					var index = parseInt(rand);
-					this.brands = drugs[index].brand;
-					this.symptom = drugs[index].symptom;
-					document.getElementById("brands").innerHTML = drugs[index].brand;
+					var drugindex = parseInt(rand);
+					
+					for (var brandindex = 0;brandindex < drugs[drugindex].brand.length ; brandindex++)
+					{
+						this.brands.push(drugs[drugindex].brand[brandindex]);
+						document.getElementById("brands").innerHTML += drugs[drugindex].brand[brandindex];
+					}
+					
+					this.symptom = drugs[index].symptom;					
 					document.getElementById("symptom").innerHTML = drugs[index].symptom;
                 }
 			}, this);
