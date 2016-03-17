@@ -18,7 +18,7 @@
 		{			
 			brands = [];
 			substances = [];
-			forms = [];
+			drugforms = [];
 			// haetaan oire ja siihen k‰ytett‰v‰n l‰‰kkeen brandi
 			// paikallisesta json-tiedostosta
 			document.getElementById("brands").innerHTML = "";
@@ -41,9 +41,9 @@
 			{
 				document.getElementById("brands").innerHTML += brands[i];
 			}
-			for (var i = 0; i<forms.length;i++)
+			for (var i = 0; i<drugforms.length;i++)
 			{
-				document.getElementById("forms").innerHTML += forms[i];
+				document.getElementById("forms").innerHTML += drugforms[i];
 			}
 			for (var i = 0; i<substances.length;i++)
 			{
@@ -54,6 +54,10 @@
 			
 		}
 		
+		
+		// hakee json-tiedostosta satunnaisen tietueen, joka sis‰lt‰‰ oireet tautiin ja siihen sopivien l‰‰kkeiden brandit
+		// taudin oireet asetetaan symptoms muuttujaan
+		// brandit pushataan brands taulukkoon
         function loadJSON()
 		{
             var data_file = "json/data.json";
@@ -124,6 +128,9 @@
             http_request.send();			
         }
 		
+		
+		// Ottaa vastaan brandin nimen stringina
+		// Pushaa substances taulukkoon annettua brandia vastaavan l‰‰keaineen
 		function sqlLoadSubstance(str) 
 		{
 			var bind = function(fn, context) {
@@ -170,6 +177,9 @@
 			http_request.send();			
 		}
 		
+		
+		// Ottaa vastaan brandin nimen stringina
+		// Pushaa drugforms taulukkoon annetulle brandille kuuluvan l‰‰kkeen muodon
 		function sqlLoadForm(str) 
 		{
 			var bind = function(fn, context) {
@@ -208,7 +218,7 @@
 				if (http_request.readyState == 4 && http_request.status == 200) 
 				{					
 					var jsondata = JSON.parse(http_request.responseText);
-					this.forms.push(jsondata);
+					this.drugforms.push(jsondata);
 					//document.getElementById("forms").innerHTML += jsondata;
 				}
 			},this);

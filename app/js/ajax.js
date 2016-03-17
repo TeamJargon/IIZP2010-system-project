@@ -12,14 +12,15 @@
 			substances = [];
 			drugforms = [];
 			
-			// haetaan oire ja siihen k‰ytett‰v‰n l‰‰kkeen brandi
-			// paikallisesta json-tiedostosta
+			// haetaan oire ja siihen k‰ytett‰vien l‰‰kkeiden brandit
 			loadJSON();
+			
 			// haetaan brandin perusteella vaikuttava aine
 			for (var i = 0;i<brands.length;i++)
 			{
 				sqlLoadSubstance(brands[i]);
-			}			
+			}	
+			
 			// haetaan brandin perusteella muoto				
 			for (var i = 0;i<brands.length;i++)
 			{
@@ -27,6 +28,9 @@
 			}					
 		}
 		
+		// hakee json-tiedostosta satunnaisen tietueen, joka sis‰lt‰‰ oireet tautiin ja siihen sopivien l‰‰kkeiden brandit
+		// taudin oireet asetetaan symptoms muuttujaan
+		// brandit pushataan brands taulukkoon
         function loadJSON()
 		{
             var data_file = "../json/data.json";
@@ -85,6 +89,8 @@
             http_request.send();			
         }
 		
+		// Ottaa vastaan brandin nimen stringina
+		// Pushaa substances taulukkoon annettua brandia vastaavan l‰‰keaineen
 		function sqlLoadSubstance(str) 
 		{
 			var bind = function(fn, context) {
@@ -130,6 +136,8 @@
 			http_request.send();			
 		}
 		
+		// Ottaa vastaan brandin nimen stringina
+		// Pushaa drugforms taulukkoon annetulle brandille kuuluvan l‰‰kkeen muodon
 		function sqlLoadForm(str) 
 		{
 			var bind = function(fn, context) {
