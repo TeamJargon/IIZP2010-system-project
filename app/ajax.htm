@@ -83,17 +83,17 @@
 					alert("otettu parsetusta datasta lääketaulukko talteen");
 					// Math.random() on luku nollasta yhteen desimaalina
 					var rand = Math.random() * drugs.length;
-					var drugindex = parseInt(rand);
+					var index = parseInt(rand);
 					alert("ennen splittiä");
-					var split = drugs[drugindex].brand.split(",");
+					var split = drugs[index].brand.split(",");
 					this.brands = split;
 					
-					/*alert("ennen looppia");
+					alert("ennen looppia");
 					for(var a = 0;a<split.length;a++)
 					{
-						this.brands.push(split[a]);
+						
 						document.getElementById("brands").innerHTML += split[a];
-					}		*/			
+					}				
 					
 					alert("Loopin jälkeen");
 					this.symptom = drugs[index].symptom;					
@@ -205,10 +205,10 @@
    <body>		
       <table class = "src">
          <tr><th>Brand</th><th>Form</th><th>Substance</th><th>symptom</th></tr>
-         <tr><td><div id = "brands">----</div></td>
-		 <td><div id = "forms">----</div></td>
-		 <td><div id = "substances">----</div></td>
-         <td><div id = "symptom">----</div></td></tr>
+         <tr><td><div id = "brands"></div></td>
+		 <td><div id = "forms"></div></td>
+		 <td><div id = "substances"></div></td>
+         <td><div id = "symptom"></div></td></tr>
       </table>
 
       <div class = "central">
