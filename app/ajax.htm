@@ -18,6 +18,10 @@
 		{			
 			// haetaan oire ja siihen k‰ytett‰v‰n l‰‰kkeen brandi
 			// paikallisesta json-tiedostosta
+			document.getElementById("brands").innerHTML = "";
+			document.getElementById("forms").innerHTML = "";
+			document.getElementById("substances").innerHTML = "";
+			document.getElementById("symptom").innerHTML = "";
 			loadJSON();
 			alert("Brands length: " + brands.length)
 			// haetaan brandin perusteella vaikuttava aine
@@ -78,24 +82,22 @@
 					alert("Readystate4 status200");
 					// Javascript function JSON.parse to parse JSON data
 					var jsonObj = JSON.parse(http_request.responseText);
-					alert("parsettu json");
+					//alert("parsettu json");
 					var drugs = jsonObj.drugs;
-					alert("otettu parsetusta datasta l‰‰ketaulukko talteen");
+					//alert("otettu parsetusta datasta l‰‰ketaulukko talteen");
 					// Math.random() on luku nollasta yhteen desimaalina
 					var rand = Math.random() * drugs.length;
 					var index = parseInt(rand);
-					alert("ennen splitti‰");
+					//alert("ennen splitti‰");
 					var split = drugs[index].brand.split(",");
-					this.brands = split;
-					
-					alert("ennen looppia");
+					this.brands = split;					
+					//alert("ennen looppia");
 					for(var a = 0;a<split.length;a++)
-					{
-						
+					{						
 						document.getElementById("brands").innerHTML += split[a];
 					}				
 					
-					alert("Loopin j‰lkeen");
+					//alert("Loopin j‰lkeen");
 					this.symptom = drugs[index].symptom;					
 					document.getElementById("symptom").innerHTML = drugs[index].symptom;
                 }
