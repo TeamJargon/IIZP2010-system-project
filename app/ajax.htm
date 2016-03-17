@@ -75,11 +75,12 @@
 				
                if (http_request.readyState == 4 && http_request.status == 200)
 			   {
-			   alert("Readystate4 status200");
+					alert("Readystate4 status200");
 					// Javascript function JSON.parse to parse JSON data
 					var jsonObj = JSON.parse(http_request.responseText);
-					
+					alert("parsettu json");
 					var drugs = jsonObj.drugs;
+					alert("otettu parsetusta datasta l‰‰ketaulukko talteen");
 					// Math.random() on luku nollasta yhteen desimaalina
 					var rand = Math.random() * drugs.length;
 					var drugindex = parseInt(rand);
