@@ -7,15 +7,24 @@
 		</style>
 		<script type = "application/javascript">
 		
-		var drugName = "";
+		var brand = "";
 		var symptom = "";
+		var substance = "";
+		var form = "";
 		
 		function GenerateChallenge()
 		{
 			
-			loadJSON();
+			loadJSON();			
+			sqlLoadSubstance(brand);
+			sqlLoadForm(brand);
 			
-			sqlLoadReference("burana");
+			
+			document.getElementById("form").innerHTML = form;
+			document.getElementById("brand").innerHTML = brand;
+			document.getElementById("substance").innerHTML = substance;
+			document.getElementById("symptom").innerHTML = symptom;
+			
 		}
 		
         function loadJSON()
@@ -67,18 +76,22 @@
 					// Math.random() on luku nollasta yhteen desimaalina
 					var rand = Math.random() * drugs.length;
 					var index = parseInt(rand);
-					this.drugName = drugs[index].name;
-					this.symptom = drugs[index].drugtarget;					
+					this.brand = drugs[index].name;
+					this.symptom = drugs[index].symptom;					
                 }
 			}, this);
 			
             http_request.open("GET", data_file, false);
-            http_request.send();
-			
+            http_request.send();			
         }
 		
-		function sqlLoadReference(str) 
+		function sqlLoadSubstance(str) 
 		{
+			var bind = function(fn, context) {
+				return function() {
+					fn.apply(context, arguments);
+				};
+			};
 			var http_request = new XMLHttpRequest();
             try
 			{
@@ -106,15 +119,59 @@
 					}
 				}
             }
-			http_request.onreadystatechange = function() {
+			http_request.onreadystatechange = bind(function() {		
 				if (http_request.readyState == 4 && http_request.status == 200) 
 				{
-					//var jsonObj = JSON.parse(http_request.responseText);
-					//document.getElementById("Name").innerHTML = jsonObj[0];
-					document.getElementById("Name").innerHTML = http_request.responseText;
+					var jsondata = JSON.parse(http_request.responseText);
+					this.substance = jsondata;
 				}
+			},this);
+			http_request.open("GET","php/getsubstance.php?brand="+encodeURIComponent(str),false);
+			http_request.send();			
+		}
+		
+		function sqlLoadForm(str) 
+		{
+			var bind = function(fn, context) {
+				return function() {
+					fn.apply(context, arguments);
+				};
 			};
-			http_request.open("GET","http://jargonapp.herokuapp.com/getmedicine.php?brand="+str,false);
+			var http_request = new XMLHttpRequest();
+            try
+			{
+               // Opera 8.0+, Firefox, Chrome, Safari
+               http_request = new XMLHttpRequest();
+            }
+			catch (e)
+			{
+               // Internet Explorer Browsers
+				try
+				{
+					http_request = new ActiveXObject("Msxml2.XMLHTTP");
+				}
+				catch (e) 
+				{
+					try
+					{
+						http_request = new ActiveXObject("Microsoft.XMLHTTP");
+					}
+					catch (e)
+					{
+						// Something went wrong
+						alert("Unable to load data from database!");
+						return false;
+					}
+				}
+            }
+			http_request.onreadystatechange = bind(function() {
+				if (http_request.readyState == 4 && http_request.status == 200) 
+				{					
+					var jsondata = JSON.parse(http_request.responseText);
+					this.form = jsondata;
+				}
+			},this);
+			http_request.open("GET","php/getform.php?brand="+encodeURIComponent(str),false);
 			http_request.send();
 		}
 		
@@ -125,9 +182,11 @@
 	
    <body>		
       <table class = "src">
-         <tr><th>Name</th><th>Used for</th></tr>
-         <tr><td><div id = "Name">----</div></td>
-         <td><div id = "Aine">----</div></td></tr>
+         <tr><th>Brand</th><th>Form</th><th>Substance</th><th>symptom</th></tr>
+         <tr><td><div id = "brand">----</div></td>
+		 <td><div id = "form">----</div></td>
+		 <td><div id = "substance">----</div></td>
+         <td><div id = "symptom">----</div></td></tr>
       </table>
 
       <div class = "central">

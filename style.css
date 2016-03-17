@@ -1,0 +1,47 @@
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: helvetica, arial, sans-serif;
+	color: #fff;
+	font-size: 14pt;
+	margin: 0;
+	padding: 0;
+	background-color: #080808;
+}
+
+canvas, img { 
+	display: block; 
+	margin: 1em auto; 
+	border: 1px solid #333; 
+	background-position: center;
+ }
+ 
+canvas { 
+	background: #e6e6e6 url(http://student.labranet.jamk.fi/~H8306/a/room1.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+
+.room {
+	width: 1366px;
+	height: 768px;
+	display: block; 
+	margin: 1em auto; 
+	border: 1px solid #333; 
+	background-position: center;
+	text-align: center;
+}
+
+#reception {
+	background-color: lightblue;
+}
+
+#medical {
+	background-color: yellow;
+}
+
+#craft {
+	background-color: green;
+}
