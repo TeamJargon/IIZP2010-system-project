@@ -34,6 +34,22 @@
 			{
 				sqlLoadForm(brands[i]);
 			}
+			
+			for (var i = 0; a<brands.length;i++)
+			{
+				document.getElementById("brands").innerHTML += brands[i];
+			}
+			for (var i = 0; a<brands.length;i++)
+			{
+				document.getElementById("forms").innerHTML += forms[i];
+			}
+			for (var i = 0; a<brands.length;i++)
+			{
+				document.getElementById("substances").innerHTML += substances[i];
+			}
+
+			document.getElementById("symptom").innerHTML = symptom;
+			
 		}
 		
         function loadJSON()
@@ -91,14 +107,14 @@
 					var split = drugs[index].brand.split(",");
 					this.brands = split;					
 					//alert("ennen looppia");
-					for(var a = 0;a<split.length;a++)
+					/*for(var a = 0;a<split.length;a++)
 					{						
 						document.getElementById("brands").innerHTML += split[a];
-					}				
+					}	*/			
 					
 					//alert("Loopin jälkeen");
 					this.symptom = drugs[index].symptom;					
-					document.getElementById("symptom").innerHTML = drugs[index].symptom;
+					//document.getElementById("symptom").innerHTML = drugs[index].symptom;
                 }
 			}, this);
 			
@@ -145,7 +161,7 @@
 				{
 					var jsondata = JSON.parse(http_request.responseText);
 					this.substances.push(jsondata);					
-					document.getElementById("substances").innerHTML += jsondata;
+					//document.getElementById("substances").innerHTML += jsondata;
 				}
 			},this);
 			http_request.open("GET","php/getsubstance.php?brand="+encodeURIComponent(str),false);
@@ -191,7 +207,7 @@
 				{					
 					var jsondata = JSON.parse(http_request.responseText);
 					this.forms.push(jsondata);
-					document.getElementById("forms").innerHTML += jsondata;
+					//document.getElementById("forms").innerHTML += jsondata;
 				}
 			},this);
 			http_request.open("GET","php/getform.php?brand="+encodeURIComponent(str),false);
