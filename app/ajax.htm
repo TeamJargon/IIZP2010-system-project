@@ -7,10 +7,12 @@
 		</style>
 		<script type = "application/javascript">
 		
-		var brand = "";
+		// JQUERY, NOT EVEN ONCE!
+		
+		var brands = [];
 		var symptom = "";
-		var substance = "";
-		var form = "";
+		var substances = [];
+		var forms = [];
 		
 		function GenerateChallenge()
 		{			
@@ -18,9 +20,16 @@
 			// paikallisesta json-tiedostosta
 			loadJSON();			
 			// haetaan brandin perusteella vaikuttava aine
-			sqlLoadSubstance(brand);
-			// haetaan brandin perusteella muoto
-			sqlLoadForm(brand);				
+			for (var i = 0;i<brands.length;i++)
+			{
+				sqlLoadSubstance(brands[i]);
+			}
+			
+			// haetaan brandin perusteella muoto				
+			for (var i = 0;i<brands.length;i++)
+			{
+				sqlLoadForm(brands[i]);
+			}
 		}
 		
         function loadJSON()
@@ -72,9 +81,9 @@
 					// Math.random() on luku nollasta yhteen desimaalina
 					var rand = Math.random() * drugs.length;
 					var index = parseInt(rand);
-					this.brand = drugs[index].brand;
-					this.symptom = drugs[index].symptom;	
-					document.getElementById("brand").innerHTML = drugs[index].brand;
+					this.brands = drugs[index].brand;
+					this.symptom = drugs[index].symptom;
+					document.getElementById("brands").innerHTML = drugs[index].brand;
 					document.getElementById("symptom").innerHTML = drugs[index].symptom;
                 }
 			}, this);
@@ -121,8 +130,8 @@
 				if (http_request.readyState == 4 && http_request.status == 200) 
 				{
 					var jsondata = JSON.parse(http_request.responseText);
-					this.substance = jsondata;					
-					document.getElementById("substance").innerHTML = jsondata;
+					this.substances.push(jsondata);					
+					document.getElementById("substances").innerHTML += jsondata;
 				}
 			},this);
 			http_request.open("GET","php/getsubstance.php?brand="+encodeURIComponent(str),false);
@@ -167,8 +176,8 @@
 				if (http_request.readyState == 4 && http_request.status == 200) 
 				{					
 					var jsondata = JSON.parse(http_request.responseText);
-					this.form = jsondata;
-					document.getElementById("form").innerHTML = jsondata;
+					this.forms.push(jsondata);
+					document.getElementById("forms").innerHTML += jsondata;
 				}
 			},this);
 			http_request.open("GET","php/getform.php?brand="+encodeURIComponent(str),false);
@@ -183,9 +192,9 @@
    <body>		
       <table class = "src">
          <tr><th>Brand</th><th>Form</th><th>Substance</th><th>symptom</th></tr>
-         <tr><td><div id = "brand">----</div></td>
-		 <td><div id = "form">----</div></td>
-		 <td><div id = "substance">----</div></td>
+         <tr><td><div id = "brands">----</div></td>
+		 <td><div id = "forms">----</div></td>
+		 <td><div id = "substances">----</div></td>
          <td><div id = "symptom">----</div></td></tr>
       </table>
 

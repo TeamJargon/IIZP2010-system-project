@@ -1,26 +1,20 @@
 {
 	"drugs":
 	[
-		{"brand": "Panadol", "symptom": "Acute pain"},
-		{"brand": "Marevan", "symptom": "Severe pain and pressure on chest"},
-		{"brand": "Selexid", "symptom": "Burning sensation with urinating"},
-		{"brand": "Trimopan", "symptom": "Burning sensation with urinating"},
-		{"brand": "Amorion", "symptom": "Coughing and fever"},
-		{"brand": "V-pen Mega", "symptom": "Coughing and fever"},
-		{"brand": "Buventol Easyhaler", "symptom": "Asthma bout"},
-		{"brand": "Seretide Diskus", "symptom": "Asthma bout"},
-		{"brand": "Metforem", "symptom": "Type 2 diabetes"},
-		{"brand": "Prednison", "symptom": "Joint pain and stiffness"},
-		{"brand": "Thyroxin", "symptom": "Tiredness, skin dryness, swelling in eyes, face and legs, weight gain, feeling chilly"},
-		{"brand": "Simvastatin", "symptom": "High cholesterol"},
-		{"brand": "Heinix", "symptom": "Allergic cold"},
-		{"brand": "Oxanest", "symptom": "Pain from cancer"},
-		{"brand": "Lantus", "symptom": "Diabetes"},
-		{"brand": "Nexium", "symptom": "Burning sensation in throat, aka heartburn"},
-		{"brand": "Lisinopril", "symptom": "Heightened bloodpressure"},
-		{"brand": "Furesis", "symptom": "Heightened bloodpressure"},
-		{"brand": "Adalat", "symptom": "Pre-eclampsy"},
-		{"brand": "Albetol", "symptom": "Heightened bloodpressure"},
-		{"brand": "Tractocile infuusio", "symptom": "Painful contractions"}	
+		{"brand": [{"Panadol"},{"Burana"}] "symptom": "I'm having acute pain and minor fever. Can you help?"},
+		{"brand": [{"Marevan"}] "symptom": "There's severe pain and pressure on my chest!"},		
+		{"brand": [{"Selexid"},{"Trimopan"}] "I have a burning sensation with urinating, it hurts!"},
+		{"brand": [{"Amorion"},{"V-pen Mega"}] "symptom": "*Cough* I have a fever and a very slimy throat, can you help?"},
+		{"brand": [{"Buventol Easyhaler"},{"Seretide Diskus"}], "symptom": "I have asthma and I need medicine! *Cough cough*"},
+		{"brand": [{"Metforem"},{"Lantus"}], "symptom": "I have diabetes and I need my medication!"},
+		{"brand": [{"Prednison"}], "symptom": "I have chronic joint pain and stiffness"},
+		{"brand": [{"Thyroxin"}], "symptom": "Tiredness, skin dryness, swelling in eyes, face and legs, weight gain, feeling chilly"},
+		{"brand": [{"Simvastatin"}], "symptom": "High cholesterol"},
+		{"brand": [{"Heinix"}], "symptom": "My spring allergies are coming back. *sneeze* Can you help?"},
+		{"brand": [{"Oxanest"}], "symptom": "Pain from cancer"},
+		{"brand": [{"Nexium"}], "symptom": "Burning sensation in throat, aka heartburn"},
+		{"brand": [{"Lisinopril"},{"Furesis"}], "symptom": "Heightened bloodpressure"},
+		{"brand": [{"Adalat"}, {"Albetol"}], "symptom": "Pre-eclampsy"},
+		{"brand": [{"Tractocile infuusio"}], "symptom": "I'm on my seventh month of pregnancy and I'm having many strong and painful contractions!"}	
 	]
 }
