@@ -23,7 +23,6 @@
 			document.getElementById("substances").innerHTML = "";
 			document.getElementById("symptom").innerHTML = "";
 			loadJSON();
-			alert("Brands length: " + brands.length)
 			// haetaan brandin perusteella vaikuttava aine
 			for (var i = 0;i<brands.length;i++)
 			{
@@ -79,7 +78,7 @@
 				
                if (http_request.readyState == 4 && http_request.status == 200)
 			   {
-					alert("Readystate4 status200");
+					//alert("Readystate4 status200");
 					// Javascript function JSON.parse to parse JSON data
 					var jsonObj = JSON.parse(http_request.responseText);
 					//alert("parsettu json");
