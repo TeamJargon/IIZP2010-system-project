@@ -16,6 +16,9 @@
 		
 		function GenerateChallenge()
 		{			
+			brands = [];
+			substances = [];
+			forms = [];
 			// haetaan oire ja siihen k‰ytett‰v‰n l‰‰kkeen brandi
 			// paikallisesta json-tiedostosta
 			document.getElementById("brands").innerHTML = "";
@@ -27,13 +30,12 @@
 			for (var i = 0;i<brands.length;i++)
 			{
 				sqlLoadSubstance(brands[i]);
-			}
-			
+			}			
 			// haetaan brandin perusteella muoto				
 			for (var i = 0;i<brands.length;i++)
 			{
 				sqlLoadForm(brands[i]);
-			}
+			}			
 			
 			for (var i = 0; i<brands.length;i++)
 			{
