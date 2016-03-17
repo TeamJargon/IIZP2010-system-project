@@ -84,16 +84,17 @@
 					// Math.random() on luku nollasta yhteen desimaalina
 					var rand = Math.random() * drugs.length;
 					var drugindex = parseInt(rand);
-					alert("Ennen looppia");
-					for (var brandindex = 0;brandindex < drugs[drugindex].brand.length ; brandindex++)
+					alert("ennen splittiä");
+					var split = drugs[drugindex].brand.split(",");
+					this.brands = split;
+					
+					/*alert("ennen looppia");
+					for(var a = 0;a<split.length;a++)
 					{
-						alert("Loopin alussa");
-						this.brands.push(drugs[drugindex].brand[brandindex]);
-						alert("pushattu brandsiin");
-						document.getElementById("brands").innerHTML += drugs[drugindex].brand[brandindex];
-						alert("Sijoitettu innerhtml");
-						alert(drugs[drugindex].brand[brandindex]);
-					}
+						this.brands.push(split[a]);
+						document.getElementById("brands").innerHTML += split[a];
+					}		*/			
+					
 					alert("Loopin jälkeen");
 					this.symptom = drugs[index].symptom;					
 					document.getElementById("symptom").innerHTML = drugs[index].symptom;
