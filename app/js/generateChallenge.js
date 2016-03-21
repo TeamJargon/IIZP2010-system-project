@@ -45,7 +45,7 @@
 			
 			document.getElementById("symptom").innerHTML = symptom;
 			document.getElementById("disease").innerHTML = disease;*/
-			alert("Brand: " + brands.join();
+			alert("Brand: " + brands.join());
 			
 		}
 		
