@@ -73,20 +73,6 @@ p, h1, h2 {
 	text-align: center;
 }
 
-#layout-wrapper2 {
-	/* display: inline-block; */
- 	width: 99.4%;
-	height: 70%;
-	margin-left: auto;
-	margin-right: auto;
-	/* margin-left: 15%; */
-	border: 3px solid black;
-	border-top: none;
-	border-radius: 0px 0px 30px 30px;
-	text-align: center;
-	background-image: url("img/officemedgubbe.jpg") no-repeat center top;
-}
-
 .boxwrapper1, .boxwrapper2, .boxwrapper3{
 	padding-left: 1%;
  	width: 32%;
@@ -153,4 +139,9 @@ p, h1, h2 {
 	margin: 1%;
 	border-radius: 10px;
 	height: 80%;
+}
+
+.centered {
+	display: block;
+	margin: auto auto;
 }
