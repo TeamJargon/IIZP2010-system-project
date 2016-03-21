@@ -15,7 +15,7 @@
 		<!--<link href="tyyli.css" type="text/css" rel="stylesheet">-->
 		<link rel='stylesheet' href='desktop.css' />
 	</head>
-	<body>
+	<body onload='GenerateChallenge()'>
 		<div id="page-wrapper">
 <!--Header and nav-->
 			<header>
@@ -32,20 +32,14 @@
 			<div id="layout-wrapper">
 					<div class="boxwrapper1">		
 						<div id="content-header">
-							<h1 id="box-title">Administration</h1>
+							<h1 id="box-title">Brand</h1>
 							<hr/>
 						</div>
 						<div id="content-1" class="mCustomScrollbar" data-mcs-theme="3d-thick">
 							<div id="box-content">
-								<ol id="forms">
-								</ol>
-								<!--<section id="section-1" class="administration">
-									<img src="img/ruisku.jpg" alt="ruiske" id="ruiske" onclick="">
-									<img src="img/laastari.jpg" alt="laastari" id="laastari"  onclick="">
-									<img src="img/tippapussi.jpg" alt="tippa" id="tippa"  onclick="">
-									<img src="img/peräpuikko.jpg" alt="peräpuikko" id="puikko"  onclick="">
-									<img src="img/pilleri.jpg" alt="pilleri" id="pilleri"  onclick="">
-								</section>-->
+								<ol id="brands">
+										</ol> 
+								
 							</div>
 						</div>
 					</div>
@@ -61,23 +55,28 @@
 										</ol> 
 									<br>
 								</section>
-								<p>End of content.</p>
 							</div>
 						</div>
 					</div>
 					<div class="boxwrapper3">
 						<div id="content-header">
-							<h1 id="box-title">Brand</h1>
+							<h1 id="box-title">Administration</h1>
 							<hr/>
 						</div>
 						<div id="content-1" class="mCustomScrollbar" data-mcs-theme="3d-thick">
 							<div id="box-content">
 								<section id="section-1">
-										<ol id="brands">
-										</ol> 
+										<ol id="forms">
+								</ol>
+								<!--<section id="section-1" class="administration">
+									<img src="img/ruisku.jpg" alt="ruiske" id="ruiske" onclick="">
+									<img src="img/laastari.jpg" alt="laastari" id="laastari"  onclick="">
+									<img src="img/tippapussi.jpg" alt="tippa" id="tippa"  onclick="">
+									<img src="img/peräpuikko.jpg" alt="peräpuikko" id="puikko"  onclick="">
+									<img src="img/pilleri.jpg" alt="pilleri" id="pilleri"  onclick="">
+								</section>-->
 									<br>
 								</section>
-								<p>End of content.</p>
 							</div>
 						</div>
 					</div>
@@ -92,7 +91,7 @@
 						<tr><li id="selectedForm"></li></tr>
 					</table>
 				</div>
-				<button onclick='answer(selectedBrand, selectedSubstances, selectedForm)'>Try your luck!</button>
+				<button id='btnAnswer' onclick='answer(selectedBrand, selectedSubstances, selectedForm)'>Try your luck!</button>
 			</div>
 <!--Footer box-->
 		</div>
