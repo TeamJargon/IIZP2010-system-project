@@ -57,7 +57,7 @@ function selectBrand(brand) {
 
 function selectSubstance(substance) {
     selectedSubstances.push(substance);
-	document.getElementById("selectedSubstance").innerHTML = "<button class='btn' onclick=resetSelection('substance')>"+substance+"</button>";
+	document.getElementById("selectedSubstance").innerHTML += "<button class='btn' onclick=resetSelection('substance')>"+substance+"</button>";
 }
 
 function selectForm(Mform) {
@@ -76,14 +76,17 @@ function resetSelection(selection)
 	{
 		case "brand":
 		document.getElementById("selectedBrand").innerHTML = "";
+		selectedBrand = "";
 		break;
 		
 		case "substance":
 		document.getElementById("selectedSubstance").innerHTML = "";
+		selectedSubstances = [];
 		break;
 		
 		case "form":
 		document.getElementById("selectedForm").innerHTML = "";
+		selectedForm = "";
 		break;
 	}
 }
