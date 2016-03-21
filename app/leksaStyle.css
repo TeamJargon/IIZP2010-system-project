@@ -140,3 +140,8 @@ p, h1, h2 {
 	border-radius: 10px;
 	height: 80%;
 }
+
+.centered {
+	display: block;
+	margin: auto auto;
+}
