@@ -84,7 +84,7 @@ p, h1, h2 {
 	border-top: none;
 	border-radius: 0px 0px 30px 30px;
 	text-align: center;
-	background-image: url("img/officemedgubbe.jpg");
+	background-image: url("img/officemedgubbe.jpg") no-repeat center top;
 }
 
 .boxwrapper1, .boxwrapper2, .boxwrapper3{
