@@ -14,14 +14,8 @@
 			drugforms = [];
 			alert("generate challenge");
 			// haetaan, tauti, oireet ja siihen k‰ytett‰vien l‰‰kkeiden brandit
-			loadJSON();
+			loadJSON();			
 			
-			for(var i = 0;i<brands.length;i++)
-			{
-				alert(brands[i]);
-								
-			}
-			alert(symptom + " - " + disease);
 			// haetaan brandin perusteella vaikuttava aine
 			for (var i = 0;i<brands.length;i++)
 			{
@@ -32,7 +26,25 @@
 			for (var i = 0;i<brands.length;i++)
 			{
 				sqlLoadForm(brands[i]);
-			}					
+			}		
+
+			for (var i = 0;i<brands.length;i++)
+			{
+				document.getElementById("brands").innerHTML += brands[i] + "<br>";
+			}	
+			
+			for (var i = 0;i<substances.length;i++)
+			{
+				document.getElementById("substances").innerHTML += substances[i] + "<br>";
+			}	
+			for (var i = 0;i<drugforms.length;i++)
+			{
+				document.getElementById("forms").innerHTML += drugforms[i] + "<br>";
+			}	
+			
+			document.getElementById("symptom").innerHTML = symptom;
+			document.getElementById("disease").innerHTML = disease;
+			
 		}
 		
 		// hakee json-tiedostosta satunnaisen tietueen, joka sis‰lt‰‰ oireet tautiin ja siihen sopivien l‰‰kkeiden brandit
