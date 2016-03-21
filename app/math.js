@@ -1,6 +1,6 @@
 function letsDoSomeMath() {
-	$("#math").show("slide", { direction: "left" }, 1000, function(){
-		$("#nurse").fadeIn("slow"); 
+	$("#nurse").show("slide", { direction: "left" }, 1000, function(){
+		$("#math").fadeIn("slow"); 
 	});
 }
 
