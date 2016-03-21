@@ -28,6 +28,7 @@
 			document.getElementById("forms").innerHTML = "";
 			document.getElementById("substances").innerHTML = "";
 			document.getElementById("symptom").innerHTML = "";
+			document.getElementById("diseases").innerHTML = "";
 			loadJSON();
 			// haetaan brandin perusteella vaikuttava aine
 			for (var i = 0;i<brands.length;i++)
@@ -42,15 +43,19 @@
 			
 			for (var i = 0; i<brands.length;i++)
 			{
-				document.getElementById("brands").innerHTML += brands[i];
+				document.getElementById("brands").innerHTML += brands[i]  + " - ";
 			}
 			for (var i = 0; i<drugforms.length;i++)
 			{
-				document.getElementById("forms").innerHTML += drugforms[i];
+				document.getElementById("forms").innerHTML += drugforms[i] + " - ";
 			}
 			for (var i = 0; i<substances.length;i++)
 			{
-				document.getElementById("substances").innerHTML += substances[i];
+				document.getElementById("substances").innerHTML += substances[i] + " - ";
+			}
+			for (var i = 0; i<diseases.length;i++)
+			{
+				document.getElementById("diseases").innerHTML += diseases[i] + " - ";
 			}
 
 			document.getElementById("symptom").innerHTML = symptom;
@@ -242,6 +247,7 @@
 		 <td><div id = "forms"></div></td>
 		 <td><div id = "substances"></div></td>
          <td><div id = "symptom"></div></td></tr>
+		 <td><div id = "diseases"></div></td></tr>
       </table>
 
       <div class = "central">
