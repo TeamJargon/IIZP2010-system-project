@@ -52,17 +52,17 @@ var selectedCategory = "";
 
 function selectBrand(brand) {
     selectedBrand = decodeURIComponent(brand);
-	document.getElementById("selectedBrand").innerHTML = "<button class='btn' onclick=resetSelection('brand')>"+brand+"</button>";
+	document.getElementById("selectedBrand").innerHTML = "<button class='btn' onclick=resetSelection('brand')>"+decodeURIComponent(brand)+"</button>";
 }
 
 function selectSubstance(substance) {
     selectedSubstances.push(decodeURIComponent(substance));
-	document.getElementById("selectedSubstance").innerHTML += "<button class='btn' onclick=resetSelection('substance')>"+substance+"</button>";
+	document.getElementById("selectedSubstance").innerHTML += "<button class='btn' onclick=resetSelection('substance')>"+decodeURIComponent(substance)+"</button>";
 }
 
 function selectForm(Mform) {
     selectedForm = decodeURIComponent(Mform);
-	document.getElementById("selectedForm").innerHTML = "<button class='btn' onclick=resetSelection('form')>"+Mform+"</button>";
+	document.getElementById("selectedForm").innerHTML = "<button class='btn' onclick=resetSelection('form')>"+decodeURIComponent(Mform)+"</button>";
 
 }
 
