@@ -6,7 +6,7 @@ $(document).ready(function() {
         dataType: "json",
         success: function(response) {
             for (var i = 0; i < response.length; i++) {
-                $("#brands").append('<li><input id=btn type=button value='+ response[i] +' onclick=selectBrand("'+ response[i] +'") </li>');
+                $("#brands").append('<li><input class=btn type=button value='+ response[i] +' onclick=selectBrand("'+ response[i] +'") </li>');
             }
         }
     });
@@ -17,7 +17,7 @@ $(document).ready(function() {
         dataType: "json",
         success: function(response) {
             for (var i = 0; i < response.length; i++) {
-                $("#substances").append('<li><input id=btn type=button value='+ response[i] +' onclick=selectSubstance("'+ response[i] +'") </li>');
+                $("#substances").append('<li><input class=btn type=button value='+ response[i] +' onclick=selectSubstance("'+ response[i] +'") </li>');
             }
         }
     });
@@ -28,7 +28,7 @@ $(document).ready(function() {
         dataType: "json",
         success: function(response) {
             for (var i = 0; i < response.length; i++) {
-                $("#forms").append('<li><input id=btn type=button value='+ response[i] +' onclick=selectForm("'+ response[i] +'") </li>');
+                $("#forms").append('<li><input class=btn type=button value='+ response[i] +' onclick=selectForm("'+ response[i] +'") </li>');
             }
         }
     });
@@ -39,7 +39,7 @@ $(document).ready(function() {
         dataType: "json",
         success: function(response) {
             for (var i = 0; i < response.length; i++) {
-                $("#categories").append('<li><input id=btn type=button value='+ response[i] +' onclick=selectCategory("'+ response[i] +'") </li>');
+                $("#categories").append('<li><input class=btn type=button value='+ response[i] +' onclick=selectCategory("'+ response[i] +'") </li>');
             }
         }
     });    
