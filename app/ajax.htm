@@ -13,14 +13,13 @@
 		var symptom = "";
 		var substances = [];
 		var forms = [];
-		var diseases = [];
+		var disease = "";
 		
 		function GenerateChallenge()
 		{			
 			brands = [];
 			substances = [];
 			drugforms = [];
-			diseases = [];
 			
 			// haetaan oire ja siihen k‰ytett‰v‰n l‰‰kkeen brandi
 			// paikallisesta json-tiedostosta
@@ -53,13 +52,9 @@
 			{
 				document.getElementById("substances").innerHTML += substances[i] + " - ";
 			}
-			for (var i = 0; i<diseases.length;i++)
-			{
-				document.getElementById("diseases").innerHTML += diseases[i] + " - ";
-			}
-
-			document.getElementById("symptom").innerHTML = symptom;
 			
+			document.getElementById("disease").innerHTML = disease;
+			document.getElementById("symptom").innerHTML = symptom;			
 		}
 		
 		
@@ -108,28 +103,16 @@
 				
                if (http_request.readyState == 4 && http_request.status == 200)
 			   {
-					//alert("Readystate4 status200");
 					// Javascript function JSON.parse to parse JSON data
 					var jsonObj = JSON.parse(http_request.responseText);
-					//alert("parsettu json");
 					var drugs = jsonObj.drugs;
-					//alert("otettu parsetusta datasta l‰‰ketaulukko talteen");
 					// Math.random() on luku nollasta yhteen desimaalina
 					var rand = Math.random() * drugs.length;
 					var index = parseInt(rand);
-					//alert("ennen splitti‰");
 					var split = drugs[index].brand.split(",");
 					this.brands = split;		
-					this.diseases.push(drugs[index].disease);
-					//alert("ennen looppia");
-					/*for(var a = 0;a<split.length;a++)
-					{						
-						document.getElementById("brands").innerHTML += split[a];
-					}	*/			
-					
-					//alert("Loopin j‰lkeen");
+					this.disease = drugs[index].disease;
 					this.symptom = drugs[index].symptom;					
-					//document.getElementById("symptom").innerHTML = drugs[index].symptom;
                 }
 			}, this);
 			
@@ -179,7 +162,6 @@
 				{
 					var jsondata = JSON.parse(http_request.responseText);
 					this.substances.push(jsondata);					
-					//document.getElementById("substances").innerHTML += jsondata;
 				}
 			},this);
 			http_request.open("GET","php/getsubstance.php?brand="+encodeURIComponent(str),false);
@@ -228,7 +210,6 @@
 				{					
 					var jsondata = JSON.parse(http_request.responseText);
 					this.drugforms.push(jsondata);
-					//document.getElementById("forms").innerHTML += jsondata;
 				}
 			},this);
 			http_request.open("GET","php/getform.php?brand="+encodeURIComponent(str),false);
@@ -247,7 +228,7 @@
 		 <td><div id = "forms"></div></td>
 		 <td><div id = "substances"></div></td>
          <td><div id = "symptom"></div></td></tr>
-		 <td><div id = "diseases"></div></td></tr>
+		 <td><div id = "disease"></div></td></tr>
       </table>
 
       <div class = "central">

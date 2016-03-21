@@ -1,20 +1,19 @@
 		
 		// JQUERY, NOT EVEN ONCE!
 		
-		var brands = [];
-		var symptom = "";
+		var brands = [];		
 		var substances = [];
 		var drugforms = [];
-		var diseases = [];
+		var symptom = "";
+		var disease = "";
 		
 		function GenerateChallenge()
 		{			
 			brands = [];
 			substances = [];
 			drugforms = [];
-			diseases = [];
 			
-			// haetaan oire ja siihen k‰ytett‰vien l‰‰kkeiden brandit
+			// haetaan, tauti, oireet ja siihen k‰ytett‰vien l‰‰kkeiden brandit
 			loadJSON();
 			
 			// haetaan brandin perusteella vaikuttava aine
@@ -33,6 +32,7 @@
 		// hakee json-tiedostosta satunnaisen tietueen, joka sis‰lt‰‰ oireet tautiin ja siihen sopivien l‰‰kkeiden brandit
 		// taudin oireet asetetaan symptoms muuttujaan
 		// brandit pushataan brands taulukkoon
+		// taudin nimike asetetaan diseasse muuttujaan
         function loadJSON()
 		{
             var data_file = "../json/data.json";
@@ -84,7 +84,7 @@
 					var split = drugs[index].brand.split(",");
 					this.brands = split;
 					this.symptom = drugs[index].symptom;
-					this.diseases.push(drugs[index].disease);
+					this.disease = drugs[index].disease;
                 }
 			}, this);
 			
