@@ -74,7 +74,7 @@ body {
 #layout-wrapper {
 	/* display: inline-block; */
  	width: 99.4%;
-	height: 50%;
+	height: 70%;
 	margin-left: auto;
 	margin-right: auto;
 	/* margin-left: 15%; */
@@ -86,13 +86,26 @@ body {
 .boxwrapper1, .boxwrapper2, .boxwrapper3{
 	padding-left: 1%;
  	width: 32%;
-	height: 80%;
-	/* border: 1px solid red; */
+	height: 65%;
+	border: 1px solid red;
 	float: left;
  }	
  
  #your-selection {
+	overflow: auto;
+	clear: both;
 	border: 2px solid black;
+	border-radius: 15px;
+	width: 50%;
+	height: 20%;
+	margin: auto;
+	padding: 1%;
+ }
+ 
+ #your-selection-header {
+	 width: 50%;
+	 margin:auto;
+	 padding-bottom: 0.5%;
  }
  
 #content-header{
@@ -100,24 +113,23 @@ body {
 	padding-left: 1.5%;
 	padding-right: 5%;
 /* 	margin-right: 0.3%; */
-	/* border: 1px solid green; */
+/* 	border: 1px solid green; */
 }
 	
 #content-1{
 	padding: 7px 5px 2px;
 	border-radius: 15px;
-	min-height: 57.5%;
-	max-height: 88%;
+	height: 80%;
 	border-width: 5px;
 	border:  solid #000000 2px;
 	font-size: 15px;
 	margin-right: 0.3%;
 }
 
-#administration {
+.administration {
 	/* border: 1px solid green; */
 	float:left;
-	margin-left: 2%;
+	padding-left: 10%;;
 }
 
 #administration h1 {
@@ -137,5 +149,5 @@ body {
 	padding: 0.5%;
 	margin: 1%;
 	border-radius: 10px;
-	height: 100%;
+	height: 80%;
 }
