@@ -13,12 +13,15 @@
 		var symptom = "";
 		var substances = [];
 		var forms = [];
+		var diseases = [];
 		
 		function GenerateChallenge()
 		{			
 			brands = [];
 			substances = [];
 			drugforms = [];
+			diseases = [];
+			
 			// haetaan oire ja siihen k‰ytett‰v‰n l‰‰kkeen brandi
 			// paikallisesta json-tiedostosta
 			document.getElementById("brands").innerHTML = "";
@@ -111,7 +114,8 @@
 					var index = parseInt(rand);
 					//alert("ennen splitti‰");
 					var split = drugs[index].brand.split(",");
-					this.brands = split;					
+					this.brands = split;		
+					this.diseases.push(drugs[index].disease);
 					//alert("ennen looppia");
 					/*for(var a = 0;a<split.length;a++)
 					{						

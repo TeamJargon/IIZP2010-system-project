@@ -5,12 +5,14 @@
 		var symptom = "";
 		var substances = [];
 		var drugforms = [];
+		var diseases = [];
 		
 		function GenerateChallenge()
 		{			
 			brands = [];
 			substances = [];
 			drugforms = [];
+			diseases = [];
 			
 			// haetaan oire ja siihen k‰ytett‰vien l‰‰kkeiden brandit
 			loadJSON();
@@ -82,6 +84,7 @@
 					var split = drugs[index].brand.split(",");
 					this.brands = split;
 					this.symptom = drugs[index].symptom;
+					this.diseases.push(drugs[index].disease);
                 }
 			}, this);
 			
