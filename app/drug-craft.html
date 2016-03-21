@@ -7,13 +7,15 @@
 		<meta name="author" content="Team Jargon">
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+		<script src="js/generateChallenge.js"></script>
+		<script src="js/lists.js"></script>
 		<title>Drugger</title>
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 		<link href="jquery.mCustomScrollbar.css" type="text/css" rel="stylesheet">
 		<!--<link href="tyyli.css" type="text/css" rel="stylesheet">-->
 		<link rel='stylesheet' href='desktop.css' />
 	</head>
-	<body>
+	<body onload="GenerateChallenge()">
 		<div id="page-wrapper">
 <!--Header and nav-->
 			<header>
@@ -35,13 +37,19 @@
 						</div>
 						<div id="content-1" class="mCustomScrollbar" data-mcs-theme="3d-thick">
 							<div id="box-content">
-								<section id="section-1" class="administration">
+								<ol id="forms">
+									
+								
+								
+								
+								</ol>
+								<!--<section id="section-1" class="administration">
 									<img src="img/ruisku.jpg" alt="ruiske" id="ruiske" onclick="">
 									<img src="img/laastari.jpg" alt="laastari" id="laastari"  onclick="">
 									<img src="img/tippapussi.jpg" alt="tippa" id="tippa"  onclick="">
 									<img src="img/peräpuikko.jpg" alt="peräpuikko" id="puikko"  onclick="">
 									<img src="img/pilleri.jpg" alt="pilleri" id="pilleri"  onclick="">
-								</section>
+								</section>-->
 							</div>
 						</div>
 					</div>
@@ -53,17 +61,7 @@
 						<div id="content-1" class="mCustomScrollbar" data-mcs-theme="3d-thick">
 							<div id="box-content">
 								<section id="section-1">
-										<ol>
-											<li>Substance1</li>
-											<li>Substance2</li>
-											<li>Substance3</li>
-											<li>Substance4</li>
-											<li>Substance5</li>
-											<li>Substance6</li>
-											<li>Substance7</li>
-											<li>Substance8</li>
-											<li>Substance9</li>
-											<li>Substance10</li>
+										<ol id="substances">
 										</ol> 
 									<br>
 								</section>
@@ -79,35 +77,7 @@
 						<div id="content-1" class="mCustomScrollbar" data-mcs-theme="3d-thick">
 							<div id="box-content">
 								<section id="section-1">
-										<ol>
-											<li>Brand1</li>
-											<li>Brand2</li>
-											<li>Brand3</li>
-											<li>Brand4</li>
-											<li>Brand5</li>
-											<li>Brand6</li>
-											<li>Brand7</li>
-											<li>Brand8</li>
-											<li>Brand9</li>
-											<li>Brand10</li>
-											<li>Brand11</li>
-											<li>Brand12</li>
-											<li>Brand13</li>
-											<li>Brand14</li>
-											<li>Brand15</li>
-											<li>Brand16</li>
-											<li>Brand17</li>
-											<li>Brand18</li>
-											<li>Brand19</li>
-											<li>Brand20</li>
-											<li>Brand21</li>
-											<li>Brand22</li>
-											<li>Brand23</li>
-											<li>Brand24</li>
-											<li>Brand25</li>
-											<li>Brand26</li>
-											<li>Brand27</li>
-											<li>Brand28</li>
+										<ol id="brands">
 										</ol> 
 									<br>
 								</section>
@@ -124,6 +94,7 @@
 						<tr><li>First selected item</li></tr>
 					</table>
 				</div>
+				<button onclick='answer(selectedBrand, selectedSubstances, selectedForm)'>Try your luck!</button>
 			</div>
 <!--Footer box-->
 		</div>

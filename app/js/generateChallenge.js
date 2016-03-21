@@ -9,13 +9,14 @@
 		
 		function GenerateChallenge()
 		{			
+			alert("generate challenge");
 			brands = [];
 			substances = [];
 			drugforms = [];
-			alert("generate challenge");
-			// haetaan, tauti, oireet ja siihen k‰ytett‰vien l‰‰kkeiden brandit
+			// haetaan tauti, oireet ja siihen k‰ytett‰vien l‰‰kkeiden brandit
+			alert("json ennen");
 			loadJSON();			
-			
+			alert("json j‰lkeen");
 			// haetaan brandin perusteella vaikuttava aine
 			for (var i = 0;i<brands.length;i++)
 			{
@@ -28,7 +29,7 @@
 				sqlLoadForm(brands[i]);
 			}		
 
-			for (var i = 0;i<brands.length;i++)
+			/*for (var i = 0;i<brands.length;i++)
 			{
 				document.getElementById("brands").innerHTML += brands[i] + "<br>";
 			}	
@@ -43,7 +44,8 @@
 			}	
 			
 			document.getElementById("symptom").innerHTML = symptom;
-			document.getElementById("disease").innerHTML = disease;
+			document.getElementById("disease").innerHTML = disease;*/
+			alert("Brand: " + brands.join());
 			
 		}
 		
@@ -93,7 +95,6 @@
 				
                if (http_request.readyState == 4 && http_request.status == 200)
 			   {
-				   alert("loadJSON");
 					// Javascript function JSON.parse to parse JSON data
 					var jsonObj = JSON.parse(http_request.responseText);
 					var drugs = jsonObj.drugs;
@@ -203,5 +204,30 @@
 			},this);
 			http_request.open("GET","../php/getform.php?brand="+encodeURIComponent(str),false);
 			http_request.send();
+		}
+		
+		function answer(brandChoice, substanceChoiceArray, formChoice)
+		{
+			var points = 0;
+			
+			if(substanceChoiceArray.length>1)
+			{
+				var selectedSubstances = substanceChoiceArray.join();		
+			}
+			else
+			{
+				var selectedSubstances = substanceChoiceArray[0];
+			}
+			
+			for(var i = 0;i<brands.length;i++)
+			{
+				if(brands[i] == brandChoice && substances[i] == selectedSubstances && drugforms[i] == formChoice)
+				{
+					alert("Congratulations, you made the right drug for the patient!");
+					GenerateChallenge();
+					return;
+				}
+			}
+			alert("Incorrect answer!");
 		}
 		
