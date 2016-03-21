@@ -9,14 +9,12 @@
 		
 		function GenerateChallenge()
 		{			
-			alert("generate challenge");
 			brands = [];
 			substances = [];
 			drugforms = [];
+			
 			// haetaan tauti, oireet ja siihen k‰ytett‰vien l‰‰kkeiden brandit
-			alert("json ennen");
 			loadJSON();			
-			alert("json j‰lkeen");
 			// haetaan brandin perusteella vaikuttava aine
 			for (var i = 0;i<brands.length;i++)
 			{
