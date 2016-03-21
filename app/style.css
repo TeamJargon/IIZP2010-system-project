@@ -36,17 +36,14 @@ canvas {
 
 #reception {
 	position: relative;
-	background-color: lightblue;
 }
 
 #medical {
 	position: relative;
-	background-color: yellow;
 }
 
 #craft {
 	position: relative;
-	background-color: green;
 }
 
 #math {
