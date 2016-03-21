@@ -12,8 +12,7 @@
 			brands = [];
 			substances = [];
 			drugforms = [];
-			alert("generate challenge");
-			// haetaan, tauti, oireet ja siihen k‰ytett‰vien l‰‰kkeiden brandit
+			// haetaan tauti, oireet ja siihen k‰ytett‰vien l‰‰kkeiden brandit
 			loadJSON();			
 			
 			// haetaan brandin perusteella vaikuttava aine
@@ -28,7 +27,7 @@
 				sqlLoadForm(brands[i]);
 			}		
 
-			for (var i = 0;i<brands.length;i++)
+			/*for (var i = 0;i<brands.length;i++)
 			{
 				document.getElementById("brands").innerHTML += brands[i] + "<br>";
 			}	
@@ -43,7 +42,7 @@
 			}	
 			
 			document.getElementById("symptom").innerHTML = symptom;
-			document.getElementById("disease").innerHTML = disease;
+			document.getElementById("disease").innerHTML = disease;*/
 			
 		}
 		
@@ -93,7 +92,6 @@
 				
                if (http_request.readyState == 4 && http_request.status == 200)
 			   {
-				   alert("loadJSON");
 					// Javascript function JSON.parse to parse JSON data
 					var jsonObj = JSON.parse(http_request.responseText);
 					var drugs = jsonObj.drugs;
