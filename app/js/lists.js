@@ -52,14 +52,17 @@ var selectedCategory = "";
 
 function selectBrand(brand) {
     selectedBrand = brand;
+	document.getElementById("selected-items").innerHTML += "<tr><li>" + brand + "</li></tr>";
 }
 
 function selectSubstance(substance) {
     selectedSubstances.push(substance);
+	document.getElementById("selected-items").innerHTML += "<tr><li>" + substance + "</li></tr>";
 }
 
-function selectForm(form) {
-    selectedForm = form;
+function selectForm(Mform) {
+    selectedForm = Mform;
+	document.getElementById("selected-items").innerHTML += "<tr><li>" + Mform + "</li></tr>";
 }
 
 function selectCategory(category) {
