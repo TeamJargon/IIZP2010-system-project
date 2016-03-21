@@ -70,6 +70,7 @@ p, h1, h2 {
 	border: 3px solid black;
 	border-top: none;
 	border-radius: 0px 0px 30px 30px;
+	text-align: center;
 }
 
 .boxwrapper1, .boxwrapper2, .boxwrapper3{
