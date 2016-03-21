@@ -1,31 +1,3 @@
-
-a {
-	color:orange;
-}
-
-header {
-	color: #B8B8B8;
-	height: 6.3%;
-/* 	width: 98%; */
-	background: linear-gradient(to top, #31B404, #3ADF00);
-  	/* border: 1px solid white; */
- 	}
-
-#inner-header {
-	width: 50%;
-	margin-left: auto;
-	margin-right: auto;
-}	
-	
-#inner-header h1 {
-/* 	margin: 10% 10% 0 0; */
-	display: inline;
-	color: white;
-}
-
-#inner_header h1 {
-
-}
 body h1 {
 	padding-left: 1%;
 	padding-top: 1%;
