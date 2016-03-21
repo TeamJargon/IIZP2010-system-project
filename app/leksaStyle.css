@@ -1,0 +1,146 @@
+
+a {
+	color:orange;
+}
+
+header {
+	color: #B8B8B8;
+	height: 6.3%;
+/* 	width: 98%; */
+	background: linear-gradient(to top, #31B404, #3ADF00);
+  	/* border: 1px solid white; */
+ 	}
+
+#inner-header {
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+}	
+	
+#inner-header h1 {
+/* 	margin: 10% 10% 0 0; */
+	display: inline;
+	color: white;
+}
+
+#inner_header h1 {
+
+}
+body h1 {
+	padding-left: 1%;
+	padding-top: 1%;
+}
+
+.nav {
+    display: inline;
+}
+
+p, h1, h2 {
+	color: black;
+	font-family: 'Open Sans Condensed', sans-serif;
+}
+
+#button1, #button2, #button3, #button4, #pressed_button{
+	display: inline;
+	padding: 0.5% 1%;
+	
+	/* border: 1px solid yellow; */
+}
+
+.buttonClass:hover { cursor: pointer; cursor: hand; }
+
+#pressed_button {
+	background: #000000;
+}	
+
+
+
+#page-wrapper{
+	width: 100%;
+ 	/* border: 1px solid green; */
+ 	height: 100%;
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#layout-wrapper {
+	/* display: inline-block; */
+ 	width: 99.4%;
+	height: 70%;
+	margin-left: auto;
+	margin-right: auto;
+	/* margin-left: 15%; */
+	border: 3px solid black;
+	border-top: none;
+	border-radius: 0px 0px 30px 30px;
+}
+
+.boxwrapper1, .boxwrapper2, .boxwrapper3{
+	padding-left: 1%;
+ 	width: 32%;
+	height: 65%;
+	border: 1px solid red;
+	float: left;
+ }	
+ 
+ #your-selection {
+	overflow: auto;
+	clear: both;
+	border: 2px solid black;
+	border-radius: 15px;
+	width: 50%;
+	height: 20%;
+	margin: auto;
+	padding: 1%;
+ }
+ 
+ #your-selection-header {
+	 width: 50%;
+	 margin:auto;
+	 padding-bottom: 0.5%;
+ }
+ 
+#content-header{
+	padding-bottom: 1%;
+	padding-left: 1.5%;
+	padding-right: 5%;
+/* 	margin-right: 0.3%; */
+/* 	border: 1px solid green; */
+}
+	
+#content-1{
+	padding: 7px 5px 2px;
+	border-radius: 15px;
+	height: 80%;
+	border-width: 5px;
+	border:  solid #000000 2px;
+	font-size: 15px;
+	margin-right: 0.3%;
+}
+
+.administration {
+	/* border: 1px solid green; */
+	float:left;
+	padding-left: 10%;;
+}
+
+#administration h1 {
+ 	padding-bottom: 1%;
+}
+
+#administration-sub {
+	border: 2px solid black;
+	border-radius: 15px;
+	padding: 2%;
+ 	margin-top: 1%;
+	display: inline-block;
+}
+
+#box-content{
+ 	/* border: 1px solid red; */
+	padding: 0.5%;
+	margin: 1%;
+	border-radius: 10px;
+	height: 80%;
+}
