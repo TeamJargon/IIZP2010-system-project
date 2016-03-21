@@ -32,28 +32,34 @@ function switchScene(name)
 {
 	switch(name) {
 	case "reception":
-		currentRoom = "reception";
-		$('#myCanvas').hide();
-		$('#reception').show();
+		currentRoom = "reception";	
+		$("#myCanvas").fadeOut("slow", function(){
+			$('#reception').fadeIn("slow", function(){
+				letsDoSomeMath();
+			});
+		});	
 		break;
 		
 	case "medical":
 		currentRoom = "medical";
-		$('#myCanvas').hide();
-		$('#medical').show();
+		$('#myCanvas').fadeOut("slow", function(){
+			$('#medical').fadeIn("slow");
+		});	
 		break;
 		
 	case "craft":
 		currentRoom = "craft";
-		$('#myCanvas').hide();
-		$('#craft').show();
+		$('#myCanvas').fadeOut("slow", function(){
+			$('#craft').fadeIn("slow");
+		});	
 		break;
 		
 	default:
 		currentRoom = "main";
-		resize();
 		$('.room').hide();
+		$('.roomChildEle').hide();
 		$('#myCanvas').show();
+		resize();		
 		break;
 	}
 }
@@ -113,6 +119,7 @@ $('#myCanvas').click(function (e)
         if (clickedX < circles[i].right && clickedX > circles[i].left && clickedY > circles[i].top && clickedY < circles[i].bottom) {
 			//vaihdetaan näkymää sen mukaan mitä ympyrää klikattiin
 			switchScene(circles[i].name);
+			break;
         }
     }
 });

@@ -6,7 +6,7 @@ body {
 	font-family: helvetica, arial, sans-serif;
 	color: #fff;
 	font-size: 14pt;
-	background-color: #080808;
+	background-color: #fff;
 }
 
 canvas, img { 
@@ -35,13 +35,27 @@ canvas {
 }
 
 #reception {
+	position: relative;
 	background-color: lightblue;
 }
 
 #medical {
+	position: relative;
 	background-color: yellow;
 }
 
 #craft {
+	position: relative;
 	background-color: green;
+}
+
+#math {
+	position: absolute;
+	top: 20%;
+    left: 0;
+	padding: 20px;
+    display: none;
+	color: black;
+	background-color: #fff;
+	border: 3px solid black;
 }
