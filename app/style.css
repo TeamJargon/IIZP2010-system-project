@@ -48,7 +48,7 @@ canvas {
 
 #math {
 	position: absolute;
-	top: 20%;
+	top: 10%;
     left: 0;
 	padding: 20px;
     display: none;
@@ -60,7 +60,7 @@ canvas {
 
 #nurse {
 	position: absolute;
-	top: 30%;
+	top: 20%;
     left: 0;
 	padding: 20px;
     display: none;
