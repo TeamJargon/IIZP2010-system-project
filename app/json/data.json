@@ -1,21 +1,85 @@
 {
 	"drugs":
 	[
-		{"brand":"Panadol,Burana", "symptom": "I'm having acute pain and minor fever. Can you help?", "disease": "Inflammatory pain"},
-		{"brand": "Marevan", "symptom": "There's a painful swelling in my right leg. It came after sitting in an airplane for 8 hours!", "disease": "Thrombosis, aka blood clotting"},		
-		{"brand": "Selexid,Trimopan", "symptom": "I have a burning sensation with urinating, it hurts!", "disease": "Urenthritis"},
-		{"brand": "Amorion", "symptom": "My left ear is aching and there's yellow slime inside. Help!", "disease": "Ear infection"},
-		{"brand": "V-pen Mega", "symptom": "*Cough* I have a fever and a very slimy throat, can you help?", "disease": "bronchitis"},
-		{"brand": "Buventol Easyhaler,Seretide Diskus", "symptom": "I have asthma and I need medicine! *Cough cough*", "disease": "Ashtma bout"},
-		{"brand": "Metforem,Lantus", "symptom": "I have diabetes and I need my medication!", "disease": "Diabetes"},
-		{"brand": "Prednison", "symptom": "I have chronic joint pain and stiffness", "disease": "rheumatism"},
-		{"brand": "Thyroxin", "symptom": "Tiredness, skin dryness, swelling in eyes, face and legs, weight gain, feeling chilly", "disease": "hypothyroidism"},
-		{"brand": "Simvastatin", "symptom": "High cholesterol", "disease": "High cholesterol"},
-		{"brand": "Heinix", "symptom": "My spring allergies are coming back. *sneeze* Can you help?", "disease": "Allergy"},
-		{"brand": "Oxanest", "symptom": "Pain from cancer", "disease": "Pain from cancer"},
-		{"brand": "Nexium", "symptom": "Burning sensation in the throat", "disease": "Heartburn"},
-		{"brand": "Lisinopril,Furesis", "symptom": "Heightened bloodpressure", "disease": "Heightened bloodpressure"},
-		{"brand": "Adalat,Albetol", "symptom": "Heightened bloodpressure on a pregnant woman", "disease": "Pre-eclampsy"},
-		{"brand": "Tractocile infusion", "symptom": "I'm on my seventh month of pregnancy and I'm having many strong and painful contractions!", "disease": "Threatening premature birth"}	
+		{
+			"brand":"Panadol,Burana",
+			"symptom": "I'm having acute pain and minor fever. Can you help?",
+			"disease": "Inflammatory pain"
+		},
+		{
+			"brand": "Marevan",
+			"symptom": "There's a painful swelling in my right leg. It came after sitting in an airplane for 8 hours!",
+			"disease": "Thrombosis, aka blood clotting"
+		},		
+		{
+			"brand": "Selexid,Trimopan", 
+			"symptom": "I have a burning sensation with urinating, it hurts!", 
+			"disease": "Urenthritis"
+		},
+		{
+			"brand": "Amorion",
+			"symptom": "My left ear is aching and there's yellow slime inside. Help!", 
+			"disease": "Ear infection"
+		},
+		{
+			"brand": "V-pen Mega", 
+			"symptom": "*Cough* I have a fever and a very slimy throat, can you help?", 
+			"disease": "bronchitis"
+		},
+		{
+			"brand": "Buventol Easyhaler,Seretide Diskus", 
+			"symptom": "I have asthma and I need medicine! *Cough cough*", 
+			"disease": "Ashtma bout"
+		},
+		{
+			"brand": "Metforem,Lantus", 
+			"symptom": "I have diabetes and I need my medication!", 
+			"disease": "Diabetes"
+		},
+		{
+			"brand": "Prednison", 
+			"symptom": "I have chronic joint pain and stiffness", 
+			"disease": "rheumatism"
+		},
+		{
+			"brand": "Thyroxin", 
+			"symptom": "Tiredness, skin dryness, swelling in eyes, face and legs, weight gain, feeling chilly", 
+			"disease": "hypothyroidism"
+		},
+		{
+			"brand": "Simvastatin", 
+			"symptom": "High cholesterol", 
+			"disease": "High cholesterol"
+		},
+		{
+			"brand": "Heinix", 
+			"symptom": "My spring allergies are coming back. *sneeze* Can you help?", 
+			"disease": "Allergy"
+		},
+		{
+			"brand": "Oxanest", 
+			"symptom": "Pain from cancer", 
+			"disease": "Pain from cancer"
+		},
+		{
+			"brand": "Nexium", 
+			"symptom": "Burning sensation in the throat", 
+			"disease": "Heartburn"
+		},
+		{	
+			"brand": "Lisinopril,Furesis", 
+			"symptom": "Heightened bloodpressure", "disease": 
+			"Heightened bloodpressure"
+		},
+		{
+			"brand": "Adalat,Albetol", 
+			"symptom": "Heightened bloodpressure on a pregnant woman", 
+			"disease": "Pre-eclampsy"
+		},
+		{
+			"brand": "Tractocile infusion", 
+			"symptom": "I'm on my seventh month of pregnancy and I'm having many strong and painful contractions!", 
+			"disease": "Threatening premature birth"
+		}	
 	]
 }

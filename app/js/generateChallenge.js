@@ -12,10 +12,16 @@
 			brands = [];
 			substances = [];
 			drugforms = [];
-			
+			alert("generate challenge");
 			// haetaan, tauti, oireet ja siihen k‰ytett‰vien l‰‰kkeiden brandit
 			loadJSON();
 			
+			for(var i = 0;i<brands.length;i++)
+			{
+				alert(brands[i]);
+								
+			}
+			alert(symptom + " - " + disease);
 			// haetaan brandin perusteella vaikuttava aine
 			for (var i = 0;i<brands.length;i++)
 			{
@@ -75,6 +81,7 @@
 				
                if (http_request.readyState == 4 && http_request.status == 200)
 			   {
+				   alert("loadJSON");
 					// Javascript function JSON.parse to parse JSON data
 					var jsonObj = JSON.parse(http_request.responseText);
 					var drugs = jsonObj.drugs;
