@@ -43,6 +43,7 @@
 			
 			document.getElementById("symptom").innerHTML = symptom;
 			document.getElementById("disease").innerHTML = disease;*/
+			alert("Brand: " + brands[0] + ", substance: " + substance[0] + ", form: " + drugforms[0]);
 			
 		}
 		
