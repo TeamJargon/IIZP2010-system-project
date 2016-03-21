@@ -52,19 +52,38 @@ var selectedCategory = "";
 
 function selectBrand(brand) {
     selectedBrand = brand;
-	document.getElementById("selected-items").innerHTML += "<tr><li>" + brand + "</li></tr>";
+	document.getElementById("selectedBrand").innerHTML = "<button class='btn' onclick=resetSelection('brand')>"+brand+"</button>";
 }
 
 function selectSubstance(substance) {
     selectedSubstances.push(substance);
-	document.getElementById("selected-items").innerHTML += "<tr><li>" + substance + "</li></tr>";
+	document.getElementById("selectedSubstance").innerHTML = "<button class='btn' onclick=resetSelection('substance')>"+substance+"</button>";
 }
 
 function selectForm(Mform) {
     selectedForm = Mform;
-	document.getElementById("selected-items").innerHTML += "<tr><li>" + Mform + "</li></tr>";
+	document.getElementById("selectedForm").innerHTML = "<button class='btn' onclick=resetSelection('form')>"+Mform+"</button>";
+
 }
 
 function selectCategory(category) {
     selectedCategory = category;
+}
+
+function resetSelection(selection)
+{
+	switch (selection)
+	{
+		case "brand":
+		document.getElementById("selectedBrand").innerHTML = "";
+		break;
+		
+		case "substance":
+		document.getElementById("selectedSubstance").innerHTML = "";
+		break;
+		
+		case "form":
+		document.getElementById("selectedForm").innerHTML = "";
+		break;
+	}
 }
