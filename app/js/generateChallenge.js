@@ -203,3 +203,28 @@
 			http_request.send();
 		}
 		
+		function answer(brandChoice, substanceChoiceArray, formChoice)
+		{
+			var points = 0;
+			
+			if(substanceChoiceArray.length>1)
+			{
+				var selectedSubstances = substanceChoiceArray.join();		
+			}
+			else
+			{
+				var selectedSubstances = substanceChoiceArray[0];
+			}
+			
+			for(var i = 0;i<brands.length;i++)
+			{
+				if(brands[i] == brandChoice && substances[i] == selectedSubstances && drugforms[i] == formChoice)
+				{
+					alert("Congratulations, you made the right drug for the patient!");
+					GenerateChallenge();
+					return;
+				}
+			}
+			alert("Incorrect answer!");
+		}
+		
