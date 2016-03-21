@@ -1,6 +1,7 @@
 function letsDoSomeMath() {
-	$("#math").show("slide", { direction: "left" }, 1000); 
-	$("#nurse").show("slide", { direction: "left" }, 1000); 
+	$("#math").show("slide", { direction: "left" }, 1000, function(){
+		$("#nurse").fadeIn("slow"); 
+	});
 }
 
 function sure() {
@@ -8,7 +9,7 @@ function sure() {
 }
 
 function nope() {
-	$("#math").hide();
+	$("#math").fadeOut("slow");
 	$("#nurse").hide("slide", { direction: "left" }, 1000); 
 }
 
