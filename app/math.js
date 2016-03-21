@@ -9,7 +9,7 @@ function sure() {
 
 function nope() {
 	$("#math").hide();
-	$("#nurse").hide();
+	$("#nurse").hide("slide", { direction: "left" }, 1000); 
 }
 
 
