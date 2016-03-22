@@ -142,6 +142,11 @@ console.log(jsonDoseNumber);
 var text = '{"Event":[' +
 '{"eventNote":"Convert ","From":' + '"' + convertions[0] + '"' + ',"To":' + '"' + convertions[1] + '"' + ', "Dose":' + '"' + jsonDoseNumber + '"' + '}]}';
 
+/*var text = '{"Event":[' +
+'{"eventNote":"Convert ","From":"Gram","To":"Decilitre", "Dose":"29" },' +
+'{"eventNote":"Convert ","From":"Millilitre","To":"Microlitre", "Dose":"1" },' +
+'{"eventNote":"Convert ","From":"Microgram","To":"Centilitre", "Dose":"1" }]}';*/
+
 obj = JSON.parse(text);
 document.getElementById('result').innerHTML = obj.Event[0].eventNote + obj.Event[0].Dose + " " + obj.Event[0].From + " to " + obj.Event[0].To;
 
@@ -299,7 +304,7 @@ function EventQuest(value) {
 		}
 	}
 	// Volume to mass
-	else if(convertFrom.indexOf("litre") != -1 & convertTo.indexOf("gram") != -1) {
+	else if(convertFrom.indexOf("litre") != -1 & convertTo.indexOf("gram") != -1 || convertFrom.indexOf("litre") != -1 & convertTo.indexOf("Gram") != -1) {
 		console.log("Muunnos tilavuudesta painoksi");
 		
 		if(convertFrom == "Decalitre") {
@@ -392,7 +397,7 @@ function EventQuest(value) {
 		}	
 	}
 	// Mass to mass
-	else if(convertFrom.indexOf("gram") != -1 & convertTo.indexOf("gram") != -1) {
+	else if(convertFrom.indexOf("gram") != -1 & convertTo.indexOf("gram") != -1 || convertFrom.indexOf("gram") != -1 & convertTo.indexOf("Gram") != -1 || convertFrom.indexOf("Gram") != -1 & convertTo.indexOf("gram") != -1) {
 		console.log("Muunnos painosta painoksi");
 		
 		if(convertFrom == "Gram") {
@@ -436,7 +441,7 @@ function EventQuest(value) {
 		}
 	}
 	// Mass to volume
-	else if(convertFrom.indexOf("gram") != -1 & convertTo.indexOf("litre") != -1) {
+	else if(convertFrom.indexOf("gram") != -1 & convertTo.indexOf("litre") != -1 || convertFrom.indexOf("Gram") != -1 & convertTo.indexOf("litre") != -1) {
 		console.log("Muunnos painosta tilavuudeksi");
 		
 		if(convertFrom == "Gram") {
