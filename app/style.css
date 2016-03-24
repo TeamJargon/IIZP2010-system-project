@@ -26,6 +26,12 @@ canvas {
     height: 100%;
 }
 
+#problem 
+{
+	border: 1px solid black;
+	background-color: white;
+}
+
 .room {
 	width: 100%;
 	height: 100%;
