@@ -153,6 +153,7 @@
 				{
 					var jsondata = JSON.parse(http_request.responseText);
 					this.substances.push(jsondata);
+					document.getElementById("substance").innerHTML = jsondata;
 					
 				}
 			},this);
@@ -200,7 +201,8 @@
 				if (http_request.readyState == 4 && http_request.status == 200) 
 				{					
 					var jsondata = JSON.parse(http_request.responseText);
-					this.drugforms.push(jsondata);
+					this.drugforms.push(jsondata);					
+					document.getElementById("form").innerHTML = jsondata;
 				}
 			},this);
 			http_request.open("GET","../php/getform.php?brand="+encodeURIComponent(str),true);
