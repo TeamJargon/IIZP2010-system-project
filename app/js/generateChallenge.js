@@ -226,7 +226,6 @@
 				if(brands[i] == brandChoice && substances[i] == selectedSubstances && drugforms[i] == formChoice)
 				{
 					alert("Congratulations, you made the right drug for the patient!");
-					GenerateChallenge();
 					return;
 				}
 			}
