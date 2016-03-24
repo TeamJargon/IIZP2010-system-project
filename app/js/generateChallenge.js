@@ -43,9 +43,8 @@
 			*/
 			document.getElementById("symptom").innerHTML = symptom;
 			document.getElementById("disease").innerHTML = disease;
-				
+			document.getElementById("brand").innerHTML = brands.join();
 			
-			//alert("Brand: " + brands.join());
 			
 		}
 		
@@ -153,7 +152,7 @@
 				{
 					var jsondata = JSON.parse(http_request.responseText);
 					this.substances.push(jsondata);
-					document.getElementById("substance").innerHTML = jsondata;
+					document.getElementById("substance").innerHTML = jsondata.join();
 					
 				}
 			},this);
