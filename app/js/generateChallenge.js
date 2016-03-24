@@ -39,11 +39,13 @@
 			for (var i = 0;i<drugforms.length;i++)
 			{
 				document.getElementById("forms").innerHTML += drugforms[i] + "<br>";
-			}	
-			
+			}
+			*/
 			document.getElementById("symptom").innerHTML = symptom;
-			document.getElementById("disease").innerHTML = disease;*/
-			alert("Brand: " + brands.join());
+			document.getElementById("disease").innerHTML = disease;
+				
+			
+			//alert("Brand: " + brands.join());
 			
 		}
 		
@@ -151,9 +153,10 @@
 				{
 					var jsondata = JSON.parse(http_request.responseText);
 					this.substances.push(jsondata);
+					
 				}
 			},this);
-			http_request.open("GET","../php/getsubstance.php?brand="+encodeURIComponent(str),false);
+			http_request.open("GET","../php/getsubstance.php?brand="+encodeURIComponent(str),true);
 			http_request.send();			
 		}
 		
@@ -200,7 +203,7 @@
 					this.drugforms.push(jsondata);
 				}
 			},this);
-			http_request.open("GET","../php/getform.php?brand="+encodeURIComponent(str),false);
+			http_request.open("GET","../php/getform.php?brand="+encodeURIComponent(str),true);
 			http_request.send();
 		}
 		

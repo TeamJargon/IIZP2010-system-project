@@ -14,16 +14,21 @@
 	<script src="js/lists.js"></script>
 	<script src="js/generateChallenge.js"></script>
 </head>
-<body onload="GenerateChallenge()">
+<body>
 	<div id="reception" class="room">
 		<div id="page-wrapper">
 			<header>
 				<div id="inner-header">
-					<button onclick="switchScene()">Takaisin</button>
+					<button onclick="switchScene()">Takaisin</button>										
+					<button onclick="GenerateChallenge()">Anna kuvaus</button>
 				</div>
 			</header>
 			<div id="layout-wrapper2">
 				<!--<img class="centered" src="img/officemedgubbe.jpg"/>-->
+				<div id="problem">
+					<p id="symptom"></p>
+					<p id="disease"></p>
+				</div>
 			</div>
 		</div>
 	</div>	
