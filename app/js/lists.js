@@ -104,11 +104,8 @@ function selectBankMedicine(brand)
 				case "oral suspension":
 					document.getElementById("BankAdministration").innerHTML = "<p>Laita kuva pipetistä</p>";
 					break;
-				case "inhalation poweder":
+				case "inhalation powder":
 					document.getElementById("BankAdministration").innerHTML = "<p>Laita kuva hengitysjauheesta</p>";
-					break;
-				case "oral suspension":
-					document.getElementById("BankAdministration").innerHTML = "<p>Laita kuva pipetistä</p>";
 					break;
 			}
             
