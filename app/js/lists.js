@@ -84,7 +84,7 @@ function selectBankMedicine(brand)
         data: { },
         dataType: "json",
         success: function(response) {
-			switch (response)
+			switch (response.join())
 			{
 				case "depot tablet":
 					document.getElementById("BankAdministration").innerHTML = "<img src='img/pilleri.jpg'>";
