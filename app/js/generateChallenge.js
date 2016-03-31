@@ -221,14 +221,20 @@
 				var selectedSubstances = substanceChoiceArray[0];
 			}
 			
-			for(var i = 0;i<brands.length;i++)
+			for(var a = 0;a<brands.length;a++)
 			{
-				if(brands[i] == brandChoice && substances[i] == selectedSubstances && drugforms[i] == formChoice)
+				for(var b = 0;b<substances.length;b++)
 				{
-					alert("Congratulations, you made the right drug for the patient!");
-					problemSolved = true; 
-					return;
-				}
+					for(var c = 0; c<drugforms.length;c++)
+					{
+						if(brands[a] == brandChoice && substances[b] == selectedSubstances && drugforms[c] == formChoice)
+						{
+							alert("Congratulations, you made the right drug for the patient!");
+							problemSolved = true; 
+							return;
+						}
+					}
+				}				
 			}
 			alert("Incorrect answer!");
 		}
