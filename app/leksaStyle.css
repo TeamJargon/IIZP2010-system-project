@@ -168,7 +168,7 @@ p, h1, h2 {
 	height:30px;
 	width:40%;
 	margin-bottom: 5px;
-	background: linear-gradient(to top, #ffcccc, #ffb3b3);
+	background: linear-gradient(to top, rgb(204, 230, 255), rgb(179, 218, 255));
 	font-size: 125%;
 	font-weight:bold;
 	border-radius:5px;
