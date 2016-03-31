@@ -73,3 +73,25 @@ canvas {
     display: none;
 	background-color: transparent;
 }
+
+#problem {
+	position: absolute;
+	top: 10%;
+    right: 0;
+	margin-left: 15px;
+	padding: 20px;
+    display: none;
+	color: black;
+	background-color: #fff;
+	border: 3px solid black;
+	border-radius: 30px 30px 30px 30px;
+}
+
+#patient {
+	position: absolute;
+	top: 20%;
+    right: 0;
+	padding: 20px;
+    display: none;
+	background-color: transparent;
+}

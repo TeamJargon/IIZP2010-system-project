@@ -36,6 +36,7 @@ function switchScene(name)
 		$("#myCanvas").fadeOut("slow", function(){
 			$('#reception').fadeIn("slow", function(){
 				letsDoSomeMath();
+				generateProblem();
 			});
 		});	
 		break;

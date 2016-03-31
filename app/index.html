@@ -20,19 +20,20 @@
 			<header>
 				<div id="inner-header">
 					<button onclick="switchScene()">Back</button>										
-					<button onclick="GenerateChallenge()">Give description</button>
+					<!--<button onclick="GenerateChallenge()">Give description</button>-->
 				</div>
 			</header>
 			<div id="layout-wrapper2">
 				<!--<img class="centered" src="img/officemedgubbe.jpg"/>-->
+				<!--
 				<div id="problem">
 					<p id="symptom"></p>
 					<p id="disease"></p>
 					<p id="brand"></p>
 					<p id="form"></p>
-					<p id="substance"></p>
-					
+					<p id="substance"></p>						
 				</div>
+				-->	
 			</div>
 		</div>
 	</div>	
@@ -173,8 +174,23 @@
 	<div id="nurse" class="roomChildEle">
 		<img src="img/nurse.png"/>
 	</div>
+	<div id="problem" class="roomChildEle">
+		<p>Hnggghhh...<br> Help me...doctor please!</p>
+	</div>
+	<div id="patient" class="roomChildEle">
+		<img src="img/patient.png"/>
+	</div>
 	<canvas id="myCanvas"></canvas>
 <script type="text/javascript" src="math.js"></script>
+<script type="text/javascript" src="problem.js"></script>
 <script type="text/javascript" src="script.js"></script>
+<script type="text/javascript">
+   window.doorbellOptions = {
+       appKey: 'TLjOh8A33PWoZDTun8H1Nc97RwxfDBYWW2imtaT1P6ByFFxkGgaSnLhNjCHg8ziy'
+   };
+   (function(d, t) {
+       var g = d.createElement(t);g.id = 'doorbellScript';g.type = 'text/javascript';g.async = true;g.src = 'https://embed.doorbell.io/button/3027?t='+(new Date().getTime());(d.getElementsByTagName('head')[0]||d.getElementsByTagName('body')[0]).appendChild(g);
+   }(document, 'script'));
+</script>
 </body>
 </html>
