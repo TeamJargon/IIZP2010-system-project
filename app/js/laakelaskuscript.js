@@ -134,7 +134,7 @@ function teksti() {
 var convertions = ["Decalitre", "Decilitre", "Centilitre", "Millilitre", "Microlitre", "Gram", "Microgram", "Nanogram"];
 shuffle(convertions);
 
-var jsonDoseNumber = Math.floor(Math.random() * 30) + 1  
+var jsonDoseNumber = Math.floor(Math.random() * 30) + 1; 
 
 console.log(convertions);
 console.log(jsonDoseNumber);
@@ -148,7 +148,7 @@ var text = '{"Event":[' +
 '{"eventNote":"Convert ","From":"Microgram","To":"Centilitre", "Dose":"1" }]}';*/
 
 obj = JSON.parse(text);
-document.getElementById('result').innerHTML = obj.Event[0].eventNote + obj.Event[0].Dose + " " + obj.Event[0].From + " to " + obj.Event[0].To;
+document.getElementById('result').innerHTML = obj.Event[0].eventNote + obj.Event[0].Dose + " " + obj.Event[0].From + " to " + obj.Event[0].To + '<br>';
 
 convertFrom = obj.Event[0].From;
 convertTo = obj.Event[0].To;
@@ -173,6 +173,61 @@ function shuffle(array) {
   }
 
   return array;
+}
+
+function choices(Doseresult) {
+	var choicesArray = [];
+	choicesArray.push(Doseresult);
+	
+	if(convertFrom.indexOf("litre") != -1 & convertTo.indexOf("litre") != -1) {
+		choicesArray.push(LitreToDecalitre(Number(convertDose)));
+		choicesArray.push(LitreToDecilitre(Number(convertDose)));
+		choicesArray.push(LitreToCentilitre(Number(convertDose)));
+		choicesArray.push(LitreToMillilitre(Number(convertDose)));
+		choicesArray.push(LitreToMicrolitre(Number(convertDose)));
+		
+		choicesArray.push(DecalitreToLitre(Number(convertDose)));
+		choicesArray.push(DecilitreToLitre(Number(convertDose)));
+		choicesArray.push(CentilitreToLitre(Number(convertDose)));
+		choicesArray.push(MillilitreToLitre(Number(convertDose)));
+		choicesArray.push(MicrolitreToLitre(Number(convertDose)));
+	}else {
+		choicesArray.push(KilogramToGram(Number(convertDose)));
+		choicesArray.push(KilogramToMicrogram(Number(convertDose)));
+		choicesArray.push(KilogramToNanogram(Number(convertDose)));
+		
+		choicesArray.push(GramToKilogram(Number(convertDose)));
+		choicesArray.push(MicrogramToKilogram(Number(convertDose)));
+		choicesArray.push(NanogramToKilogram(Number(convertDose)));
+	}
+	
+	var choicesArrayFiltered = [];
+
+	for(var i in choicesArray){
+		if(choicesArrayFiltered.indexOf(choicesArray[i]) === -1){
+			choicesArrayFiltered.push(choicesArray[i]);
+		}
+	}
+	
+	// delete dublicated values
+	var i = choicesArrayFiltered.indexOf(Doseresult);
+	choicesArrayFiltered.splice(i, 1);
+
+	shuffle(choicesArrayFiltered);
+	
+	// clear choicesArray[]
+	choicesArray.splice(0, choicesArray.length);
+	
+	// Add 3 values to choicesArray
+	for(choicesArrayIndex = 0; choicesArrayIndex < 3; choicesArrayIndex++) {
+		choicesArray.push(choicesArrayFiltered[choicesArrayIndex]);
+	}
+	
+	// Add right answer to array
+	choicesArray.push(Doseresult);
+	shuffle(choicesArray);
+	
+	return choicesArray;
 }
 
 function EventQuest(value) {
@@ -533,18 +588,25 @@ function EventQuest(value) {
 	console.log(result);
 	console.log(Doseresult);
 	
-	if(result == Doseresult) {
+	choicesArray = choices(Doseresult);
+	console.log(choicesArray);
+
+	for(choicesArrayIndex = 0; choicesArrayIndex < choicesArray.length; choicesArrayIndex++) {
+		document.getElementById('result').innerHTML += '<a href="#">' + choicesArray[choicesArrayIndex] + '</a>' + '<br>';
+	}
+	
+	/*if(result == Doseresult) {
 		document.getElementById('result').innerHTML = "True";
 	}else {
 		document.getElementById('result').innerHTML = "False";
-	}
+	}*/
 	
 }
 
 /* -------------------------------------------- Run functions | Debug -------------------------------------------- */
 
-function run(value) {
-	LitreToDecalitre(Number(convertDose));
+function run() {
+	/*LitreToDecalitre(Number(convertDose));
 	LitreToDecilitre(Number(convertDose));
 	LitreToCentilitre(Number(convertDose));
 	LitreToMillilitre(Number(convertDose));
@@ -562,10 +624,14 @@ function run(value) {
 	
 	GramToKilogram(Number(convertDose));
 	MicrogramToKilogram(Number(convertDose));
-	NanogramToKilogram(Number(convertDose));
+	NanogramToKilogram(Number(convertDose));*/
+	
+	
+	teksti();
 	
 	//--------------EventQuest----------------------//
-	EventQuest(Number(value));
+	EventQuest(Number(convertDose));
+	
 	
 }
 
