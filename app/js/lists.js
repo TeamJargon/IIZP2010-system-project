@@ -68,8 +68,9 @@ var selectedCategory = "";
 function selectBankMedicine(brand)
 {
 	selectedBrand = decodeURIComponent(brand);
+	
 	$.ajax({  
-        type: 'POST',  
+        type: 'GET',  
         url: 'php/getsubstance.php?brand=' + selectedBrand, 
         data: { },
         dataType: "json",
@@ -79,7 +80,7 @@ function selectBankMedicine(brand)
     });
 	
 	$.ajax({  
-        type: 'POST',  
+        type: 'GET',  
         url: 'php/getform.php?brand=' + selectedBrand, 
         data: { },
         dataType: "json",
