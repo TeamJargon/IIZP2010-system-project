@@ -168,5 +168,8 @@ p, h1, h2 {
 	height:30px;
 	width:40%;
 	margin-bottom: 5px;
+	background-color: #AAAAFF;
+	font-size: 150%;
+	font-weight:bold;
 
 }
