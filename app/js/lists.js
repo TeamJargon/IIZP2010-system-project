@@ -88,7 +88,7 @@ function selectBankMedicine(brand)
 			switch (response)
 			{
 				case "depot tablet":
-					document.getElementById("BankAdministration").innerHTML = "<img src='img/pilleri.jpg'><p>"+response+"</p>"";
+					document.getElementById("BankAdministration").innerHTML = "<img src='img/pilleri.jpg'><p>"+response+"</p>";
 					break;
 				case "gastro-resistant tablet":
 					document.getElementById("BankAdministration").innerHTML = "<img src='img/pilleri.jpg'><p>"+response+"</p>";
