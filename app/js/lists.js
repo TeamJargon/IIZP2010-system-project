@@ -87,25 +87,25 @@ function selectBankMedicine(brand)
 			switch (response.join())
 			{
 				case "depot tablet":
-					document.getElementById("BankAdministration").innerHTML = "<img src='img/pilleri.jpg'>";
+					document.getElementById("BankAdministration").innerHTML = "<img src='img/pilleri.jpg'><p>"+response.join()+"</p>"";
 					break;
 				case "gastro-resistant tablet":
-					document.getElementById("BankAdministration").innerHTML = "<img src='img/pilleri.jpg'>";
+					document.getElementById("BankAdministration").innerHTML = "<img src='img/pilleri.jpg'><p>"+response.join()+"</p>";
 					break;
 				case "tablet":
-					document.getElementById("BankAdministration").innerHTML = "<img src='img/pilleri.jpg'>";
+					document.getElementById("BankAdministration").innerHTML = "<img src='img/pilleri.jpg'><p>"+response.join()+"</p>"";
 					break;
 				case "injection":
-					document.getElementById("BankAdministration").innerHTML = "<img src='img/ruisku.jpg'>";
+					document.getElementById("BankAdministration").innerHTML = "<img src='img/ruisku.jpg'><p>"+response.join()+"</p>"";
 					break;
 				case "solution for injection":
-					document.getElementById("BankAdministration").innerHTML = "<img src='img/ruisku.jpg'>";
+					document.getElementById("BankAdministration").innerHTML = "<img src='img/ruisku.jpg'><p>"+response.join()+"</p>"";
 					break;
 				case "oral suspension":
-					document.getElementById("BankAdministration").innerHTML = "<p>Laita kuva pipetistä</p>";
+					document.getElementById("BankAdministration").innerHTML = "<p>Laita kuva pipetistä</p><p>"+response.join()+"</p>"";
 					break;
 				case "inhalation powder":
-					document.getElementById("BankAdministration").innerHTML = "<p>Laita kuva hengitysjauheesta</p>";
+					document.getElementById("BankAdministration").innerHTML = "<p>Laita kuva hengitysjauheesta</p><p>"+response.join()+"</p>"";
 					break;
 			}
             
