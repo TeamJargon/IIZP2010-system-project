@@ -103,10 +103,10 @@ function selectBankMedicine(brand)
 					document.getElementById("BankAdministration").innerHTML = "<img src='img/ruisku.jpg'><p>"+response.join()+"</p>";
 					break;
 				case "oral suspension":
-					document.getElementById("BankAdministration").innerHTML = "<p>Laita kuva pipetistä</p><p>"+response.join()+"</p>";
+					document.getElementById("BankAdministration").innerHTML = "<img src='img/oral_suspension.png'><p>"+response.join()+"</p>";
 					break;
 				case "inhalation powder":
-					document.getElementById("BankAdministration").innerHTML = "<p>Laita kuva hengitysjauheesta</p><p>"+response.join()+"</p>";
+					document.getElementById("BankAdministration").innerHTML = "<img src='img/inhalator.png'><p>"+response.join()+"</p>";
 					break;
 			}
             
