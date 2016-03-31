@@ -88,25 +88,25 @@ function selectBankMedicine(brand)
 			switch (response.join())
 			{
 				case "depot tablet":
-					document.getElementById("BankAdministration").innerHTML = "<img src='img/pilleri.jpg'><p>"+response.join()+"</p>";
+					document.getElementById("BankAdministration").innerHTML = "<img class='drugPic' src='img/pilleri.jpg'><p>"+response.join()+"</p>";
 					break;
 				case "gastro-resistant tablet":
-					document.getElementById("BankAdministration").innerHTML = "<img src='img/pilleri.jpg'><p>"+response.join()+"</p>";
+					document.getElementById("BankAdministration").innerHTML = "<img class='drugPic' src='img/pilleri.jpg'><p>"+response.join()+"</p>";
 					break;
 				case "tablet":
-					document.getElementById("BankAdministration").innerHTML = "<img src='img/pilleri.jpg'><p>"+response.join()+"</p>";
+					document.getElementById("BankAdministration").innerHTML = "<img class='drugPic' src='img/pilleri.jpg'><p>"+response.join()+"</p>";
 					break;
 				case "injection":
-					document.getElementById("BankAdministration").innerHTML = "<img src='img/ruisku.jpg'><p>"+response.join()+"</p>";
+					document.getElementById("BankAdministration").innerHTML = "<img class='drugPic' src='img/ruisku.jpg'><p>"+response.join()+"</p>";
 					break;
 				case "solution for injection":
-					document.getElementById("BankAdministration").innerHTML = "<img src='img/ruisku.jpg'><p>"+response.join()+"</p>";
+					document.getElementById("BankAdministration").innerHTML = "<img class='drugPic' src='img/ruisku.jpg'><p>"+response.join()+"</p>";
 					break;
 				case "oral suspension":
-					document.getElementById("BankAdministration").innerHTML = "<img src='img/oral_suspension.png'><p>"+response.join()+"</p>";
+					document.getElementById("BankAdministration").innerHTML = "<img class='drugPic' src='img/oral_suspension.png'><p>"+response.join()+"</p>";
 					break;
 				case "inhalation powder":
-					document.getElementById("BankAdministration").innerHTML = "<img src='img/inhalator.png'><p>"+response.join()+"</p>";
+					document.getElementById("BankAdministration").innerHTML = "<img class='drugPic' src='img/inhalator.png'><p>"+response.join()+"</p>";
 					break;
 			}
             
