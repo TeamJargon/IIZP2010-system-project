@@ -1,4 +1,4 @@
-		
+		var problemSolved = true;
 		// JQUERY, NOT EVEN ONCE!
 		
 		var brands = [];		
@@ -42,8 +42,8 @@
 			}
 			*/
 			document.getElementById("symptom").innerHTML = symptom;
-			document.getElementById("disease").innerHTML = disease;
-			document.getElementById("brand").innerHTML = brands.join();
+			//document.getElementById("disease").innerHTML = disease;
+			//document.getElementById("brand").innerHTML = brands.join();
 			
 			
 		}
@@ -152,7 +152,7 @@
 				{
 					var jsondata = JSON.parse(http_request.responseText);
 					this.substances.push(jsondata);
-					document.getElementById("substance").innerHTML = jsondata.join();
+					//document.getElementById("substance").innerHTML = jsondata.join();
 					
 				}
 			},this);
@@ -201,7 +201,7 @@
 				{					
 					var jsondata = JSON.parse(http_request.responseText);
 					this.drugforms.push(jsondata);					
-					document.getElementById("form").innerHTML = jsondata;
+					//document.getElementById("form").innerHTML = jsondata;
 				}
 			},this);
 			http_request.open("GET","../php/getform.php?brand="+encodeURIComponent(str),true);
@@ -226,6 +226,7 @@
 				if(brands[i] == brandChoice && substances[i] == selectedSubstances && drugforms[i] == formChoice)
 				{
 					alert("Congratulations, you made the right drug for the patient!");
+					problemSolved = true; 
 					return;
 				}
 			}
