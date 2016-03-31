@@ -165,6 +165,8 @@ p, h1, h2 {
 
 .btn
 {
-	width:50%;
+	height:30px;
+	width:40%;
+	margin-bottom: 5px;
 
 }
