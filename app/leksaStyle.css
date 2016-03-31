@@ -168,8 +168,9 @@ p, h1, h2 {
 	height:30px;
 	width:40%;
 	margin-bottom: 5px;
-	background-color: #AAAAFF;
-	font-size: 150%;
+	background: linear-gradient(to top, #ffcccc, #ffb3b3);
+	font-size: 125%;
 	font-weight:bold;
+	border-radius:5px;
 
 }
