@@ -162,3 +162,9 @@ p, h1, h2 {
 	display: block;
 	margin: auto auto;
 }
+
+.btn
+{
+	width:50%;
+	
+}
