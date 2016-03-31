@@ -47,7 +47,7 @@ $(document).ready(function() {
 	/* -------------------------------------------------------------------- */
 	/* -------------------------------------------------------------------- */
 	
-	    $.ajax({  
+	$.ajax({  
         type: 'POST',  
         url: 'php/selectbrands.php', 
         data: { },
@@ -68,6 +68,52 @@ var selectedCategory = "";
 function selectBankMedicine(brand)
 {
 	selectedBrand = decodeURIComponent(brand);
+	$.ajax({  
+        type: 'POST',  
+        url: 'php/getsubstance.php?brand=' + selectedBrand, 
+        data: { },
+        dataType: "json",
+        success: function(response) {
+            document.getElementById("BankSubstances").innerHTML = "<p>" + response.join() + "</p>";
+        }
+    });
+	
+	$.ajax({  
+        type: 'POST',  
+        url: 'php/getform.php?brand=' + selectedBrand, 
+        data: { },
+        dataType: "json",
+        success: function(response) {
+			switch (response)
+			{
+				case "depot tablet":
+					document.getElementById("BankAdministration").innerHTML = "<img src='img/pilleri.jpg'>";
+					break;
+				case "gastro-resistant tablet":
+					document.getElementById("BankAdministration").innerHTML = "<img src='img/pilleri.jpg'>";
+					break;
+				case "tablet":
+					document.getElementById("BankAdministration").innerHTML = "<img src='img/pilleri.jpg'>";
+					break;
+				case "injection":
+					document.getElementById("BankAdministration").innerHTML = "<img src='img/ruisku.jpg'>";
+					break;
+				case "solution for injection":
+					document.getElementById("BankAdministration").innerHTML = "<img src='img/ruisku.jpg'>";
+					break;
+				case "oral suspension":
+					document.getElementById("BankAdministration").innerHTML = "<p>Laita kuva pipetistä</p>";
+					break;
+				case "inhalation poweder":
+					document.getElementById("BankAdministration").innerHTML = "<p>Laita kuva hengitysjauheesta</p>";
+					break;
+				case "oral suspension":
+					document.getElementById("BankAdministration").innerHTML = "<p>Laita kuva pipetistä</p>";
+					break;
+			}
+            
+        }
+    });
 	
 }
 
