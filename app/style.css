@@ -54,7 +54,7 @@ canvas {
 
 #math {
 	position: absolute;
-	top: 10%;
+	top: 15%;
     left: 0;
 	margin-left: 15px;
 	padding: 20px;
@@ -76,8 +76,8 @@ canvas {
 
 #problem {
 	position: absolute;
-	top: 10%;
-    right: 0;
+	top: 15%;
+    right: 5%;
 	margin-left: 15px;
 	padding: 20px;
     display: none;
