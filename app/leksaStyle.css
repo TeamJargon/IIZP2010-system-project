@@ -172,5 +172,11 @@ p, h1, h2 {
 	font-size: 125%;
 	font-weight:bold;
 	border-radius:5px;
+}
 
+#SelectedBrandsSubstance
+{
+	font-size:300%;
+	font-weight:bold;
+	
 }

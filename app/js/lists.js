@@ -75,7 +75,7 @@ function selectBankMedicine(brand)
         data: { },
         dataType: "json",
         success: function(response) {
-            document.getElementById("BankSubstances").innerHTML = "<p>" + response + "</p>";
+            document.getElementById("BankSubstances").innerHTML = "<p id='SelectedBrandsSubstance'>" + response + "</p>";
         }
     });
 	

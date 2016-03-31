@@ -221,6 +221,8 @@
 				var selectedSubstances = substanceChoiceArray[0];
 			}
 			
+			// abandon hope all who enter here.
+			
 			for(var a = 0;a<brands.length;a++)
 			{
 				for(var b = 0;b<substances.length;b++)
