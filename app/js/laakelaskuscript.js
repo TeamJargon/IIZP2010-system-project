@@ -118,6 +118,7 @@ var convertTo;
 var convertDose;
 
 function Event() {
+Console.log("EVENT KUTSUTTU!");
 var convertions = ["Decalitre", "Decilitre", "Centilitre", "Millilitre", "Microlitre", "Gram", "Microgram", "Nanogram"];
 shuffle(convertions);
 
