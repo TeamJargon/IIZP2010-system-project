@@ -575,7 +575,7 @@ function EventQuest(value) {
 function answerLaakelasku(clickedId) {
 	if(clickedId == GlobalDoseresult) {
 		document.getElementById('mathProblem').innerHTML = "Correct answer, thanks! Can you help me with another one?<br>";
-		document.getElementById('mathProblem').innetHTML += "<button type='button' onclick='Event()'>Ok</button>";
+		document.getElementById('mathProblem').innerHTML += "<button type='button' onclick='Event()'>Ok</button>";
 		correctStreak++;
 	} else {
 		if (correctStreak == null) {
@@ -583,6 +583,6 @@ function answerLaakelasku(clickedId) {
 		}
 		document.getElementById('mathProblem').innerHTML = "Sorry, but that was wrong answer. Your streak was: " + correctStreak + "<br>";
 		correctStreak = 0;
-		document.getElementById('mathProblem').innetHTML += "<button type='button' onclick='nope()'>Ok</button>";
+		document.getElementById('mathProblem').innerHTML += "<button type='button' onclick='nope()'>Ok</button>";
 	}
 }
