@@ -118,7 +118,7 @@ var convertTo;
 var convertDose;
 
 function Event() {
-Console.log("EVENT KUTSUTTU!");
+console.log("EVENT KUTSUTTU!");
 var convertions = ["Decalitre", "Decilitre", "Centilitre", "Millilitre", "Microlitre", "Gram", "Microgram", "Nanogram"];
 shuffle(convertions);
 
@@ -133,7 +133,7 @@ var text = '{"Event":[' +
 '{"eventNote":"Convert ","From":"Microgram","To":"Centilitre", "Dose":"1" }]}';*/
 
 obj = JSON.parse(text);
-document.getElementById('result').innerHTML = obj.Event[0].eventNote + obj.Event[0].Dose + " " + obj.Event[0].From + " to " + obj.Event[0].To + '<br>';
+document.getElementById('math').innerHTML = obj.Event[0].eventNote + obj.Event[0].Dose + " " + obj.Event[0].From + " to " + obj.Event[0].To + '<br>';
 
 convertFrom = obj.Event[0].From;
 convertTo = obj.Event[0].To;
@@ -562,14 +562,14 @@ function EventQuest(value) {
 	choicesArray = choices(Doseresult);
 
 	for(choicesArrayIndex = 0; choicesArrayIndex < choicesArray.length; choicesArrayIndex++) {
-		document.getElementById('result').innerHTML += '<a href="#"' + 'onclick="answer(this.id)"' + 'id=' + choicesArray[choicesArrayIndex] + '>' + choicesArray[choicesArrayIndex] + '</a>' + '<br>';
+		document.getElementById('math').innerHTML += '<a href="#"' + 'onclick="answer(this.id)"' + 'id=' + choicesArray[choicesArrayIndex] + '>' + choicesArray[choicesArrayIndex] + '</a>' + '<br>';
 	}
 }
 
 function answer(clickedId) {
 	if(clickedId == GlobalDoseresult) {
-		document.getElementById('result').innerHTML = "True";
+		document.getElementById('math').innerHTML = "True";
 	}else {
-		document.getElementById('result').innerHTML = "False";
+		document.getElementById('math').innerHTML = "False";
 	}
 }
