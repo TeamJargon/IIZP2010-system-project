@@ -210,6 +210,7 @@
 		
 		function answer(brandChoice, substanceChoiceArray, formChoice)
 		{
+			alert("shiet");
 			var points = 0;
 			
 			if(substanceChoiceArray.length>1)
