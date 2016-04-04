@@ -1,5 +1,6 @@
 // answer function variable
 var GlobalDoseresult;
+var GlobalRomanresult;
 
 var correctStreak;
 
@@ -120,33 +121,69 @@ var convertTo;
 var convertDose;
 
 function Event() {
-var convertionsVolume = ["Decalitre", "Decilitre", "Centilitre", "Millilitre", "Microlitre"];
-var convertionsMass = ["Gram", "Microgram", "Nanogram"];
-var convertions = [];
+// Roman numeral
+if(parseInt((Math.random()) * 2) == 1) {
+	var convertions = [];
 
-if(parseInt((Math.random() * 2)) == 1) { 
-	convertions = convertionsVolume;
-}else {
-	convertions = convertionsMass;
+	var jsonDoseNumber = Math.floor(Math.random() * 999) + 1; 
+	GlobalRomanresult = jsonDoseNumber;
+	
+	var romanNumeral = EventQuestRome(parseInt(jsonDoseNumber));
+
+		var text = '{"Event":[' +
+		'{"eventNote":"Convert ","Dose":' + '"' + romanNumeral + '"' + '}]}';
+
+
+	obj = JSON.parse(text);
+	document.getElementById('mathProblem').innerHTML = obj.Event[0].eventNote + " Roman Numeral " + obj.Event[0].Dose + " "+ " to Numeral"+ '<br>';
+	
+	while(convertions.length < 3) {
+		var randomNumber = Math.floor(Math.random() * 999) + 1;
+		
+		if(randomNumber == jsonDoseNumber) {
+			randomNumber = Math.floor(Math.random() * 999) + 1;
+		}else {
+			convertions.push(randomNumber);
+		}
+	}
+	
+	convertions.push(jsonDoseNumber);
+	
+	shuffle(convertions);
+	
+	for(choicesArrayIndex = 0; choicesArrayIndex < convertions.length; choicesArrayIndex++) {
+		document.getElementById('mathProblem').innerHTML += '<button ' + 'onclick="answerRomanLaakelasku(this.id)"' + 'id=' + convertions[choicesArrayIndex] + '>' + convertions[choicesArrayIndex] + '</button>' + '<br>';
+	}
 }
-var convertions = 
+// unit conversion
+else {
+	var convertionsVolume = ["Decalitre", "Decilitre", "Centilitre", "Millilitre", "Microlitre"];
+	var convertionsMass = ["Gram", "Microgram", "Nanogram"];
+	var convertions = [];
 
-shuffle(convertions);
+	if(parseInt((Math.random() * 2)) == 1) { 
+		convertions = convertionsVolume;
+	}else {
+		convertions = convertionsMass;
+	}
 
-var jsonDoseNumber = Math.floor(Math.random() * 30) + 1; 
+	shuffle(convertions);
 
-var text = '{"Event":[' +
-'{"eventNote":"Convert ","From":' + '"' + convertions[0] + '"' + ',"To":' + '"' + convertions[1] + '"' + ', "Dose":' + '"' + jsonDoseNumber + '"' + '}]}';
+	var jsonDoseNumber = Math.floor(Math.random() * 30) + 1; 
 
-obj = JSON.parse(text);
-document.getElementById('mathProblem').innerHTML = obj.Event[0].eventNote + obj.Event[0].Dose + " " + obj.Event[0].From + " to " + obj.Event[0].To + '<br>';
+	var text = '{"Event":[' +
+	'{"eventNote":"Convert ","From":' + '"' + convertions[0] + '"' + ',"To":' + '"' + convertions[1] + '"' + ', "Dose":' + '"' + jsonDoseNumber + '"' + '}]}';
 
-convertFrom = obj.Event[0].From;
-convertTo = obj.Event[0].To;
-convertDose = obj.Event[0].Dose
+	obj = JSON.parse(text);
+	document.getElementById('mathProblem').innerHTML = obj.Event[0].eventNote + obj.Event[0].Dose + " " + obj.Event[0].From + " to " + obj.Event[0].To + '<br>';
 
-//--------------EventQuest----------------------//
-	EventQuest(Number(convertDose));
+	convertFrom = obj.Event[0].From;
+	convertTo = obj.Event[0].To;
+	convertDose = obj.Event[0].Dose
+
+	//--------------EventQuest----------------------//
+		EventQuest(Number(convertDose));
+	}
 }
 
 function shuffle(array) {
@@ -221,6 +258,10 @@ function choices(Doseresult) {
 	shuffle(choicesArray);
 	
 	return choicesArray;
+}
+
+function EventQuestRome(value) {
+	return convertToRoman(value);
 }
 
 function EventQuest(value) {
@@ -572,6 +613,25 @@ function EventQuest(value) {
 	}
 }
 
+function answerRomanLaakelasku(clickedId) {
+	if(clickedId == GlobalRomanresult) {
+		if (correctStreak == null) {
+			correctStreak = 0;
+		}
+		document.getElementById('mathProblem').innerHTML = "Correct answer, thanks! Can you help me with another one?<br>";
+		document.getElementById('mathProblem').innerHTML += "<button type='button' onclick='Event()'>Ok</button>&nbsp;&nbsp;";
+		document.getElementById('mathProblem').innerHTML += "<button type='button' onclick='nope()'>Nope</button>";
+		correctStreak++;
+	} else {
+		if (correctStreak == null) {
+			correctStreak = 0;
+		}
+		document.getElementById('mathProblem').innerHTML = "Sorry, but that was wrong answer. Your streak was: " + correctStreak + "<br>";
+		correctStreak = 0;
+		document.getElementById('mathProblem').innerHTML += "<button type='button' onclick='nope()'>Ok</button>";
+	}
+}
+
 function answerLaakelasku(clickedId) {
 	if(clickedId == GlobalDoseresult) {
 		if (correctStreak == null) {
@@ -590,3 +650,151 @@ function answerLaakelasku(clickedId) {
 		document.getElementById('mathProblem').innerHTML += "<button type='button' onclick='nope()'>Ok</button>";
 	}
 }
+
+//------------------------------------------------------------------- roman.js -------------------------------------------------------------------//
+ /*************************************************************
+ *           Thesh Ooter's Roman Numeral Convertor            *
+ *                                                            *
+ * For converting between integers and Roman Numerals as well *
+ * as checking the validity of Roman Numerals and correcting  *
+ * some common Roman Numeral mistakes.                        *
+ *                                                            *
+ * This script should work with any web browser that supports *
+ * ECMAScript V3 (specifically try and catch) and the DOM2    *
+ * method 'getElementById()'; this has been tested to work    *
+ * in IE5+ and Mozilla 1.7 (although it should work with      *
+ * earlier versions, it is untesed) as well as Opera 7.5. I   *
+ * do not have access to a KHTML based browser like Safari or *
+ * Konqueror, but I expect this to work in recent versions.   *
+ *                                                            *
+ * This script was written by Scott Hulberg (AKA Thesh Ooter) *
+ * scott_hulberg@yahoo.com                                    *
+ *************************************************************/
+
+var undefined; //needed for this to work in IE5
+
+ /***********************************
+ * These first arrays are used by   *
+ * the functions which convert      *
+ * roman numerals into integers.    *
+ ***********************************/
+
+var counter = new Array(7);
+
+var romans = new Array(7);
+romans["I"] = 1;
+romans["V"] = 5;
+romans["X"] = 10;
+romans["L"] = 50;
+romans["C"] = 100;
+romans["D"] = 500;
+romans["M"] = 1000;
+
+var subs = new Array(4);
+subs["I"] = true;
+subs["X"] = true;
+subs["C"] = true;
+subs["M"] = true;
+
+ /***********************************
+ * This next array stores the data  *
+ * needed to convert integers into  *
+ * roman numerals.                  *
+ ***********************************/
+
+var getChar = new Array(7);
+getChar[0] = "I";
+getChar[1] = "V";
+getChar[2] = "X";
+getChar[3] = "L";
+getChar[4] = "C";
+getChar[5] = "D";
+getChar[6] = "M";
+
+ /***********************************
+ * This first function is a pretty  *
+ * simple and generic function used *
+ * to define and throw errors       *
+ ***********************************/
+
+ function createError(ErrorName, ErrorMessage) {
+	 var theError = new Error();
+	 theError.name = ErrorName;
+	 theError.message = ErrorMessage;
+	 throw theError;
+ }
+
+ /***********************************
+ * The next two functions are used  *
+ * for converting an integer into a *
+ * roman Numeral.                   *
+ ***********************************/
+
+function ints(pos, iValue) {
+	var charValue = "";
+	var s = 2*pos;
+	if (pos > 2) {
+		for (var i=0; i<iValue*Math.pow(10,(pos-3)); i++) {
+			charValue += "M";
+		}
+	}
+	else if (iValue < 4) {
+		for (var i=0; i<iValue; i++) {
+			charValue += getChar[s];
+		}
+	}
+	else if (iValue == 4) {
+		charValue = getChar[s] + getChar[s+1];
+	}
+	else if (iValue < 9) {
+		charValue = getChar[s+1];
+		for (var i=0; i<iValue-5; i++) {
+			charValue += getChar[s];
+		}
+	}
+	else if (iValue == 9) {
+		charValue = getChar[s] + getChar[s+2];
+	}
+	return new String(charValue);
+}
+
+function parseIntToRoman(intNumb, whichError) {
+	var romNumb;
+	var romNumbFinal = "";
+	if ((parseInt(intNumb, 10) != intNumb) || (parseInt(intNumb,10) < 0)) {
+		try {		
+			if (whichError == 0) {
+				createError("InputError", "Cannot create a valid Roman Numeral");
+			}
+			else {
+				createError("InputError", "Not a positive Integer");
+			}
+		}
+		catch(err) {
+			romNumbFinal = err.name.toString() + ": " + err.message.toString();
+		}
+	}
+	else {
+		intNumb = parseInt(intNumb, 10).toString();
+		for (var k=0; k<intNumb.length; k++) {
+			var currentI = parseInt(intNumb.charAt(intNumb.length - (k + 1)));
+			romNumb = romNumbFinal;
+			romNumbFinal = ints(k, currentI) + romNumb;
+		}
+	}
+	return romNumbFinal;
+}
+
+ /***********************************
+ * These next functions are used to *
+ * interact with the input in the   *
+ * forms in the page - modify as    *
+ * needed.                          *
+ ***********************************/
+
+function convertToRoman(romanValue) {
+	var intput = romanValue;
+	var finalRomNumber = parseIntToRoman(intput, 1);
+	return finalRomNumber;
+}
+//--------------------------------------------- end roman.js -------------------------------------------------------------------//
