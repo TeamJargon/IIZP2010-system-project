@@ -1,6 +1,8 @@
 // answer function variable
 var GlobalDoseresult;
 
+var correctStreak;
+
 function float_exponent(number) {
     exponent = 1;
     while (number < 1.0) {
@@ -572,8 +574,12 @@ function EventQuest(value) {
 
 function answerLaakelasku(clickedId) {
 	if(clickedId == GlobalDoseresult) {
-		document.getElementById('mathProblem').innerHTML = "True";
+		document.getElementById('mathProblem').innerHTML = 'Correct answer, thanks! Can you help me with another one?' + '<br>';
+		document.getElementById('mathProblem').innetHTML += '<button ' + 'onclick="Event()"' + '>' + 'Ok' + '</button>' + '<br>';
+		correctStreak++;
 	}else {
-		document.getElementById('mathProblem').innerHTML = "False";
+		document.getElementById('mathProblem').innerHTML = 'Sorry, but that was wrong answer. Your streak was: ' + correctStreak + '<br>';
+		correctStreak = 0;
+		document.getElementById('mathProblem').innetHTML += '<button ' + 'onclick="nope()"' + '>' + 'Ok' + '</button>' + '<br>';
 	}
 }

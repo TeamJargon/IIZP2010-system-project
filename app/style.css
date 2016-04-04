@@ -68,9 +68,10 @@ canvas {
 #mathProblem {
 	position: absolute;
 	top: 10%;
-    left: 50%;
+    left: 30%;
 	margin-left: 15px;
 	padding: 20px;
+	display: none;
 	color: black;
 	background-color: #fff;
 	border: 3px solid black;
