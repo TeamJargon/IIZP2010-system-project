@@ -118,7 +118,6 @@ var convertTo;
 var convertDose;
 
 function Event() {
-console.log("EVENT KUTSUTTU!");
 var convertions = ["Decalitre", "Decilitre", "Centilitre", "Millilitre", "Microlitre", "Gram", "Microgram", "Nanogram"];
 shuffle(convertions);
 
@@ -133,7 +132,7 @@ var text = '{"Event":[' +
 '{"eventNote":"Convert ","From":"Microgram","To":"Centilitre", "Dose":"1" }]}';*/
 
 obj = JSON.parse(text);
-document.getElementById('math').innerHTML = obj.Event[0].eventNote + obj.Event[0].Dose + " " + obj.Event[0].From + " to " + obj.Event[0].To + '<br>';
+document.getElementById('mathProblem').innerHTML = obj.Event[0].eventNote + obj.Event[0].Dose + " " + obj.Event[0].From + " to " + obj.Event[0].To + '<br>';
 
 convertFrom = obj.Event[0].From;
 convertTo = obj.Event[0].To;
@@ -562,14 +561,14 @@ function EventQuest(value) {
 	choicesArray = choices(Doseresult);
 
 	for(choicesArrayIndex = 0; choicesArrayIndex < choicesArray.length; choicesArrayIndex++) {
-		document.getElementById('math').innerHTML += '<button ' + 'onclick="answerLaakelasku(this.id)"' + 'id=' + choicesArray[choicesArrayIndex] + '>' + choicesArray[choicesArrayIndex] + '</button>' + '<br>';
+		document.getElementById('mathProblem').innerHTML += '<button ' + 'onclick="answerLaakelasku(this.id)"' + 'id=' + choicesArray[choicesArrayIndex] + '>' + choicesArray[choicesArrayIndex] + '</button>' + '<br>';
 	}
 }
 
 function answerLaakelasku(clickedId) {
 	if(clickedId == GlobalDoseresult) {
-		document.getElementById('math').innerHTML = "True";
+		document.getElementById('mathProblem').innerHTML = "True";
 	}else {
-		document.getElementById('math').innerHTML = "False";
+		document.getElementById('mathProblem').innerHTML = "False";
 	}
 }

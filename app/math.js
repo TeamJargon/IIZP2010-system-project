@@ -6,7 +6,6 @@ function letsDoSomeMath() {
 
 function sure() {
 	alert("lets do some math!");
-	console.log("SURE PAINETTU!");
 	Event();
 }
 
