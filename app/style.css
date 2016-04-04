@@ -65,6 +65,19 @@ canvas {
 	border-radius: 30px 30px 30px 30px;
 }
 
+#mathProblem {
+	position: absolute;
+	top: 10%;
+    left: 30%;
+	margin-left: 15px;
+	padding: 20px;
+    display: none;
+	color: black;
+	background-color: #fff;
+	border: 3px solid black;
+	border-radius: 30px 30px 30px 30px;
+}
+
 #nurse {
 	position: absolute;
 	top: 20%;

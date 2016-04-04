@@ -6,6 +6,8 @@ function letsDoSomeMath() {
 
 function sure() {
 	alert("lets do some math!");
+	Event();
+	$("#mathProblem").fadeIn("slow"); 
 }
 
 function nope() {
