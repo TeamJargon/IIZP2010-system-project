@@ -578,7 +578,7 @@ function answerLaakelasku(clickedId) {
 			correctStreak = 0;
 		}
 		document.getElementById('mathProblem').innerHTML = "Correct answer, thanks! Can you help me with another one?<br>";
-		document.getElementById('mathProblem').innerHTML += "<button type='button' onclick='Event()'>Ok</button>";
+		document.getElementById('mathProblem').innerHTML += "<button type='button' onclick='Event()'>Ok</button>&nbsp;&nbsp;";
 		document.getElementById('mathProblem').innerHTML += "<button type='button' onclick='nope()'>Nope</button>";
 		correctStreak++;
 	} else {
