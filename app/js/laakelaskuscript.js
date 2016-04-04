@@ -1,3 +1,6 @@
+// answer function variable
+var GlobalDoseresult;
+
 function float_exponent(number) {
     exponent = 1;
     while (number < 1.0) {
@@ -14,70 +17,60 @@ function format_float(number, extra_precision) {
 /* --------------------------------------------Volume-------------------------------------------- */
 function LitreToDecalitre(volume) {
 	var Decalitre = volume * 0.1;
-	console.log("Litra dekalitroina: " + format_float(Decalitre));
 	
 	return format_float(Decalitre);
 }
 
 function LitreToDecilitre(volume) {
 	var decilitre = volume * 10;
-	console.log("Litra desilitroina: " + format_float(decilitre));
 	
 	return format_float(decilitre);
 }
 
 function LitreToCentilitre(volume) {
 	var centilitre = volume * 100;
-	console.log("Litra senttilitroina: " + format_float(centilitre));
 	
 	return format_float(centilitre);
 }
 
 function LitreToMillilitre(volume) {
 	var millilitre = volume * 1000;
-	console.log("Litra millilitroina: " + format_float(millilitre));
 	
 	return format_float(millilitre);
 }
 
 function LitreToMicrolitre(volume) {
 	var microlitre = volume * 1000000;
-	console.log("Litra microlitroina: " + format_float(microlitre));
 	
 	return format_float(microlitre);
 }
 
 function DecalitreToLitre(volume) {
 	var decalitre = volume * 10;
-	console.log("Dekalitra litroina: " + format_float(decalitre));
 	
 	return format_float(decalitre);
 }
 
 function DecilitreToLitre(volume) {
 	var decilitre = volume * 0.1;
-	console.log("Desilitra litroina: " + format_float(decilitre));
 	
 	return format_float(decilitre);
 }
 
 function CentilitreToLitre(volume) {
 	var centilitre = volume * 0.01;
-	console.log("Senttilitra litroina: " + format_float(centilitre));
 	
 	return format_float(centilitre);
 }
 
 function MillilitreToLitre(volume) {
 	var millilitre = volume * 0.001;
-	console.log("Millilitra litroina: " + format_float(millilitre));
 	
 	return format_float(millilitre);
 }
 
 function MicrolitreToLitre(volume) {
 	var microlitre = volume * 0.000001;
-	console.log("Microlitra litroina: " + format_float(microlitre));
 	
 	return format_float(microlitre);
 }
@@ -85,42 +78,36 @@ function MicrolitreToLitre(volume) {
 /* --------------------------------------------Mass-------------------------------------------- */
 function KilogramToGram(mass) {
 	var gram = mass * 1000;
-	console.log("Kilogramma grammoina: " + format_float(gram));
 	
 	return format_float(gram);
 }
 
 function KilogramToMicrogram(mass) {
 	var Microgram = mass * 1000000000;
-	console.log("Kilogramma microgrammoina: " + format_float(Microgram));
 	
 	return format_float(Microgram);
 }
 
 function KilogramToNanogram(mass) {
 	var nanogram = mass *  1000000000000;
-	console.log("Kilogramma nanogrammoina: " + format_float(nanogram));
 	
 	return format_float(nanogram);
 }
 
 function GramToKilogram(mass) {
 	var gram = mass * 0.001;
-	console.log("Gramma kilogrammoina: " + format_float(gram));
 	
 	return format_float(gram);
 }
 
 function MicrogramToKilogram(mass) {
 	var Microgram = mass * 0.000000001;
-	console.log("Microgramma  kilogrammoina: " + format_float(Microgram));
 	
 	return format_float(Microgram);
 }
 
 function NanogramToKilogram(mass) {
 	var nanogram = mass * 0.000000000001;
-	console.log("Nanogramma kilogrammoina: " + format_float(nanogram));
 	
 	return format_float(nanogram);
 }
@@ -130,14 +117,11 @@ var convertFrom;
 var convertTo;
 var convertDose;
 
-function teksti() {
+function Event() {
 var convertions = ["Decalitre", "Decilitre", "Centilitre", "Millilitre", "Microlitre", "Gram", "Microgram", "Nanogram"];
 shuffle(convertions);
 
 var jsonDoseNumber = Math.floor(Math.random() * 30) + 1; 
-
-console.log(convertions);
-console.log(jsonDoseNumber);
 
 var text = '{"Event":[' +
 '{"eventNote":"Convert ","From":' + '"' + convertions[0] + '"' + ',"To":' + '"' + convertions[1] + '"' + ', "Dose":' + '"' + jsonDoseNumber + '"' + '}]}';
@@ -154,6 +138,8 @@ convertFrom = obj.Event[0].From;
 convertTo = obj.Event[0].To;
 convertDose = obj.Event[0].Dose
 
+//--------------EventQuest----------------------//
+	EventQuest(Number(convertDose));
 }
 
 function shuffle(array) {
@@ -231,21 +217,12 @@ function choices(Doseresult) {
 }
 
 function EventQuest(value) {
-	
-	console.log("-------------------------------------------------------------------------------------------------");
-	console.log("convertFrom: " + convertFrom);
-	console.log("convertTo: " + convertTo);
-	console.log("convertDose: " + convertDose);
-	console.log("-------------------------------------------------------------------------------------------------");
-	
 	var result = value;
 	var DoseConvert;
 	var Doseresult;
 	
 	// Volume to volume
 	if(convertFrom.indexOf("litre") != -1 & convertTo.indexOf("litre") != -1){
-		console.log("Muunnos tilavuudesta tilavuudeksi");
-		
 		if(convertFrom == "Decalitre") {
 			if(convertTo == "Decilitre"){
 				
@@ -360,8 +337,6 @@ function EventQuest(value) {
 	}
 	// Volume to mass
 	else if(convertFrom.indexOf("litre") != -1 & convertTo.indexOf("gram") != -1 || convertFrom.indexOf("litre") != -1 & convertTo.indexOf("Gram") != -1) {
-		console.log("Muunnos tilavuudesta painoksi");
-		
 		if(convertFrom == "Decalitre") {
 			if(convertTo == "Gram"){
 				
@@ -452,9 +427,7 @@ function EventQuest(value) {
 		}	
 	}
 	// Mass to mass
-	else if(convertFrom.indexOf("gram") != -1 & convertTo.indexOf("gram") != -1 || convertFrom.indexOf("gram") != -1 & convertTo.indexOf("Gram") != -1 || convertFrom.indexOf("Gram") != -1 & convertTo.indexOf("gram") != -1) {
-		console.log("Muunnos painosta painoksi");
-		
+	else if(convertFrom.indexOf("gram") != -1 & convertTo.indexOf("gram") != -1 || convertFrom.indexOf("gram") != -1 & convertTo.indexOf("Gram") != -1 || convertFrom.indexOf("Gram") != -1 & convertTo.indexOf("gram") != -1) {	
 		if(convertFrom == "Gram") {
 			if(convertTo == "Microgram"){
 	
@@ -497,8 +470,6 @@ function EventQuest(value) {
 	}
 	// Mass to volume
 	else if(convertFrom.indexOf("gram") != -1 & convertTo.indexOf("litre") != -1 || convertFrom.indexOf("Gram") != -1 & convertTo.indexOf("litre") != -1) {
-		console.log("Muunnos painosta tilavuudeksi");
-		
 		if(convertFrom == "Gram") {
 			if(convertTo == "Decalitre"){
 				
@@ -584,54 +555,20 @@ function EventQuest(value) {
 			}
 		}	
 	}
-
-	console.log(result);
-	console.log(Doseresult);
+	
+	GlobalDoseresult = Doseresult;
 	
 	choicesArray = choices(Doseresult);
-	console.log(choicesArray);
 
 	for(choicesArrayIndex = 0; choicesArrayIndex < choicesArray.length; choicesArrayIndex++) {
-		document.getElementById('result').innerHTML += '<a href="#">' + choicesArray[choicesArrayIndex] + '</a>' + '<br>';
+		document.getElementById('result').innerHTML += '<a href="#"' + 'onclick="answer(this.id)"' + 'id=' + choicesArray[choicesArrayIndex] + '>' + choicesArray[choicesArrayIndex] + '</a>' + '<br>';
 	}
-	
-	/*if(result == Doseresult) {
+}
+
+function answer(clickedId) {
+	if(clickedId == GlobalDoseresult) {
 		document.getElementById('result').innerHTML = "True";
 	}else {
 		document.getElementById('result').innerHTML = "False";
-	}*/
-	
+	}
 }
-
-/* -------------------------------------------- Run functions | Debug -------------------------------------------- */
-
-function run() {
-	/*LitreToDecalitre(Number(convertDose));
-	LitreToDecilitre(Number(convertDose));
-	LitreToCentilitre(Number(convertDose));
-	LitreToMillilitre(Number(convertDose));
-	LitreToMicrolitre(Number(convertDose));
-	
-	DecalitreToLitre(Number(convertDose));
-	DecilitreToLitre(Number(convertDose));
-	CentilitreToLitre(Number(convertDose));
-	MillilitreToLitre(Number(convertDose));
-	MicrolitreToLitre(Number(convertDose));
-	
-	KilogramToGram(Number(convertDose));
-	KilogramToMicrogram(Number(convertDose));
-	KilogramToNanogram(Number(convertDose));
-	
-	GramToKilogram(Number(convertDose));
-	MicrogramToKilogram(Number(convertDose));
-	NanogramToKilogram(Number(convertDose));*/
-	
-	
-	teksti();
-	
-	//--------------EventQuest----------------------//
-	EventQuest(Number(convertDose));
-	
-	
-}
-
