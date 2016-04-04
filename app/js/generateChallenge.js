@@ -244,8 +244,8 @@
 		}
 		
 		function updateScore(correct){
-			alert("WubWub, updateScoressa!");
-			var stringOldScore = document.getElementsByClassName("score").innerHTML;
+			//alert("WubWub, updateScoressa!");
+			var stringOldScore = document.getElementById("score1").innerHTML;
 			var intOldScore = parseInt(stringOldScore);
 			
 			if(correct == true){	
@@ -258,6 +258,8 @@
 			
 			alert("New score = " +  newScore);
 			
-			document.getElementsByClassName("score").innerHTML = stringNewScore;
+			document.getElementById("score1").innerHTML = stringNewScore;
+			document.getElementById("score2").innerHTML = stringNewScore;
+			document.getElementById("score3").innerHTML = stringNewScore;
 		}
 		
