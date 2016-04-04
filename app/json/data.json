@@ -38,17 +38,17 @@
 		},
 		{
 			"brand": "Prednison", 
-			"symptom": "I have chronic joint pain and stiffness", 
+			"symptom": "I have chronic joint pain and stiffness. Help!", 
 			"disease": "rheumatism"
 		},
 		{
 			"brand": "Thyroxin", 
-			"symptom": "Tiredness, skin dryness, swelling in eyes, face and legs, weight gain, feeling chilly", 
+			"symptom": "Can you help me? I'm tired and my skin is dry. I have swelling in my eyes, face and legs. I have gained weight and I'm feeling chilly.", 
 			"disease": "hypothyroidism"
 		},
 		{
 			"brand": "Simvastatin", 
-			"symptom": "High cholesterol", 
+			"symptom": "Help, my cholesterol is high!", 
 			"disease": "High cholesterol"
 		},
 		{
@@ -58,22 +58,22 @@
 		},
 		{
 			"brand": "Oxanest", 
-			"symptom": "Pain from cancer", 
+			"symptom": "Help! I have cancer and I'm in terrible pain!", 
 			"disease": "Pain from cancer"
 		},
 		{
 			"brand": "Nexium", 
-			"symptom": "Burning sensation in the throat", 
+			"symptom": "I have burning sensation in the throat, help me please!", 
 			"disease": "Heartburn"
 		},
 		{	
 			"brand": "Lisinopril,Furesis", 
-			"symptom": "Heightened bloodpressure", 
+			"symptom": "My bloodpressure is high, please help.", 
 			"disease": "Heightened bloodpressure"
 		},
 		{
 			"brand": "Adalat,Albetol", 
-			"symptom": "Heightened bloodpressure on a pregnant woman", 
+			"symptom": "I'm pregnant and my bloodpressure is high.", 
 			"disease": "Pre-eclampsy"
 		},
 		{
