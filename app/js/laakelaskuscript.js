@@ -562,11 +562,11 @@ function EventQuest(value) {
 	choicesArray = choices(Doseresult);
 
 	for(choicesArrayIndex = 0; choicesArrayIndex < choicesArray.length; choicesArrayIndex++) {
-		document.getElementById('math').innerHTML += '<a href="#"' + 'onclick="answer(this.id)"' + 'id=' + choicesArray[choicesArrayIndex] + '>' + choicesArray[choicesArrayIndex] + '</a>' + '<br>';
+		document.getElementById('math').innerHTML += '<a href="#"' + 'onclick="answerLaakelasku(this.id)"' + 'id=' + choicesArray[choicesArrayIndex] + '>' + choicesArray[choicesArrayIndex] + '</a>' + '<br>';
 	}
 }
 
-function answer(clickedId) {
+function answerLaakelasku(clickedId) {
 	if(clickedId == GlobalDoseresult) {
 		document.getElementById('math').innerHTML = "True";
 	}else {
