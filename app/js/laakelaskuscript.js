@@ -574,12 +574,15 @@ function EventQuest(value) {
 
 function answerLaakelasku(clickedId) {
 	if(clickedId == GlobalDoseresult) {
-		document.getElementById('mathProblem').innerHTML = 'Correct answer, thanks! Can you help me with another one?' + '<br>';
-		document.getElementById('mathProblem').innetHTML += '<button ' + 'onclick="Event()"' + '>' + 'Ok' + '</button>' + '<br>';
+		document.getElementById('mathProblem').innerHTML = "Correct answer, thanks! Can you help me with another one?<br>";
+		document.getElementById('mathProblem').innetHTML += "<button type='button' onclick='Event()'>Ok</button>";
 		correctStreak++;
-	}else {
-		document.getElementById('mathProblem').innerHTML = 'Sorry, but that was wrong answer. Your streak was: ' + correctStreak + '<br>';
+	} else {
+		if (correctStreak == null) {
+			correctStreak = 0;
+		}
+		document.getElementById('mathProblem').innerHTML = "Sorry, but that was wrong answer. Your streak was: " + correctStreak + "<br>";
 		correctStreak = 0;
-		document.getElementById('mathProblem').innetHTML += '<button ' + 'onclick="nope()"' + '>' + 'Ok' + '</button>' + '<br>';
+		document.getElementById('mathProblem').innetHTML += "<button type='button' onclick='nope()'>Ok</button>";
 	}
 }
