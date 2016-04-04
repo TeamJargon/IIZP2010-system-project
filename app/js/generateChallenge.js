@@ -256,6 +256,8 @@
 			
 			var stringNewScore = String(newScore);
 			
+			alert("New score = " +  newScore);
+			
 			document.getElementsByClassName("score").innerHTML = stringNewScore;
 		}
 		
