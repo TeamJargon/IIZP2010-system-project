@@ -233,17 +233,17 @@
 						{
 							alert("Congratulations, you made the right drug for the patient!");
 							problemSolved = true; 
-							//updateScore(true);
+							updateScore(true);
 							return;
 						}
 					}
 				}				
 			}
 			alert("Incorrect answer!");
-			//updateScore(false);
+			updateScore(false);
 		}
 		
-		/*function updateScore( boolean correct){
+		function updateScore(correct){
 			alert("WubWub, updateScoressa!");
 			var stringOldScore = div.getElementsByTagName('score')[0];
 			int intOldScore = parseInt(oldScore);
@@ -258,4 +258,4 @@
 			
 			document.getElementById("score").innerHTML = stringNewScore;
 		}
-		*/
+		
