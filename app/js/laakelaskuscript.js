@@ -562,7 +562,7 @@ function EventQuest(value) {
 	choicesArray = choices(Doseresult);
 
 	for(choicesArrayIndex = 0; choicesArrayIndex < choicesArray.length; choicesArrayIndex++) {
-		document.getElementById('math').innerHTML += '<a href="#"' + 'onclick="answerLaakelasku(this.id)"' + 'id=' + choicesArray[choicesArrayIndex] + '>' + choicesArray[choicesArrayIndex] + '</a>' + '<br>';
+		document.getElementById('math').innerHTML += '<a' + 'onclick="answerLaakelasku(this.id)"' + 'id=' + choicesArray[choicesArrayIndex] + '>' + choicesArray[choicesArrayIndex] + '</a>' + '<br>';
 	}
 }
 
