@@ -118,18 +118,23 @@ var convertTo;
 var convertDose;
 
 function Event() {
-var convertions = ["Decalitre", "Decilitre", "Centilitre", "Millilitre", "Microlitre", "Gram", "Microgram", "Nanogram"];
+var convertionsVolume = ["Decalitre", "Decilitre", "Centilitre", "Millilitre", "Microlitre"];
+var convertionsMass = ["Gram", "Microgram", "Nanogram"];
+var convertions = [];
+
+if(parseInt((Math.random() * 2)) == 1) { 
+	convertions = convertionsVolume;
+}else {
+	convertions = convertionsMass;
+}
+var convertions = 
+
 shuffle(convertions);
 
 var jsonDoseNumber = Math.floor(Math.random() * 30) + 1; 
 
 var text = '{"Event":[' +
 '{"eventNote":"Convert ","From":' + '"' + convertions[0] + '"' + ',"To":' + '"' + convertions[1] + '"' + ', "Dose":' + '"' + jsonDoseNumber + '"' + '}]}';
-
-/*var text = '{"Event":[' +
-'{"eventNote":"Convert ","From":"Gram","To":"Decilitre", "Dose":"29" },' +
-'{"eventNote":"Convert ","From":"Millilitre","To":"Microlitre", "Dose":"1" },' +
-'{"eventNote":"Convert ","From":"Microgram","To":"Centilitre", "Dose":"1" }]}';*/
 
 obj = JSON.parse(text);
 document.getElementById('mathProblem').innerHTML = obj.Event[0].eventNote + obj.Event[0].Dose + " " + obj.Event[0].From + " to " + obj.Event[0].To + '<br>';
