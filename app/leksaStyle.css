@@ -87,7 +87,7 @@ p, h1, h2 {
 	overflow: hidden;
     background-size: cover;
     background-position: center;
-    /*background-image: url("img/tausta.jpg");*/
+    background-image: url("img/doctors_office.jpg");
 }
 
 .boxwrapper1, .boxwrapper2, .boxwrapper3{
