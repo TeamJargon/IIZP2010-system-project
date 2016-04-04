@@ -233,11 +233,28 @@
 						{
 							alert("Congratulations, you made the right drug for the patient!");
 							problemSolved = true; 
+							updateScore(true);
 							return;
 						}
 					}
 				}				
 			}
 			alert("Incorrect answer!");
+			updateScore(false);
+		}
+		
+		function updateScore( boolean correct){
+			var stringOldScore = div.getElementsByTagName('score')[0];
+			int intOldScore = parseInt(oldScore);
+			
+			if(correct == true){	
+				int newScore = intOldScore + 1000;
+			} else {
+				int newScore = intOldScore - 1000;
+			}
+			
+			var stringNewScore = String(newScore);
+			
+			document.getElementById("score").innerHTML = stringNewScore;
 		}
 		
