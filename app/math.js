@@ -12,6 +12,7 @@ function sure() {
 
 function nope() {
 	$("#math").fadeOut("slow");
+	$("#mathProblem").fadeOut("slow");
 	$("#nurse").hide("slide", { direction: "left" }, 1000); 
 }
 
