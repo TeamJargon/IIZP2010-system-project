@@ -246,12 +246,12 @@
 		function updateScore(correct){
 			alert("WubWub, updateScoressa!");
 			var stringOldScore = div.getElementsByTagName('score')[0];
-			int intOldScore = parseInt(oldScore);
+			var intOldScore = parseInt(stringOldScore);
 			
 			if(correct == true){	
-				int newScore = intOldScore + 1000;
+				var newScore = intOldScore + 1000;
 			} else {
-				int newScore = intOldScore - 1000;
+				var newScore = intOldScore - 1000;
 			}
 			
 			var stringNewScore = String(newScore);
