@@ -15,7 +15,7 @@ canvas, img {
  }
  
 canvas { 
-	background: url(http://student.labranet.jamk.fi/~H8306/a/room1.png);
+	background: url("img/rooms.png");
 	background-size: 100% 100%;
     position: absolute;
     top: 0;
