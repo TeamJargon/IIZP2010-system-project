@@ -244,6 +244,7 @@
 		}
 		
 		function updateScore( boolean correct){
+			alert("WubWub, updateScoressa!");
 			var stringOldScore = div.getElementsByTagName('score')[0];
 			int intOldScore = parseInt(oldScore);
 			
