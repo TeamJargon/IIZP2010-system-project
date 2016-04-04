@@ -210,7 +210,6 @@
 		
 		function answer(brandChoice, substanceChoiceArray, formChoice)
 		{
-			alert("shiet");
 			var points = 0;
 			
 			if(substanceChoiceArray.length>1)
@@ -234,17 +233,17 @@
 						{
 							alert("Congratulations, you made the right drug for the patient!");
 							problemSolved = true; 
-							updateScore(true);
+							//updateScore(true);
 							return;
 						}
 					}
 				}				
 			}
 			alert("Incorrect answer!");
-			updateScore(false);
+			//updateScore(false);
 		}
 		
-		function updateScore( boolean correct){
+		/*function updateScore( boolean correct){
 			alert("WubWub, updateScoressa!");
 			var stringOldScore = div.getElementsByTagName('score')[0];
 			int intOldScore = parseInt(oldScore);
@@ -259,4 +258,4 @@
 			
 			document.getElementById("score").innerHTML = stringNewScore;
 		}
-		
+		*/
