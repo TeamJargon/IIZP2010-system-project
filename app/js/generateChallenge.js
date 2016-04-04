@@ -245,7 +245,7 @@
 		
 		function updateScore(correct){
 			alert("WubWub, updateScoressa!");
-			var stringOldScore = div.getElementsByTagName('score')[0];
+			var stringOldScore = document.getElementById("score").innerHTML;
 			var intOldScore = parseInt(stringOldScore);
 			
 			if(correct == true){	
