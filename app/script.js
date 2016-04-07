@@ -33,17 +33,16 @@ function switchScene(name)
 	switch(name) {
 	case "reception":
 		currentRoom = "reception";	
-		document.getElementById("info").innerHTML = "<h1>Info</h1><p>Here you can see your patient's problem on the right side. You can also help the nurse to practice your math skills on the left.<br>Now go back to the main room and let's go create a drug to help your patient!</p>";
 		$("#myCanvas").fadeOut("slow", function(){
 			$('#reception').fadeIn("slow", function(){
 				letsDoSomeMath();
 				generateProblem();
+				document.getElementById("info").innerHTML = "<h1>Info</h1><p>Here you can see your patient's problem on the right side. You can also help the nurse to practice your math skills on the left.<br>Now go back to the main room and let's go create a drug to help your patient!</p>";
 			});
 		});	
 		break;
 		
 	case "medical":
-		document.getElementById("info").innerHTML = "<h1>Info</h1><p>Here you can find all drug recipes if you can't remember them. Your patient's problem was:<br> " + symptom + "<br>Now go create the correct drug for your patient in the laboratory.</p>";
 		currentRoom = "medical";
 		$('#myCanvas').fadeOut("slow", function(){
 			$('#medical').fadeIn("slow");
@@ -51,7 +50,6 @@ function switchScene(name)
 		break;
 		
 	case "craft":
-		document.getElementById("info").innerHTML = "<h1>Info</h1><p>Here you can create drugs. Your patient's problem was:<br> " + symptom + "<br>Now what drug could help him...Hmm...<br>If you can't remember, you can go to the medical room.</p>";
 		currentRoom = "craft";
 		$('#myCanvas').fadeOut("slow", function(){
 			$('#craft').fadeIn("slow");
@@ -59,7 +57,6 @@ function switchScene(name)
 		break;
 		
 	default:
-		document.getElementById("info").innerHTML = "<h1>Info</h1><p>Now click the laboratory (3). You can create drugs for your patient there.</p>";
 		currentRoom = "main";
 		$('.room').hide();
 		$('.roomChildEle').hide();
