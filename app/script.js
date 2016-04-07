@@ -140,10 +140,11 @@ $(window).bind('resize', function(e)
 
 $('.hintbtn').click(function (e)
 {
-    if (document.getElementById('hintbox').textContent != "") {
+    if (document.getElementById('hintbox').textContent.length == 0) {
         var hint = document.createElement("div");
         var text = document.createTextNode(window.disease);
         hint.appendChild(text);
         document.getElementById('hintbox').appendChild(hint);
-    }
+    
+    }        
 });
