@@ -19,11 +19,11 @@ header {
 }
 
 .score-div {
-		
+	float: right;	
 }
 
 #score1, #score2, #score3 {
-	float: left;
+	
 }
 
 body h1 {
