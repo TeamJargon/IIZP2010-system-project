@@ -120,10 +120,9 @@ var convertFrom;
 var convertTo;
 var convertDose;
 
-function Event() {
+function EventRomanNumerals() {
 // Roman numeral
-if(parseInt((Math.random()) * 2) == 1) {
-	var convertions = [];
+	var conversions = [];
 
 	var jsonDoseNumber = Math.floor(Math.random() * 999) + 1; 
 	GlobalRomanresult = jsonDoseNumber;
@@ -137,42 +136,42 @@ if(parseInt((Math.random()) * 2) == 1) {
 	obj = JSON.parse(text);
 	document.getElementById('mathProblem').innerHTML = obj.Event[0].eventNote + " Roman Numeral " + obj.Event[0].Dose + " "+ " to Numeral"+ '<br>';
 	
-	while(convertions.length < 3) {
+	while(conversions.length < 3) {
 		var randomNumber = Math.floor(Math.random() * 999) + 1;
 		
 		if(randomNumber == jsonDoseNumber) {
 			randomNumber = Math.floor(Math.random() * 999) + 1;
 		}else {
-			convertions.push(randomNumber);
+			conversions.push(randomNumber);
 		}
 	}
 	
-	convertions.push(jsonDoseNumber);
+	conversions.push(jsonDoseNumber);
 	
-	shuffle(convertions);
+	shuffle(conversions);
 	
-	for(choicesArrayIndex = 0; choicesArrayIndex < convertions.length; choicesArrayIndex++) {
-		document.getElementById('mathProblem').innerHTML += '<button ' + 'onclick="answerRomanLaakelasku(this.id)"' + 'id=' + convertions[choicesArrayIndex] + '>' + convertions[choicesArrayIndex] + '</button>' + '<br>';
+	for(choicesArrayIndex = 0; choicesArrayIndex < conversions.length; choicesArrayIndex++) {
+		document.getElementById('mathProblem').innerHTML += '<button ' + 'onclick="answerRomanLaakelasku(this.id)"' + 'id=' + conversions[choicesArrayIndex] + '>' + conversions[choicesArrayIndex] + '</button>' + '<br>';
 	}
 }
-// unit conversion
-else {
-	var convertionsVolume = ["Decalitre", "Decilitre", "Centilitre", "Millilitre", "Microlitre"];
-	var convertionsMass = ["Gram", "Microgram", "Nanogram"];
-	var convertions = [];
+
+function EventUnitconversion() {
+	var conversionsVolume = ["Decalitre", "Decilitre", "Centilitre", "Millilitre", "Microlitre"];
+	var conversionsMass = ["Gram", "Microgram", "Nanogram"];
+	var conversions = [];
 
 	if(parseInt((Math.random() * 2)) == 1) { 
-		convertions = convertionsVolume;
+		conversions = conversionsVolume;
 	}else {
-		convertions = convertionsMass;
+		conversions = conversionsMass;
 	}
 
-	shuffle(convertions);
+	shuffle(conversions);
 
 	var jsonDoseNumber = Math.floor(Math.random() * 30) + 1; 
 
 	var text = '{"Event":[' +
-	'{"eventNote":"Convert ","From":' + '"' + convertions[0] + '"' + ',"To":' + '"' + convertions[1] + '"' + ', "Dose":' + '"' + jsonDoseNumber + '"' + '}]}';
+	'{"eventNote":"Convert ","From":' + '"' + conversions[0] + '"' + ',"To":' + '"' + conversions[1] + '"' + ', "Dose":' + '"' + jsonDoseNumber + '"' + '}]}';
 
 	obj = JSON.parse(text);
 	document.getElementById('mathProblem').innerHTML = obj.Event[0].eventNote + obj.Event[0].Dose + " " + obj.Event[0].From + " to " + obj.Event[0].To + '<br>';
@@ -183,7 +182,6 @@ else {
 
 	//--------------EventQuest----------------------//
 		EventQuest(Number(convertDose));
-	}
 }
 
 function shuffle(array) {
