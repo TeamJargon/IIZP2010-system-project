@@ -22,8 +22,8 @@ header {
 	float: right;	
 }
 
-#score1, #score2, #score3 {
-	
+.score-p {
+	display: inline;
 }
 
 body h1 {
