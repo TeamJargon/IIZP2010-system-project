@@ -80,6 +80,20 @@ canvas {
 	z-index: 100;
 }
 
+#mathProblemChoice {
+	position: absolute;
+	top: 35%;
+    left: 20%;
+	margin-left: 15px;
+	padding: 20px;
+	display: none;
+	color: black;
+	background-color: #fff;
+	border: 3px solid black;
+	border-radius: 30px 30px 30px 30px;
+	z-index: 100;
+}
+
 #nurse {
 	position: absolute;
 	top: 20%;

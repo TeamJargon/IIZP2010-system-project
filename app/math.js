@@ -5,9 +5,21 @@ function letsDoSomeMath() {
 }
 
 function sure() {
-	Event();
+	problemChoice();
 	$("#math").fadeOut("slow"); 
-	$("#mathProblem").fadeIn("slow"); 
+	$("#mathProblemChoice").fadeIn("slow"); 
+}
+
+function problemChoice(buttonID) {
+	if(buttonID == 'romanNumerals') {
+		Event();
+		$("#mathProblemChoice").fadeOut("slow"); 
+		$("#mathProblem").fadeIn("slow");
+	}else if(buttonID == 'unitConversion') {
+		Event();
+		$("#mathProblemChoice").fadeOut("slow"); 
+		$("#mathProblem").fadeIn("slow");
+	}
 }
 
 function nope() {
