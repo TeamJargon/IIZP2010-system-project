@@ -8,9 +8,9 @@ function drawMain()
 	$('.room').hide();
 	$('#myCanvas').show();	
 	//x, y, fillcolor, radius, linewidth, strokestyle, fontcolor, textalign, fonttype, filltext, name
-	drawCircle(c.width / 2.7, c.height / 4, "#CCE6FF", c.width * 0.04, 4, "black", "white", "center", "bold 20pt Arial", "1", "reception");
-	drawCircle(c. width / 1.8, c.height / 2.5, "#CCE6FF", c.width * 0.04, 4, "black", "white", "center", "bold 20pt Arial", "2", "medical");
-	drawCircle(c. width / 1.3, c.height / 1.7, "#CCE6FF", c.width * 0.04, 4, "black", "white", "center", "bold 20pt Arial", "3", "craft");
+	drawCircle(c.width / 2.7, c.height / 4, "#CCE6FF", c.width * 0.04, 4, "black", "black", "center", "bold 20pt Arial", "1", "reception");
+	drawCircle(c. width / 1.8, c.height / 2.5, "#CCE6FF", c.width * 0.04, 4, "black", "black", "center", "bold 20pt Arial", "2", "medical");
+	drawCircle(c. width / 1.3, c.height / 1.7, "#CCE6FF", c.width * 0.04, 4, "black", "black", "center", "bold 20pt Arial", "3", "craft");
 }
 
 /*
@@ -37,6 +37,7 @@ function switchScene(name)
 			$('#reception').fadeIn("slow", function(){
 				letsDoSomeMath();
 				generateProblem();
+				document.getElementById("info").innerHTML = "<h1>Info</h1><p>Here you can see your patient's problem on the right side. You can also help the nurse to practice your math skills on the left.<br>Now go back to the main room and let's go create a drug to help your patient!</p>";
 			});
 		});	
 		break;
