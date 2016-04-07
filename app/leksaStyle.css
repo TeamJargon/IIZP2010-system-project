@@ -19,7 +19,7 @@ header {
 }
 
 .score-div {
-		display: inline-block;
+		display: inline-block !important;
 }
 
 body h1 {
