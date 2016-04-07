@@ -19,7 +19,11 @@ header {
 }
 
 .score-div {
-		display: inline-block !important;
+		
+}
+
+#score1, #score2, #score3 {
+	float: left;
 }
 
 body h1 {
