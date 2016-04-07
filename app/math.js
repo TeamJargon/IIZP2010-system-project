@@ -12,11 +12,11 @@ function sure() {
 
 function problemChoice(buttonID) {
 	if(buttonID == 'romanNumerals') {
-		Event();
+		EventRomanNumerals();
 		$("#mathProblemChoice").fadeOut("slow"); 
 		$("#mathProblem").fadeIn("slow");
 	}else if(buttonID == 'unitConversion') {
-		Event();
+		EventUnitconversion();
 		$("#mathProblemChoice").fadeOut("slow"); 
 		$("#mathProblem").fadeIn("slow");
 	}
