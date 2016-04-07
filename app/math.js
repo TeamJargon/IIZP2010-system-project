@@ -7,6 +7,7 @@ function letsDoSomeMath() {
 function sure() {
 	problemChoice();
 	$("#math").fadeOut("slow"); 
+	$("#mathProblem").fadeOut("slow");
 	$("#mathProblemChoice").fadeIn("slow"); 
 }
 
