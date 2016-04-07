@@ -186,4 +186,15 @@ ol, li, ul {
 	
 }
 
+#hint {
+    float: right;
+    margin-top: 20px;
+    margin-right: 50px;
+}
+
+#hintbox {
+    float: left;
+    margin-right: 10px;
+    color: black;
+}
 

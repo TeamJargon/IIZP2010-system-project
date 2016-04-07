@@ -135,3 +135,12 @@ $(window).bind('resize', function(e)
 		}, 100);
 	}
 });
+
+
+$('.hintbtn').click(function (e)
+{
+    var hint = document.createElement("div");
+    var text = document.createTextNode(window.disease);
+    hint.appendChild(text);
+    document.getElementById('hintbox').appendChild(hint);
+});
