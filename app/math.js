@@ -24,6 +24,7 @@ function problemChoice(buttonID) {
 
 function nope() {
 	$("#math").fadeOut("slow");
+	$("#mathProblemChoice").fadeOut("slow");
 	$("#mathProblem").fadeOut("slow");
 	$("#nurse").hide("slide", { direction: "left" }, 1000); 
 }
