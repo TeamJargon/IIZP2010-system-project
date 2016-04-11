@@ -157,6 +157,6 @@ $('.hintbtn').click(function (e)
         hintbox.appendChild("Disease: " + hint);
     } else if (hintbox.textContent == window.disease) {
         hintbox.innerHTML = "";
-        hintbox.appendChild("Disease: "window.disease + ", Brand: " + window.brand.join());
+        hintbox.appendChild("Disease: " + window.disease + ", Brand: " + window.brand.join());
     }
 });
