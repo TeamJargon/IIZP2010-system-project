@@ -234,6 +234,7 @@
 							alert("Congratulations, you made the right drug for the patient!");
 							problemSolved = true; 
 							updateScore(true);
+							resetHint();
 							return;
 						}
 					}
@@ -244,6 +245,7 @@
 		}
 		
 		function updateScore(correct){
+			
 			//alert("WubWub, updateScoressa!");
 			var stringOldScore = document.getElementById("score1").innerHTML;
 			alert(document.getElementById("score1").innerHTML);
@@ -262,5 +264,9 @@
 			document.getElementById("score1").innerHTML = stringNewScore;
 			document.getElementById("score2").innerHTML = stringNewScore;
 			document.getElementById("score3").innerHTML = stringNewScore;
+		}
+		
+		function resetHint() {
+			 document.getElementById("hintbox").innerHTML = "";
 		}
 		
