@@ -147,3 +147,10 @@ canvas {
 		display: none;
 	}
 }
+
+@media screen and (max-height: 460px) {
+	#info 
+	{
+		display: none;
+	}
+}
