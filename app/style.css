@@ -141,14 +141,14 @@ canvas {
 	z-index: 200;
 }
 
-@media screen and (max-width: 720) and (max-height: 890) {
+@media screen and (max-width: 720px) and (max-height: 890px) {
 	#info 
 	{
 		display: none;
 	}
 }
 
-@media screen and (max-height: 460) {
+@media screen and (max-height: 460px) {
 	#info 
 	{
 		display: none;
