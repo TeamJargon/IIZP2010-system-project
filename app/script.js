@@ -32,12 +32,14 @@ function switchScene(name)
 {
 	switch(name) {
 	case "reception":
+		$('#btnBack').prop('disabled', true);
 		currentRoom = "reception";	
 		document.getElementById("info").innerHTML = "<h1>Info</h1><p>Here you can see your patient's problem on the right side. You can also help the nurse to practice your math skills on the left.<br>Now go back to the main room and let's go create a drug to help your patient!</p>";
 		$("#myCanvas").fadeOut("slow", function(){
 			$('#reception').fadeIn("slow", function(){
 				letsDoSomeMath();
 				generateProblem();
+				$('#btnBack').prop('disabled', false);
 			});
 		});	
 		break;
