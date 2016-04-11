@@ -141,7 +141,7 @@ canvas {
 	z-index: 200;
 }
 
-@media screen and (max-height: 940px) {
+@media screen and (max-height: 460px) {
 	#info 
 	{
 		display: none;
