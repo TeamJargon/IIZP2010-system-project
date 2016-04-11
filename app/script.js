@@ -152,11 +152,13 @@ $('.hintbtn').click(function (e)
     var hintbox = document.getElementById('hintbox');
     if (hintbox.textContent.length == 0) {
         var hint = document.createElement("div");
-        var text = document.createTextNode(window.disease);
+        var text = document.createTextNode("Disease: " + window.disease);
         hint.appendChild(text);
-        hintbox.appendChild("Disease: " + hint);
+        hintbox.appendChild(hint);
     } else if (hintbox.textContent == window.disease) {
         hintbox.innerHTML = "";
-        hintbox.appendChild("Disease: " + window.disease + ", Brand: " + window.brand.join());
+        var text = document.createTextNode("Disease: " + window.disease + ", Brand: " + window.brand.join(" and "));
+        hint.appendChild(text)
+        hintbox.appendChild(hint);
     }
 });
