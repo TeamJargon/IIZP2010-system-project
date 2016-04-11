@@ -138,5 +138,12 @@ canvas {
 	border: 3px solid black;
 	border-radius: 30px 30px 30px 30px;
 	font-weight:bold;
-	z-index: 100;
+	z-index: 200;
+}
+
+@media screen and (max-width: 720) and (max-height: 890) {
+	#info 
+	{
+		display: none;
+	}
 }
