@@ -159,7 +159,7 @@ $('.hintbtn').click(function (e)
     } else if (hintbox.textContent == ("Disease: " + window.disease)) {
         hintbox.innerHTML = "";
         var hint = document.createElement("div");
-        var hinttext = "Disease: " + window.disease + " Brand: " + window.brand.join(" and ");
+        var hinttext = "Disease: " + window.disease + " Brand: " + window.brands.join(" and ");
         var text = document.createTextNode(hinttext);
         hint.appendChild(text)
         hintbox.appendChild(hint);
