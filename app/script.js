@@ -156,6 +156,7 @@ $('.hintbtn').click(function (e)
         hint.appendChild(text);
         hintbox.appendChild(hint);
     } else if (hintbox.textContent == window.disease) {
+        alert(hintbox.textContent + " " + window.disease);
         hintbox.appendChild(", " + window.brand);
     }
 });
