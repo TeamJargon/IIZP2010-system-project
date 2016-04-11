@@ -237,7 +237,7 @@
 							//alert("Congratulations, you made the right drug for the patient!");
 							problemSolved = true; 
 							newPatient = true;
-							updateScore(true);
+							updateScore(1);
 							resetHint();
 							return;
 						}
@@ -246,25 +246,34 @@
 			}
 			document.getElementById("info").innerHTML = "<h1>Wrong answer!</h1><p>You lost 1000 score points, try again.<br>If you can't remember the drug's recipe, you can always check it out in the medical room.</p>";
 			//alert("Incorrect answer!");
-			updateScore(false);
+			updateScore(0);
 		}
 		
-		function updateScore(correct){
+		function updateScore(answer){
+		
+			//answer arvo 0 = v‰‰rin
+			//answer arvo 1 = oikein
+			//answer arvo 2 = hint n‰ytetty
+			//answer arvo 3 = oikea vastaus katsottu
 			
-			//alert("WubWub, updateScoressa!");
 			var stringOldScore = document.getElementById("score1").innerHTML;
-			//alert(document.getElementById("score1").innerHTML);
 			var intOldScore = parseInt(stringOldScore);
 			
-			if(correct == true){	
+			if(answer == 1){	
 				var newScore = intOldScore + 1000;
-			} else {
+				
+			} else if (answer == 0){				
+				var newScore = intOldScore - 500;
+				
+			} else if(answer == 2){
+				var newScore = intOldScore - 200;
+				
+			} else if(answer == 3){
 				var newScore = intOldScore - 1000;
+				
 			}
 			
 			var stringNewScore = String(newScore);
-			
-			//alert("New score = " +  newScore);
 			
 			document.getElementById("score1").innerHTML = stringNewScore;
 			document.getElementById("score2").innerHTML = stringNewScore;
