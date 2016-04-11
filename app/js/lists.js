@@ -53,8 +53,8 @@ $(document).ready(function() {
         data: { },
         dataType: "json",
         success: function(response) {
-            for (var i = 0; i < response.length; i++) {														//alla, tuplafunktiokutsu rikkoo medical roomin nappien toiminnan
-                $("#BankBrands").append("<li><input class='btn cheatbtn' type='button' value='"+ response[i] +"' onclick=selectBankMedicine('"+ encodeURIComponent(response[i]) +"');</li>");
+            for (var i = 0; i < response.length; i++) {														
+                $("#BankBrands").append("<li><input class='btn cheatbtn' type='button' value='"+ response[i] +"' onclick=selectBankMedicine('"+ encodeURIComponent(response[i]) +"') </li>");
             }
         }
     });  
