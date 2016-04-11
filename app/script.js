@@ -45,7 +45,7 @@ function switchScene(name)
 		break;
 		
 	case "medical":
-		document.getElementById("info").innerHTML = "<h1>Info</h1><p>Here you can find all drug recipes if you can't remember them. Your patient's problem was:<br> " + symptom + "<br>Now go create the correct drug for your patient in the laboratory.</p>";
+		document.getElementById("info").innerHTML = "<h1>Info</h1><p>Here you can find all drug recipes if you can't remember them. Your patient's problem was:<br> " + "<i>" + symptom + "</i>" + "<br>Now go create the correct drug for your patient in the laboratory.</p>";
 		currentRoom = "medical";
 		$('#myCanvas').fadeOut("slow", function(){
 			$('#medical').fadeIn("slow");
@@ -53,7 +53,7 @@ function switchScene(name)
 		break;
 		
 	case "craft":
-		document.getElementById("info").innerHTML = "<h1>Info</h1><p>Here you can create drugs. Your patient's problem was:<br> " + symptom + "<br>Now what drug could help him...Hmm...<br>If you can't remember, you can go to the medical room.</p>";
+		document.getElementById("info").innerHTML = "<h1>Info</h1><p>Here you can create drugs. Your patient's problem was:<br> " + "<i>" + symptom + "</i>" + "<br>Now what drug could help him...Hmm...<br>If you can't remember, you can go to the medical room.</p>";
 		currentRoom = "craft";
 		$('#myCanvas').fadeOut("slow", function(){
 			$('#craft').fadeIn("slow");
