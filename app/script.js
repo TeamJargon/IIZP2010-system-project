@@ -157,6 +157,7 @@ $('.hintbtn').click(function (e)
         hintbox.appendChild(hint);
     } else if (hintbox.textContent == window.disease) {
         hintbox.innerHTML = "";
+        var hint = document.createElement("div");
         var text = document.createTextNode("Disease: " + window.disease + ", Brand: " + window.brand.join(" and "));
         hint.appendChild(text)
         hintbox.appendChild(hint);
