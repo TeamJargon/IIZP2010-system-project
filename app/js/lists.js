@@ -53,7 +53,7 @@ $(document).ready(function() {
         data: { },
         dataType: "json",
         success: function(response) {
-            for (var i = 0; i < response.length; i++) {
+            for (var i = 0; i < response.length; i++) {														//alla, tuplafunktiokutsu rikkoo medical roomin nappien toiminnan
                 $("#BankBrands").append("<li><input class='btn cheatbtn' type='button' value='"+ response[i] +"' onclick=updateScore(3); selectBankMedicine('"+ encodeURIComponent(response[i]) +"');</li>");
             }
         }
