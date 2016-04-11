@@ -154,9 +154,9 @@ $('.hintbtn').click(function (e)
         var hint = document.createElement("div");
         var text = document.createTextNode(window.disease);
         hint.appendChild(text);
-        hintbox.appendChild(hint);
+        hintbox.appendChild("Disease: " + hint);
     } else if (hintbox.textContent == window.disease) {
         hintbox.innerHTML = "";
-        hintbox.appendChild(window.disease + ", " + window.brand);
+        hintbox.appendChild("Disease: "window.disease + ", Brand: " + window.brand.join());
     }
 });
