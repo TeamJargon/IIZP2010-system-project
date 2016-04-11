@@ -54,7 +54,7 @@ $(document).ready(function() {
         dataType: "json",
         success: function(response) {
             for (var i = 0; i < response.length; i++) {														
-                $("#BankBrands").append("<li><input class='btn cheatbtn' type='button' value='"+ response[i] +"' onclick=selectBankMedicine('"+ encodeURIComponent(response[i]) +"') </li>");
+                $("#BankBrands").append("<li><input class='btn cheatbtn' type='button' value='"+ response[i] +"' onclick=selectBankMedicine('"+ encodeURIComponent(response[i]) +"'); </li>");
             }
         }
     });  
