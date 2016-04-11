@@ -231,7 +231,8 @@
 					{
 						if(brands[a] == brandChoice && substances[b] == selectedSubstances && drugforms[c] == formChoice)
 						{
-							alert("Congratulations, you made the right drug for the patient!");
+							document.getElementById("info").innerHTML = "<h1>Congratulations!</h1><p>You made the right drug for the patient and you got 1000 score points.<br>Now go back to the reception, you got a new patient waiting for you!</p>";
+							//alert("Congratulations, you made the right drug for the patient!");
 							problemSolved = true; 
 							updateScore(true);
 							resetHint();
@@ -240,7 +241,8 @@
 					}
 				}				
 			}
-			alert("Incorrect answer!");
+			document.getElementById("info").innerHTML = "<h1>Wrong answer</h1><p>Try again. If you can't remember the drug's recipe, you can always check it out in the medical room.</p>";
+			//alert("Incorrect answer!");
 			updateScore(false);
 		}
 		
@@ -248,7 +250,7 @@
 			
 			//alert("WubWub, updateScoressa!");
 			var stringOldScore = document.getElementById("score1").innerHTML;
-			alert(document.getElementById("score1").innerHTML);
+			//alert(document.getElementById("score1").innerHTML);
 			var intOldScore = parseInt(stringOldScore);
 			
 			if(correct == true){	
@@ -259,7 +261,7 @@
 			
 			var stringNewScore = String(newScore);
 			
-			alert("New score = " +  newScore);
+			//alert("New score = " +  newScore);
 			
 			document.getElementById("score1").innerHTML = stringNewScore;
 			document.getElementById("score2").innerHTML = stringNewScore;
