@@ -39,6 +39,7 @@ function switchScene(name)
 			$('#reception').fadeIn("slow", function(){
 				letsDoSomeMath();
 				generateProblem();
+				newPatient = false;
 			});
 		});	
 		break;
@@ -61,14 +62,10 @@ function switchScene(name)
 		
 	default:
 		if (newPatient == true)
-		{
 			document.getElementById("info").innerHTML = "<h1>Info</h1><p>Now go back to the reception, you got a new patient waiting for you.</p>";
-			newPatient = false;
-		}
+			
 		else
-		{
 			document.getElementById("info").innerHTML = "<h1>Info</h1><p>Now click the laboratory (3). You can create drugs for your patient there.</p>";
-		}
 		currentRoom = "main";
 		$('.room').hide();
 		$('.roomChildEle').hide();
