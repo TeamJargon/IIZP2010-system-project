@@ -104,7 +104,7 @@
 					var drugs = jsonObj.drugs;
 					// Math.random() on luku nollasta yhteen desimaalina
 					var rand = Math.random() * drugs.length;
-					if(this.i == rand)
+					while(this.i == rand)
 					{
 						rand = Math.random() * drugs.length;
 					}
