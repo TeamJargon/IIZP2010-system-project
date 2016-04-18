@@ -18,6 +18,10 @@ header {
 	color: white;
 }
 
+#score-div p {
+	font-size: 42;
+}
+
 .score-div {
 	float:left;	
 }
