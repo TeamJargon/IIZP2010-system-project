@@ -8,6 +8,7 @@ function generateProblem() {
 		{
 			problemSolved = false;
 			GenerateChallenge();
+			$('#btnAnswer').prop('disabled', false);
 		}	
 	});
 }
