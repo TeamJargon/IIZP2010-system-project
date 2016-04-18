@@ -124,7 +124,7 @@ function EventRomanNumerals() {
 // Roman numeral
 	var conversions = [];
 
-	var jsonDoseNumber = Math.floor(Math.random() * 999) + 1; 
+	var jsonDoseNumber = Math.floor(Math.random() * 100) + 1; 
 	GlobalRomanresult = jsonDoseNumber;
 	
 	var romanNumeral = EventQuestRome(parseInt(jsonDoseNumber));
