@@ -8,6 +8,7 @@
 		var drugforms = [];
 		var symptom = "";
 		var disease = "";
+		var i = 0;
 		
 		function GenerateChallenge()
 		{			
@@ -46,6 +47,8 @@
 			document.getElementById("symptom").innerHTML = symptom;
 			//document.getElementById("disease").innerHTML = disease;
 			//document.getElementById("brand").innerHTML = brands.join();
+			
+			
 			
 			
 		}
@@ -101,6 +104,11 @@
 					var drugs = jsonObj.drugs;
 					// Math.random() on luku nollasta yhteen desimaalina
 					var rand = Math.random() * drugs.length;
+					if(this.i == rand)
+					{
+						rand = Math.random() * drugs.length;
+					}
+					this.i = rand;
 					var index = parseInt(rand);
 					var split = drugs[index].brand.split(",");
 					this.brands = split;
