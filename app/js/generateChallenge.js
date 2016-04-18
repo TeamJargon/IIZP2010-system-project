@@ -289,6 +289,7 @@
 		}
 		
 		function resetHint() {
-			 document.getElementById("hintbox").innerHTML = "";
+			 document.getElementById("hintboxdisease").innerHTML = "";
+			 document.getElementById("hintboxbrand").innerHTML = "";
 		}
 		
