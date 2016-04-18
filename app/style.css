@@ -26,6 +26,12 @@ canvas {
     height: 100%;
 }
 
+#btnAnswer
+{
+	padding: 10px 15px 10px 15px;
+	font-size:20;
+}
+
 #problem 
 {
 	border: 1px solid black;
