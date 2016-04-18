@@ -66,6 +66,8 @@ var selectedCategory = "";
 
 function selectBankMedicine(brand)
 {
+	updateScore(3);
+	
 	selectedBrand = decodeURIComponent(brand);
 	
 	$.ajax({  
