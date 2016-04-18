@@ -242,7 +242,7 @@
 						if(brands[a] == brandChoice && substances[b] == selectedSubstances && drugforms[c] == formChoice)
 						{
 							document.getElementById("info").innerHTML = "<h1>Congratulations!</h1><p>You made the right drug for the patient and you got 1000 score points.<br>Now go back to the reception, you got a new patient waiting for you.</p>";
-							//alert("Congratulations, you made the right drug for the patient!");
+							alert("Congratulations, you made the right drug for the patient!");
 							problemSolved = true; 
 							newPatient = true;
 							updateScore(1);
@@ -253,7 +253,7 @@
 				}				
 			}
 			document.getElementById("info").innerHTML = "<h1>Wrong answer!</h1><p>You lost 1000 score points, try again.<br>If you can't remember the drug's recipe, you can always check it out in the medical room.</p>";
-			//alert("Incorrect answer!");
+			alert("Incorrect answer!");
 			updateScore(0);
 		}
 		
