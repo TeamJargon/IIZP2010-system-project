@@ -55,9 +55,7 @@ ol, li, ul {
 
 #pressed_button {
 	background: #000000;
-}	
-
-
+}
 
 #page-wrapper{
 	color: black;
@@ -176,7 +174,7 @@ ol, li, ul {
 .btn
 {
 	height:30px;
-	width:40%;
+	width:45%;
 	margin-bottom: 5px;
 	background: linear-gradient(to top, rgb(204, 230, 255), rgb(179, 218, 255));
 	font-size: 125%;
@@ -201,5 +199,21 @@ ol, li, ul {
     float: left;
     margin-right: 10px;
     color: black;
+}
+
+.hintbox div {
+    background-color: aquamarine;
+    border: 2px solid black;
+    border-radius: 15px;
+    width: 250px;
+    height: 30px;
+}
+
+.hintbtn {
+    width: 140px;
+    height: 30px;
+    background: linear-gradient(to top, rgb(204, 230, 255), rgb(179, 218, 255));
+    font-size: 18px;
+    border-radius:5px;
 }
 
