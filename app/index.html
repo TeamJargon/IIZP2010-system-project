@@ -13,8 +13,20 @@
 	<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
 	<script src="js/lists.js"></script>
 	<script src="js/generateChallenge.js"></script>
+	<script type="text/javascript">
+	/* wait for the page to be fully loaded*/
+	$(window).load(function(){
+		/* page is fully loaded */
+		/* fade out overlay div */
+		$('#overlay').fadeOut("slow");
+	});
+	</script>
 </head>
 <body onload='GenerateChallenge()'>
+	<div id="overlay">
+		<img src="img/loader.gif" alt="loader">
+	</div>
+
 	<div id="reception" class="room">
 		<div id="page-wrapper">
 			<header>

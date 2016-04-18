@@ -161,3 +161,23 @@ canvas {
 		display: none;
 	}
 }
+
+#overlay {
+	/* overlay that hides the whole page until it's fully loaded */
+	position: fixed;
+	z-index: 99999;
+	background: rgb(29,33,35);
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+
+#overlay img {
+	/* center of the screen */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: 36px;
+    margin-top: 36px;
+}
