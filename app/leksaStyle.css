@@ -217,7 +217,7 @@ ol, li, ul {
     border-radius:5px;
 }
 
-#btnBack {
+.btnBack {
     width: 200px;
     height: 50px;
     background: linear-gradient(to top, rgb(204, 230, 255), rgb(179, 218, 255));
