@@ -137,10 +137,10 @@ function EventRomanNumerals() {
 	document.getElementById('mathProblem').innerHTML = obj.Event[0].eventNote + " Roman Numeral " + obj.Event[0].Dose + " "+ " to Numeral"+ '<br>';
 	
 	while(conversions.length < 3) {
-		var randomNumber = Math.floor(Math.random() * 999) + 1;
+		var randomNumber = Math.floor(Math.random() * 100) + 1;
 		
 		if(randomNumber == jsonDoseNumber) {
-			randomNumber = Math.floor(Math.random() * 999) + 1;
+			randomNumber = Math.floor(Math.random() * 100) + 1;
 		}else {
 			conversions.push(randomNumber);
 		}
