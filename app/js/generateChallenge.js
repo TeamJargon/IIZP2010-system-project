@@ -247,7 +247,7 @@
 							$('#btnAnswer').prop('disabled', true);
 							problemSolved = true; 
 							newPatient = true;
-							updateScore(1);
+							updateScore(0);
 							resetHint();
 							return;
 						}
@@ -256,14 +256,15 @@
 			}
 			document.getElementById("info").innerHTML = "<h1>Wrong answer!</h1><p>You lost 500 score points, try again.<br>If you can't remember the drug's recipe, you can always check it out in the medical room.</p>";
 			//alert("Incorrect answer!");
-			updateScore(0);
+			updateScore(-1);
 		}
 		
 		function updateScore(answer){
-		
-			//answer arvo 0 = väärin
-			//answer arvo 1 = oikein
-			//answer arvo 2 = hint näytetty
+			
+			//answer arvo -1 = väärin
+			//answer arvo 0 = oikein
+			//answer arvo 1 = brandi-hint näytetty
+			//answer arvo 2 = tauti-hint näytetty
 			//answer arvo 3 = oikea vastaus katsottu
 			//answer arvo 4 = yksikkömuunnos oikein
 			//answer arvo 5 = yksikkömuunnon väärin
@@ -271,14 +272,17 @@
 			var stringOldScore = document.getElementById("score1").innerHTML;
 			var intOldScore = parseInt(stringOldScore);
 			
-			if(answer == 1){	
+			if(answer == 0){	
 				var newScore = intOldScore + 1000;
 				
-			} else if (answer == 0){				
+			} else if (answer == -1){				
 				var newScore = intOldScore - 500;
-				
+			
+			} else if (answer == 1){
+				var newScore = intOldScore -200;
+			
 			} else if(answer == 2){
-				var newScore = intOldScore - 200;
+				var newScore = intOldScore - 50;
 				
 			} else if(answer == 3){
 				var newScore = intOldScore - 1000;
