@@ -115,6 +115,7 @@
 					this.brands = split;
 					this.symptom = drugs[index].symptom;
 					this.disease = drugs[index].disease;
+					alert(this.disease);
                 }
 			}, this);
 			
