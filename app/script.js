@@ -153,7 +153,7 @@ $('#diseasebtn').click(function (e)
     if (hintbox.textContent.length == 0) {
         var hint = document.createElement("div");
         var hinttext = "Disease: " + window.disease;
-		alert(window.disease);
+		alert("TÄSSÄ HINT BUTTON ARVO: " + window.disease);
         var text = document.createTextNode(hinttext);
         hint.appendChild(text);
         hintbox.appendChild(hint);
