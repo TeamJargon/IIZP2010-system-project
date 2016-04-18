@@ -104,12 +104,13 @@
 					var drugs = jsonObj.drugs;
 					// Math.random() on luku nollasta yhteen desimaalina
 					var rand = Math.random() * drugs.length;
-					while(this.i == rand)
+					while(this.i == parseInt(rand))
 					{
 						rand = Math.random() * drugs.length;
 					}
-					this.i = rand;
+					
 					var index = parseInt(rand);
+					this.i = index;
 					var split = drugs[index].brand.split(",");
 					this.brands = split;
 					this.symptom = drugs[index].symptom;
