@@ -147,19 +147,24 @@ $(window).bind('resize', function(e)
 });
 
 
-$('.hintbtn').click(function (e)
+$('#diseasebtn').click(function (e)
 {
-    var hintbox = document.getElementById('hintbox');
+    var hintbox = document.getElementById('hintboxdisease');
     if (hintbox.textContent.length == 0) {
         var hint = document.createElement("div");
         var hinttext = "Disease: " + window.disease;
         var text = document.createTextNode(hinttext);
         hint.appendChild(text);
         hintbox.appendChild(hint);
-    } else if (hintbox.textContent == ("Disease: " + window.disease)) {
-        hintbox.innerHTML = "";
+    }
+});
+
+$('#brandbtn').click(function (e)
+{
+    var hintbox = document.getElementById('hintboxbrand');
+    if (hintbox.textContent.length == 0) {
         var hint = document.createElement("div");
-        var hinttext = "Disease: " + window.disease + " Brand: " + window.brands.join(" or ");
+        var hinttext = " Brand: " + window.brands.join(" or ");
         var text = document.createTextNode(hinttext);
         hint.appendChild(text)
         hintbox.appendChild(hint);

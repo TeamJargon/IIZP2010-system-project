@@ -197,7 +197,7 @@ ol, li, ul {
     margin-right: 50px;
 }
 
-#hintbox {
+.hintbox {
     float: left;
     margin-right: 10px;
     color: black;
