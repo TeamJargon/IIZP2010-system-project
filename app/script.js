@@ -34,7 +34,7 @@ function switchScene(name)
 	case "reception":
 		$('.btnBack').prop('disabled', true);
 		currentRoom = "reception";	
-		document.getElementById("info").innerHTML = "<h1>Info</h1><p>Here you can see your patient's problem on the right side.<br>If you need help determining the correct drug, on the top right corner of the screen in this room are hint buttons which give you some hints and may help you determine the correct medicine. Pressing the hint-buttons gives minus points.<br>You can also help the nurse and practice your math skills on the left.<br>Note: helping the nurse is optional!</p>";
+		document.getElementById("info").innerHTML = "<h2>Info</h2><p>Here you can see your patient's problem on the right side.<br>If you need help determining the correct drug, you can click the hint-buttons on the top right corner.<br>You lose some score points if you use the hints though.<br>You can also help the nurse and practice your math skills on the left, but it is optional.</p>";
 		$("#myCanvas").fadeOut("slow", function(){
 			$('#reception').fadeIn("slow", function(){
 				letsDoSomeMath();
@@ -45,7 +45,7 @@ function switchScene(name)
 		break;
 		
 	case "medical":
-		document.getElementById("info").innerHTML = "<h1>Info</h1><p>Here you can find all drug recipes if you can't remember them. Your patient's problem was:<br> " + "<i>" + symptom + "</i>" + "<br>Now go create the correct drug for your patient in the laboratory.</p>";
+		document.getElementById("info").innerHTML = "<h2>Info</h2><p>Here you can find all drug recipes if you can't remember them. Your patient's problem was:<br> " + "<i>" + symptom + "</i>" + "<br>Now go create the correct drug for your patient in the laboratory.</p>";
 		currentRoom = "medical";
 		$('#myCanvas').fadeOut("slow", function(){
 			$('#medical').fadeIn("slow");
@@ -53,19 +53,19 @@ function switchScene(name)
 		break;
 		
 	case "craft":
-		document.getElementById("info").innerHTML = "<h1>Info</h1><p>Here you can create drugs. Your patient's problem was:<br> " + "<i>" + symptom + "</i>" + "<br>Now what drug could help him...Hmm...<br>If you can't remember, you can go to the medical room.</p>";
+		document.getElementById("info").innerHTML = "<h2>Info</h2><p>Here you can create drugs. Your patient's problem was:<br> " + "<i>" + symptom + "</i>" + "<br>Now what drug could help him...Hmm...<br>If you can't remember, you can go to the medical room.</p>";
 		currentRoom = "craft";
 		$('#myCanvas').fadeOut("slow", function(){
 			$('#craft').fadeIn("slow");
-		});	
+		});
 		break;
 		
 	default:
 		if (newPatient == true)
-			document.getElementById("info").innerHTML = "<h1>Info</h1><p>Now go back to the reception, you got a new patient waiting for you.</p>";
+			document.getElementById("info").innerHTML = "<h2>Info</h2><p>Now go back to the reception, you got a new patient waiting for you.</p>";
 			
 		else
-			document.getElementById("info").innerHTML = "<h1>Info</h1><p>Now click the laboratory (3). You can create drugs for your patient there.</p>";
+			document.getElementById("info").innerHTML = "<h2>Info</h2><p>Now click the laboratory (3). You can create drugs for your patient there.</p>";
 		currentRoom = "main";
 		$('.room').hide();
 		$('.roomChildEle').hide();
