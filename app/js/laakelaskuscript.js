@@ -620,6 +620,7 @@ function answerRomanLaakelasku(clickedId) {
 		document.getElementById('mathProblem').innerHTML += "<button type='button' onclick='sure()'>Ok</button>&nbsp;&nbsp;";
 		document.getElementById('mathProblem').innerHTML += "<button type='button' onclick='nope()'>Nope</button>";
 		correctStreak++;
+		updateScore(4);
 	} else {
 		if (correctStreak == null) {
 			correctStreak = 0;
@@ -627,6 +628,7 @@ function answerRomanLaakelasku(clickedId) {
 		document.getElementById('mathProblem').innerHTML = "Sorry, but that was wrong answer. Your streak was: " + correctStreak + "<br>";
 		correctStreak = 0;
 		document.getElementById('mathProblem').innerHTML += "<button type='button' onclick='nope()'>Ok</button>";
+		updateScore(5);
 	}
 }
 
@@ -639,6 +641,7 @@ function answerLaakelasku(clickedId) {
 		document.getElementById('mathProblem').innerHTML += "<button type='button' onclick='sure()'>Ok</button>&nbsp;&nbsp;";
 		document.getElementById('mathProblem').innerHTML += "<button type='button' onclick='nope()'>Nope</button>";
 		correctStreak++;
+		updateScore(4);
 	} else {
 		if (correctStreak == null) {
 			correctStreak = 0;
@@ -646,6 +649,7 @@ function answerLaakelasku(clickedId) {
 		document.getElementById('mathProblem').innerHTML = "Sorry, but that was wrong answer. Your streak was: " + correctStreak + "<br>";
 		correctStreak = 0;
 		document.getElementById('mathProblem').innerHTML += "<button type='button' onclick='nope()'>Ok</button>";
+		updateScore(5);
 	}
 }
 
