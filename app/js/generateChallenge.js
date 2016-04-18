@@ -243,8 +243,6 @@
 						if(brands[a] == brandChoice && substances[b] == selectedSubstances && drugforms[c] == formChoice)
 						{
 							document.getElementById("info").innerHTML = "<h1>Congratulations!</h1><p>You made the right drug for the patient and you got 1000 score points.<br>Now go back to the reception, you got a new patient waiting for you.</p>";
-							//alert("Congratulations, you made the right drug for the patient!");
-							alert("Congratulations, you made the right drug for the patient!");
 							$('#btnAnswer').prop('disabled', true);
 							problemSolved = true; 
 							newPatient = true;
