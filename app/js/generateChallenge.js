@@ -1,4 +1,4 @@
-		var problemSolved = true;
+Ôªø		var problemSolved = true;
 		var newPatient = false;
 		
 		// JQUERY, NOT EVEN ONCE!
@@ -16,7 +16,7 @@
 			substances = [];
 			drugforms = [];
 			
-			// haetaan tauti, oireet ja siihen k‰ytett‰vien l‰‰kkeiden brandit
+			// haetaan tauti, oireet ja siihen k√§ytett√§vien l√§√§kkeiden brandit
 			loadJSON();			
 			// haetaan brandin perusteella vaikuttava aine
 			for (var i = 0;i<brands.length;i++)
@@ -53,7 +53,7 @@
 			
 		}
 		
-		// hakee json-tiedostosta satunnaisen tietueen, joka sis‰lt‰‰ oireet tautiin ja siihen sopivien l‰‰kkeiden brandit
+		// hakee json-tiedostosta satunnaisen tietueen, joka sis√§lt√§√§ oireet tautiin ja siihen sopivien l√§√§kkeiden brandit
 		// taudin oireet asetetaan symptoms muuttujaan
 		// brandit pushataan brands taulukkoon
 		// taudin nimike asetetaan diseasse muuttujaan
@@ -115,7 +115,7 @@
 					this.brands = split;
 					this.symptom = drugs[index].symptom;
 					this.disease = drugs[index].disease;
-					alert("TƒSSƒ OIKEA (GENEROITU) ARVO: " + this.disease);
+					alert("T√ÑSS√Ñ OIKEA (GENEROITU) ARVO: " + this.disease);
                 }
 			}, this);
 			
@@ -124,7 +124,7 @@
         }
 		
 		// Ottaa vastaan brandin nimen stringina
-		// Pushaa substances taulukkoon annettua brandia vastaavan l‰‰keaineen
+		// Pushaa substances taulukkoon annettua brandia vastaavan l√§√§keaineen
 		function sqlLoadSubstance(str) 
 		{
 			var bind = function(fn, context) {
@@ -173,7 +173,7 @@
 		}
 		
 		// Ottaa vastaan brandin nimen stringina
-		// Pushaa drugforms taulukkoon annetulle brandille kuuluvan l‰‰kkeen muodon
+		// Pushaa drugforms taulukkoon annetulle brandille kuuluvan l√§√§kkeen muodon
 		function sqlLoadForm(str) 
 		{
 			var bind = function(fn, context) {
@@ -261,12 +261,12 @@
 		
 		function updateScore(answer){
 		
-			//answer arvo 0 = v‰‰rin
+			//answer arvo 0 = v√§√§rin
 			//answer arvo 1 = oikein
-			//answer arvo 2 = hint n‰ytetty
+			//answer arvo 2 = hint n√§ytetty
 			//answer arvo 3 = oikea vastaus katsottu
-			//answer arvo 4 = yksikkˆmuunnos oikein
-			//answer arvo 5 = yksikkˆmuunnon v‰‰rin
+			//answer arvo 4 = yksikk√∂muunnos oikein
+			//answer arvo 5 = yksikk√∂muunnon v√§√§rin
 			
 			var stringOldScore = document.getElementById("score1").innerHTML;
 			var intOldScore = parseInt(stringOldScore);
