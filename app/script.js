@@ -8,9 +8,9 @@ function drawMain()
 	$('.room').hide();
 	$('#myCanvas').show();	
 	//x, y, fillcolor, radius, linewidth, strokestyle, fontcolor, textalign, fonttype, filltext, name
-	drawCircle(c.width / 2.7, c.height / 4, "#CCE6FF", c.width * 0.04, 4, "black", "black", "center", "bold 20pt Arial", "Reception", "reception");
-	drawCircle(c. width / 1.8, c.height / 2.5, "#CCE6FF", c.width * 0.04, 4, "black", "black", "center", "bold 20pt Arial", "Medical room", "medical");
-	drawCircle(c. width / 1.3, c.height / 1.7, "#CCE6FF", c.width * 0.04, 4, "black", "black", "center", "bold 20pt Arial", "Laboratory", "craft");
+	drawCircle(c.width / 2.7, c.height / 4, "#CCE6FF", c.width * 0.04, 4, "black", "black", "center", "bold 18pt Arial", "Reception", "reception");
+	drawCircle(c. width / 1.8, c.height / 2.5, "#CCE6FF", c.width * 0.04, 4, "black", "black", "center", "bold 18pt Arial", "Medical room", "medical");
+	drawCircle(c. width / 1.3, c.height / 1.7, "#CCE6FF", c.width * 0.04, 4, "black", "black", "center", "bold 18pt Arial", "Laboratory", "craft");
 }
 
 /*
