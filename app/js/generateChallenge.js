@@ -115,7 +115,6 @@
 					this.brands = split;
 					this.symptom = drugs[index].symptom;
 					this.disease = drugs[index].disease;
-					alert("TÄSSÄ OIKEA (GENEROITU) ARVO: " + this.disease);
                 }
 			}, this);
 			

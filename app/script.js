@@ -33,6 +33,8 @@ function switchScene(name)
 	switch(name) {
 	case "reception":
 		$('.btnBack').prop('disabled', true);
+		$('#diseasebtn').prop('disabled', true);
+		$('#brandbtn').prop('disabled', true);	
 		currentRoom = "reception";	
 		document.getElementById("info").innerHTML = "<h2>Info</h2><p>Here you can see your patient's problem on the right side.<br>If you need help determining the correct drug, you can click the hint-buttons on the top right corner.<br>You lose some score points if you use the hints though.<br>You can also help the nurse and practice your math skills on the left, but it is optional.</p>";
 		$("#myCanvas").fadeOut("slow", function(){
@@ -149,11 +151,11 @@ $(window).bind('resize', function(e)
 
 $('#diseasebtn').click(function (e)
 {
+	$('#diseasebtn').prop('disabled', true);
     var hintbox = document.getElementById('hintboxdisease');
     if (hintbox.textContent.length == 0) {
         var hint = document.createElement("div");
         var hinttext = "Disease: " + window.disease;
-		alert("TÄSSÄ HINT BUTTON ARVO: " + window.disease);
         var text = document.createTextNode(hinttext);
         hint.appendChild(text);
         hintbox.appendChild(hint);
@@ -162,6 +164,7 @@ $('#diseasebtn').click(function (e)
 
 $('#brandbtn').click(function (e)
 {
+	$('#brandbtn').prop('disabled', true);
     var hintbox = document.getElementById('hintboxbrand');
     if (hintbox.textContent.length == 0) {
         var hint = document.createElement("div");
