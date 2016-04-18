@@ -32,7 +32,7 @@ function switchScene(name)
 {
 	switch(name) {
 	case "reception":
-		$('#btnBack').prop('disabled', true);
+		$('.btnBack').prop('disabled', true);
 		currentRoom = "reception";	
 		document.getElementById("info").innerHTML = "<h1>Info</h1><p>Here you can see your patient's problem on the right side.<br>If you need help determining the correct drug, on the top right corner of the screen in this room are hint buttons which give you some hints and may help you determine the correct medicine. Pressing the hint-buttons gives minus points.<br>You can also help the nurse and practice your math skills on the left.<br>Note: helping the nurse is optional!</p>";
 		$("#myCanvas").fadeOut("slow", function(){
