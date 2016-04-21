@@ -67,7 +67,7 @@ var selectedCategory = "";
 function selectBankMedicine(brand)
 {
 	updateScore(3);
-	alert("selectBankMedicinessä, updatescore kutsuttu.");
+	//alert("selectBankMedicinessä, updatescore kutsuttu.");
 	
 	selectedBrand = decodeURIComponent(brand);
 	
