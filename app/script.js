@@ -67,7 +67,7 @@ function switchScene(name)
 			document.getElementById("info").innerHTML = "<h2>Info</h2><p>Now go back to the reception, you got a new patient waiting for you.</p>";
 			
 		else
-			document.getElementById("info").innerHTML = "<h2>Info</h2><p>Now click the laboratory (3). You can create drugs for your patient there.</p>";
+			document.getElementById("info").innerHTML = "<h2>Info</h2><p>Now go to the laboratory. You can create drugs for your patient there.</p>";
 		currentRoom = "main";
 		$('.room').hide();
 		$('.roomChildEle').hide();
